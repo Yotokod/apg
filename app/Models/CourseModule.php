@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\Concerns\Translatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
+
+class CourseModule extends Model
+{
+    use Translatable;
+    protected $guarded = [];
+
+    public $timestamps = false;
+    protected function casts(): array { return ['title' => 'array']; }
+
+    public function course(): BelongsTo { return $this->belongsTo(Course::class); }
+
+    public function lessons(): HasMany { return $this->hasMany(Lesson::class)->orderBy('position'); }
+}
+
