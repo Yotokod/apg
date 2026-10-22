@@ -6,7 +6,7 @@
             <div class="flex flex-wrap gap-2">
                 <button wire:click="$set('category','')" class="btn {{ $category === '' ? 'bg-brand-600 text-white' : 'btn-ghost' }}">{{ __('shop.all') }}</button>
                 @foreach ($categories as $c)
-                    <button wire:click="$set('category','{{ $c }}')" class="btn {{ $category === $c ? 'bg-brand-600 text-white' : 'btn-ghost' }}">{{ __('shop.cat.'.$c) }}</button>
+                    <button wire:click="$set('category','{{ $c }}')" class="btn {{ $category === $c ? 'bg-brand-600 text-white' : 'btn-ghost' }}">{{ trans()->has('shop.cat.'.$c) ? __('shop.cat.'.$c) : $c }}</button>
                 @endforeach
             </div>
         </div>
@@ -22,7 +22,7 @@
                         @else <i class="fa-solid {{ ['poulet' => 'fa-drumstick-bite', 'poussin' => 'fa-dove', 'oeuf' => 'fa-egg', 'caille' => 'fa-feather', 'pintade' => 'fa-feather-pointed'][$p->category] ?? 'fa-kiwi-bird' }}"></i> @endif
                     </div>
                     <div class="flex flex-1 flex-col gap-2 p-4">
-                        <span class="text-xs font-semibold uppercase text-brand-700 dark:text-brand-500">{{ __('shop.cat.'.$p->category) }}</span>
+                        <span class="text-xs font-semibold uppercase text-brand-700 dark:text-brand-500">{{ trans()->has('shop.cat.'.$p->category) ? __('shop.cat.'.$p->category) : $p->category }}</span>
                         <h3 class="truncate font-bold">{{ $p->tr('name') }}</h3>
                         <p class="line-clamp-2 text-sm text-stone-600 dark:text-stone-400">{{ $p->tr('description') }}</p>
                         <div class="mt-auto flex items-center justify-between pt-2">

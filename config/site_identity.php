@@ -10,10 +10,10 @@ return [
     'logo' => '/images/logo.svg',
     'primary_color' => '#16a34a',
     'accent_color' => '#f59e0b',
-    'phone' => '+229 01 00 00 00 00',
-    'whatsapp' => '22901000000000',
+    'phone' => '+229 67 16 00 53',
+    'whatsapp' => '22967160053',
     'email' => 'contact@africa-poulets-goliath.com',
-    'address' => 'Cotonou, Bénin',
+    'address' => 'Porto-Novo, Bénin',
     'cities' => 'Cotonou, Porto-Novo, Parakou',
     'currency' => 'FCFA',
     'socials' => [

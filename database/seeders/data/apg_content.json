@@ -1,0 +1,1976 @@
+{
+  "company": {
+    "name": "Africa Poulet Goliath (APG)",
+    "tagline": "Formation et Vente",
+    "description": "Vente et exportation de poussins Goliath à travers toute l'Afrique, plus formations en aviculture. Livraison par fret aérien en Afrique et dans le monde.",
+    "ceo": "Alkaïrou Madougou (PDG)",
+    "trainer": "Prof. Madougou",
+    "website": "https://africa-poulets-goliath.com/",
+    "phones": [
+      "+229 67 16 00 53"
+    ],
+    "whatsapp": [],
+    "emails": [
+      "contact@africa-poulets-goliath.com"
+    ],
+    "addresses": [
+      "Porto-Novo, Bénin"
+    ],
+    "cities": [
+      "Porto-Novo",
+      "Cotonou",
+      "Nord du Bénin",
+      "Abidjan/Côte d'Ivoire",
+      "Lomé/Togo",
+      "Thiès",
+      "Dakar",
+      "Ouagadougou",
+      "Bamako",
+      "Douala"
+    ],
+    "opening_hours": "Lundi à samedi 9h00-20h00; samedi et dimanche 10h30-22h00 (le site indique aussi une joignabilité 24h/24)",
+    "social": {
+      "facebook": "https://www.facebook.com/africapouletgoliath",
+      "twitter": "https://twitter.com/pouletgoliath",
+      "youtube": "https://youtube.com/@africapouletgoliath",
+      "instagram": "https://www.instagram.com/p/Co9xMBZt9Ip/?igshid=YmMyMTA2M2Y="
+    }
+  },
+  "products": [
+    {
+      "name": "Cartons de poussins Goliath (Monde)",
+      "slug": "cartons-de-poussins-goliath-monde",
+      "category": "Aviculture",
+      "description_fr": "Carton de 50 poussins Goliath. Commande minimale : 5 cartons (250 poussins) par voie terrestre, 10 cartons (500 poussins) pour une commande individuelle par avion. Frais de livraison communiqués par un agent.",
+      "price_fcfa": 65000,
+      "unit": "carton de 50 poussins"
+    },
+    {
+      "name": "Cartons de poussins Goliath (Togo - Burkina Faso - Niger)",
+      "slug": "cartons-de-poussins-goliath-afrique",
+      "category": "Aviculture",
+      "description_fr": "Carton de 50 poussins Goliath. Commande minimale : 5 cartons (250 poussins) par voie terrestre, 10 cartons (500 poussins) pour une commande individuelle par avion. Frais de livraison communiqués par un agent.",
+      "price_fcfa": 55000,
+      "unit": "carton de 50 poussins"
+    },
+    {
+      "name": "Cartons de poussins Goliath (Bénin)",
+      "slug": "cartons-de-poussins-goliath-benin",
+      "category": "Aviculture",
+      "description_fr": "Carton de 50 poussins Goliath. Commande minimale : 5 cartons (250 poussins) par voie terrestre, 10 cartons (500 poussins) pour une commande individuelle par avion. Frais de livraison communiqués par un agent.",
+      "price_fcfa": 45000,
+      "unit": "carton de 50 poussins"
+    },
+    {
+      "name": "Poulets Goliath Bio Congelés",
+      "slug": "poulets-goliath-bio-congeles",
+      "category": "Viande",
+      "description_fr": "Poulet Goliath bio congelé, apprécié pour sa qualité et sa valeur nutritive.",
+      "price_fcfa": 3000,
+      "unit": "kg"
+    },
+    {
+      "name": "Cartons de cailleteaux de race améliorée",
+      "slug": "cartons-de-cailleteaux-de-race-ameliores",
+      "category": "Cailles",
+      "description_fr": "Cailleteaux de race améliorée, à croissance rapide et ponte précoce.",
+      "price_fcfa": 40000,
+      "unit": "carton"
+    },
+    {
+      "name": "Pintades de race améliorée",
+      "slug": "pintades-de-race-amelioree",
+      "category": "Pintades",
+      "description_fr": "Pintades de race améliorée pour la ponte, la croissance et la rusticité. Produit variable selon le pays.",
+      "price_fcfa": 80000,
+      "unit": "lot"
+    },
+    {
+      "name": "Formation complète en aviculture biologique - 10 modules",
+      "slug": "formation-complete-en-aviculture-biologique-10-modules",
+      "category": "Formations",
+      "description_fr": "Formation complète de 10 modules en aviculture biologique. Prix promotionnel (prix normal 117 000 FCFA).",
+      "price_fcfa": 83000,
+      "unit": "formation"
+    },
+    {
+      "name": "Formation en aviculture - Module complet",
+      "slug": "formation-en-aviculture-module-complet",
+      "category": "Formations",
+      "description_fr": "Formation complète de 10 modules en aviculture biologique, 30 % de réduction (prix normal 116 000 FCFA).",
+      "price_fcfa": 81200,
+      "unit": "formation"
+    },
+    {
+      "name": "Guide incontournable de formulation de provende pour poulets Goliath en Afrique",
+      "slug": "guide-incontournable-de-formulation-de-provende-pour-poulets-goliath-en-afrique",
+      "category": "Guides",
+      "description_fr": "Guide de formules alimentaires pour poulets Goliath en Afrique.",
+      "price_fcfa": 15000,
+      "unit": "guide"
+    },
+    {
+      "name": "Guide complet de l'alimentation des poulets avec des superaliments naturels",
+      "slug": "guide-complet-de-lalimentation-des-poulets-avec-des-superaliments-naturels",
+      "category": "Guides",
+      "description_fr": "Alimentation des poulets avec des superaliments naturels (baobab, néré, moringa...).",
+      "price_fcfa": 15000,
+      "unit": "guide"
+    },
+    {
+      "name": "Pack 2 en 1 : guide de formulation + guide d'alimentation",
+      "slug": "2-en-1-guide-incontournable-de-formulation-de-provende-pour-poulets-goliath-en-afrique-guide-complet-de-lalimentation-des-poulets-avec-des-superaliments-naturels",
+      "category": "Guides",
+      "description_fr": "Les deux guides à prix réduit.",
+      "price_fcfa": 25000,
+      "unit": "pack"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Module 1 : Généralités sur l'aviculture biologique",
+      "slug": "generalites-sur-laviculture-biologique",
+      "description": "L'aviculture biologique est une méthode d'élevage axée sur le bien-être animal, la durabilité et la santé environnementale : accès à l'extérieur, alimentation biologique et naturelle, interdiction des antibiotiques, pesticides, hormones de croissance et OGM.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "L'élevage de la volaille est une véritable source de revenus. Il permet de créer des richesses en un temps court. Cependant il ne joue pas encore le rôle qu'il aurait pu jouer dans la lutte contre la pauvreté...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "État des lieux de l'aviculture familiale en Afrique",
+          "lessons": [
+            {
+              "title": "État des lieux de l'aviculture familiale en Afrique",
+              "content": "La plupart des élevages familiaux de volaille en Afrique : absence de poulailler ou abris précaire ; alimentation limitée à quelques restes ; animaux en divagation exposés aux maladies, prédateurs, vol ; très fort taux de mortalité...",
+              "quiz": []
+            },
+            {
+              "title": "A. Des solutions européennes mal adaptées",
+              "content": "L'élevage des souches européennes obéit à un protocole bien établi (logement, alimentation, soins). Mais quand ces races sont transposées en Afrique, les conditions climatiques et économiques ne permettent pas le rendement espéré...",
+              "quiz": []
+            },
+            {
+              "title": "B. Quelques bonnes pratiques avicoles locales",
+              "content": "Installer des perchoirs et des nids aménagés ; nettoyer tous les jours le poulailler en y répandant de la cendre de bois ; administrer selon la maladie une solution de piment rouge écrasé, une pommade d'huile de palme et de sel...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Hypothèses",
+          "lessons": [
+            {
+              "title": "Hypothèses",
+              "content": "Quels sont les principaux obstacles auxquels sont confrontés les aviculteurs ? Hypothèse 1 : les faibles résultats des ateliers de volaille sont liés à des facteurs internes et externes qui déterminent coûts et profits...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les problèmes majeurs de l'aviculture en Afrique",
+          "lessons": [
+            {
+              "title": "Les problèmes majeurs de l'aviculture en Afrique",
+              "content": "L'aviculture en Afrique est un secteur très rentable quand on maîtrise son investissement, mais beaucoup investissent sans formation, sans accompagnement, sans objectif ou avec une mauvaise gestion...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "L'élevage bio en Afrique, un rêve ou une réalité",
+          "lessons": [
+            {
+              "title": "L'élevage bio en Afrique, un rêve ou une réalité",
+              "content": "L'élevage biologique est une exploitation agricole où les règles de l'agriculture biologique sont respectées : pas de pesticides, d'engrais chimiques de synthèse, de conservateurs ou colorants artificiels, pas de semences OGM...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Clarification conceptuelle",
+          "lessons": [
+            {
+              "title": "A. Questions réponses",
+              "content": "Q : Qu'appelle-t-on un élevage avicole biologique ? R : C'est un élevage qui s'inscrit dans la durabilité, respectueux de la santé humaine, de l'environnement et du bien-être animal...",
+              "quiz": []
+            },
+            {
+              "title": "Définitions des mots clés en aviculture",
+              "content": "Poussin : jeune poule ou jeune coq de 0 à 4 semaines (1er âge 0-2 semaines, 2e âge 2-4 semaines). Poulet : jeune poule de 4 à 8 semaines...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Origine des volailles et logements",
+          "lessons": [
+            {
+              "title": "A. Origines des volailles",
+              "content": "Généralement les animaux doivent provenir d'élevage bio. Le règlement autorise toutefois des achats hors bio sous conditions (forte mortalité, renouvellement du cheptel, non-disponibilité d'animaux bio)...",
+              "quiz": []
+            },
+            {
+              "title": "Logement",
+              "content": "L'élevage hors sol est interdit. Les bâtiments avicoles doivent permettre à tous les oiseaux d'accéder facilement à l'espace de plein air ; un tiers au moins de la surface doit être construit en dur...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les compétences techniques pour être un bon aviculteur",
+          "lessons": [
+            {
+              "title": "Le choix de la race de volaille à élever",
+              "content": "Le choix de la race dépend de l'objectif de l'élevage (œufs, viande, reproduction), des conditions environnementales et des ressources disponibles...",
+              "quiz": []
+            },
+            {
+              "title": "Choix du mode d'élevage",
+              "content": "Le mode d'élevage dépend du type de volaille, des moyens financiers et humains, de la taille de l'exploitation et de la situation géographique : divagation, parcours libre contrôlé avec poulailler, claustration sur litière...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 1",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Est-ce qu'une poule a besoin du coq pour pondre un œuf ?",
+                  "options": [
+                    "Non, car l'ovulation chez la poule s'effectue à l'extérieur",
+                    "Oui, car la ponte est liée à la reproduction",
+                    "Aucune des réponses ci-dessus"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Est-ce qu'une poule a besoin du coq pour produire des poussins ?",
+                  "options": [
+                    "Oui, car c'est une reproduction par voie sexuée",
+                    "Non, car l'ovulation chez la poule s'effectue à l'extérieur",
+                    "Aucune des réponses ci-dessus"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Qu'appelle-t-on un élevage avicole biologique ?",
+                  "options": [
+                    "Un élevage qui utilise des pesticides, des engrais chimiques de synthèse et des semences OGM",
+                    "Un élevage qui respecte la durabilité, la santé humaine, l'environnement et le bien-être animal",
+                    "Un élevage industriel qui vise à maximiser la production sans tenir compte du bien-être des animaux"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Qu'est-ce qu'un élevage avicole conventionnel ?",
+                  "options": [
+                    "Un élevage qui respecte la durabilité, la santé humaine, l'environnement et le bien-être animal",
+                    "Un élevage industriel qui vise à maximiser la production sans tenir compte du bien-être des animaux",
+                    "Un élevage qui utilise des méthodes respectueuses des équilibres naturels"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Les animaux des élevages biologiques ont-ils obligatoirement un parcours à l'extérieur ?",
+                  "options": [
+                    "Oui, ils ont un parcours à l'extérieur obligatoire",
+                    "Non, ils peuvent être élevés entièrement en intérieur",
+                    "Aucune des réponses"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Les bâtiments avicoles des élevages biologiques doivent-ils permettre à tous les animaux d'accéder facilement à l'espace de plein air ?",
+                  "options": [
+                    "Oui, tous les animaux doivent pouvoir accéder facilement à l'espace de plein air",
+                    "Non, seuls les animaux en bonne santé peuvent accéder"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Qu'est-ce qui détermine principalement le choix de la race de volaille à élever ?",
+                  "options": [
+                    "La passion pour cet oiseau",
+                    "Les moyens financiers et humains disponibles",
+                    "Le marché porteur et lucratif"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quels sont les critères à prendre en compte pour choisir le mode d'élevage adapté ?",
+                  "options": [
+                    "La taille de l'exploitation et l'espace disponible",
+                    "La race de volaille choisie",
+                    "La passion de l'aviculteur pour l'élevage en divagation"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Quelle est la durée d'élevage nécessaire pour les poulets de chair bio avant l'abattage ?",
+                  "options": [
+                    "40 jours",
+                    "60 jours",
+                    "81 jours"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quels sont les différents types d'élevages de volaille ?",
+                  "options": [
+                    "Divagation avec ou sans abris précaires, parcours libre contrôlé avec poulailler, claustration sur litière en bâtiment clos, liberté totale",
+                    "Divagation avec ou sans abris précaires, parcours libre contrôlé avec poulailler, claustration sur litière en bâtiment clos, batterie en cages empilées",
+                    "Divagation avec ou sans abris précaires, liberté totale, batterie en cages empilées"
+                  ],
+                  "correct_index": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 2 : Les normes de construction d'un bâtiment de volaille",
+      "slug": "normes-construction-batiment-volaille",
+      "description": "Choix de l'emplacement et normes de construction d'un bâtiment avicole, avec exemple pour 1000 poulets Goliath.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "La construction d'un bâtiment de volaille est une étape cruciale : la qualité de l'environnement est essentielle pour la santé, le bien-être et la productivité des volailles...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Le choix de l'emplacement",
+          "lessons": [
+            {
+              "title": "Le choix de l'emplacement.",
+              "content": "Le bâtiment avicole doit être construit sur un lieu non inondable, si possible proche du lieu d'habitation, sur un terrain bien sec, de préférence en légère pente qui absorbe l'eau de pluie...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les normes à respecter pour la construction d'un bâtiment de volaille",
+          "lessons": [
+            {
+              "title": "Les normes à respecter pour la construction d'un bâtiment de volaille.",
+              "content": "Les normes varient selon le type et la taille de l'exploitation, la région et le pays : dimensionnement, ventilation, éclairage, température, hygiène...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Exemple de construction d'un bâtiment de 1000 poulets Goliath",
+          "lessons": [
+            {
+              "title": "Exemple de construction d'un bâtiment de 1000 poulets Goliath",
+              "content": "Normes pour un bâtiment de 1000 poulets avec une densité de 5 poulets par mètre carré : surface de plancher, ventilation, éclairage...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "La construction d'un bâtiment avicole doit respecter des normes (dimensions, ventilation, parcours extérieur, éclairage, température, hygiène) pour assurer le bien-être des animaux et la rentabilité...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 2",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Quelles sont les normes de construction à respecter pour assurer un environnement sain et sûr pour les volailles ?",
+                  "options": [
+                    "Il n'y a pas de normes spécifiques",
+                    "Elles dépendent de la taille de l'exploitation avicole uniquement",
+                    "Elles varient selon le type et la taille de l'exploitation avicole, ainsi que selon la région et le pays"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quelles sont les dimensions recommandées pour les poulets de chair ?",
+                  "options": [
+                    "0,07 m² par poulet",
+                    "0,09 m² par poulet",
+                    "0,11 m² par poulet"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quelle est la durée minimale de lumière artificielle nécessaire pour les poulets de chair ?",
+                  "options": [
+                    "12 heures par jour",
+                    "16 heures par jour",
+                    "20 heures par jour"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quel équipement est essentiel pour maintenir un environnement sain dans le bâtiment avicole ?",
+                  "options": [
+                    "Des tapis roulants",
+                    "Des systèmes de nettoyage et de désinfection réguliers",
+                    "Des téléviseurs"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi est-il important de prévoir des systèmes de ventilation adaptés aux différentes saisons ?",
+                  "options": [
+                    "Pour éviter les courants d'air",
+                    "Pour assurer une circulation d'air suffisante",
+                    "Pour économiser de l'énergie"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi est-il important de construire un bâtiment avicole sur un terrain bien sec ?",
+                  "options": [
+                    "Pour éviter la surpopulation des volailles",
+                    "Pour faciliter l'entretien et la gestion de l'exploitation",
+                    "Pour éviter l'humidité qui favorise les maladies"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment doit être le sol autour du bâtiment avicole ?",
+                  "options": [
+                    "Plat et gazonné",
+                    "Avec des rigoles pour l'écoulement de l'eau",
+                    "En pente légère et qui absorbe l'eau de pluie"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment doit être orienté un bâtiment avicole ?",
+                  "options": [
+                    "Face aux vents dominants",
+                    "De manière à éviter une exposition excessive aux rayons directs du soleil et aux vents dominants",
+                    "Sans préférence particulière"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment doit être le plafond du bâtiment avicole ?",
+                  "options": [
+                    "Bas pour réduire les coûts de construction",
+                    "Suffisamment haut pour permettre une bonne ventilation",
+                    "Sans préférence particulière"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Combien d'œufs une poule peut-elle pondre en moyenne par an ?",
+                  "options": [
+                    "50 à 100 œufs",
+                    "150 à 360 œufs",
+                    "500 à 1000 œufs"
+                  ],
+                  "correct_index": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 3 : Réussir le démarrage des poussins",
+      "slug": "reussir-le-demarrage-des-poussins",
+      "description": "Conditions de base, préparation, soins et gestion de l'élevage pendant la période de démarrage.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "Le démarrage des poussins est une étape cruciale : c'est la période où les poussins sont les plus vulnérables et nécessitent des soins attentifs pour une croissance saine...",
+              "quiz": []
+            },
+            {
+              "title": "Présentation du cours et de l'importance du démarrage réussi des poussins",
+              "content": "Présentation du cours et explication de l'importance d'un démarrage réussi des poussins dans l'élevage de volailles...",
+              "quiz": []
+            },
+            {
+              "title": "Objectifs du cours",
+              "content": "Comprendre l'importance du démarrage réussi ; connaître les conditions de base (propreté, température, humidité, ventilation, qualité de l'air) ; savoir préparer l'arrivée des poussins...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les conditions de base pour un démarrage réussi",
+          "lessons": [
+            {
+              "title": "Choix du site pour l'installation de l'élevage",
+              "content": "Éléments à prendre en compte : accessibilité du site, éloignement des zones contaminées, voisinage, climat, terrain plat, stable et non sujet à l'érosion, accès à l'eau...",
+              "quiz": []
+            },
+            {
+              "title": "La propreté de l'environnement",
+              "content": "Un environnement propre et sain est un prérequis à la croissance et au développement sains des poussins ; il réduit le risque de maladies...",
+              "quiz": []
+            },
+            {
+              "title": "Les paramètres de température et d'humidité",
+              "content": "Pour les premiers jours de vie, la température doit être maintenue entre 32 °C et 35 °C, puis réduite progressivement...",
+              "quiz": []
+            },
+            {
+              "title": "L'importance de la propreté et de l'environnement",
+              "content": "La propreté de l'environnement est essentielle pour réussir le démarrage des poussins...",
+              "quiz": []
+            },
+            {
+              "title": "La ventilation et la qualité de l'air",
+              "content": "La conception du bâtiment doit favoriser une bonne circulation de l'air et minimiser les zones mortes ; les ouvertures d'aération doivent être bien placées...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "La préparation des poussins",
+          "lessons": [
+            {
+              "title": "La sélection des poussins et la gestion des arrivées",
+              "content": "Choisir un fournisseur de confiance disposant de bonnes pratiques d'élevage et de transport ; vérifier l'état des poussins à l'arrivée...",
+              "quiz": []
+            },
+            {
+              "title": "L'alimentation et l'abreuvoir des poussins dès leur arrivée",
+              "content": "Dès leur arrivée, les poussins ont besoin d'un accès constant à de l'eau et à un aliment de démarrage de qualité...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les soins et les traitements de base des poussins",
+          "lessons": [
+            {
+              "title": "Les soins de base des poussins",
+              "content": "Fournir chaleur, nourriture, eau, luminosité et ventilation, éléments essentiels à une croissance saine et uniforme...",
+              "quiz": []
+            },
+            {
+              "title": "La vaccination et les traitements préventifs",
+              "content": "La vaccination et les traitements préventifs sont essentiels pour prévenir les maladies chez les poussins ; un programme doit être en place...",
+              "quiz": []
+            },
+            {
+              "title": "La surveillance et la gestion des maladies",
+              "content": "Signes courants de maladie : diminution de l'appétit et de l'activité, respiration difficile, diarrhée...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "La gestion de l'élevage pendant la période de démarrage",
+          "lessons": [
+            {
+              "title": "La gestion de l'éclairage et du cycle jour/nuit",
+              "content": "La lumière a un impact sur l'appétit, la croissance et le comportement des poussins ; fournir un cycle jour/nuit régulier...",
+              "quiz": []
+            },
+            {
+              "title": "La surveillance de la croissance et du développement des poussins",
+              "content": "Peser régulièrement un échantillon représentatif de poussins pour suivre le gain de poids...",
+              "quiz": []
+            },
+            {
+              "title": "La gestion des taux de mortalité",
+              "content": "Surveiller et identifier les causes de mortalité ; des taux élevés indiquent des problèmes de santé ou de gestion...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les meilleures pratiques pour un élevage réussi",
+          "lessons": [
+            {
+              "title": "Les meilleures pratiques pour l'alimentation des poussins",
+              "content": "Fournir une alimentation de haute qualité riche en protéines...",
+              "quiz": []
+            },
+            {
+              "title": "Les meilleures pratiques pour la gestion de l'environnement",
+              "content": "Maintenir une température et une humidité appropriées...",
+              "quiz": []
+            },
+            {
+              "title": "Les meilleures pratiques pour la gestion des maladies et les parasites",
+              "content": "Mesures préventives : hygiène, bonne alimentation, ventilation adéquate, pratiques d'hygiène strictes pour les travailleurs, vaccination...",
+              "quiz": []
+            },
+            {
+              "title": "La poussinière et suivi du comportement des poussins",
+              "content": "Le poussin ne pèse que 45 g (Goliath) à la naissance, très sensible au froid et au stress ; il faut aménager une poussinière avec l'ambiance adéquate...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Récapitulation des points clés du cours",
+              "content": "Récapitulatif des sujets du cours « Réussir le démarrage des poussins »...",
+              "quiz": []
+            },
+            {
+              "title": "Conseils pour le maintien de la réussite du démarrage des poussins",
+              "content": "Surveillance continue, hygiène, détection précoce des problèmes...",
+              "quiz": []
+            },
+            {
+              "title": "Perspectives d'avenir pour l'élevage des poussins",
+              "content": "L'élevage de poussins est appelé à se développer et à se diversifier avec l'évolution de la demande et l'innovation technologique...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 3",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Pourquoi un climat chaud et sec est-il généralement préférable pour éviter les maladies chez les poussins ?",
+                  "options": [
+                    "Car les maladies se propagent moins facilement dans un environnement sec.",
+                    "Car les poussins préfèrent un climat chaud et sec.",
+                    "Car les maladies se propagent plus facilement dans un environnement humide."
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Pourquoi le terrain doit-il être plat, stable et non sujet à l'érosion ?",
+                  "options": [
+                    "Pour permettre l'installation des bâtiments nécessaires.",
+                    "Pour créer un paysage esthétique.",
+                    "Pour réduire les coûts de construction."
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Pourquoi la qualité de l'air est-elle importante dans la zone de démarrage ?",
+                  "options": [
+                    "Parce qu'elle peut causer des problèmes de température",
+                    "Parce qu'elle peut causer des problèmes respiratoires chez les poussins",
+                    "Parce qu'elle peut affecter la qualité de l'eau"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi l'eau est-elle essentielle pour l'élevage des poussins ?",
+                  "options": [
+                    "Pour la couleur des plumes des poussins.",
+                    "Pour le goût de la viande de poulet.",
+                    "Pour la croissance et le développement sains des poussins."
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Pourquoi tenir compte des voisins potentiels lors de la sélection du site ?",
+                  "options": [
+                    "Pour s'assurer que les voisins achètent des poussins.",
+                    "Pour inviter les voisins à visiter l'élevage.",
+                    "Pour éviter les conflits et les problèmes de zonage."
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Lors du chauffage, si les poussins sont répartis uniformément dans la zone de démarrage, cela indique que :",
+                  "options": [
+                    "ils ont faim et qu'il faudra leur donner à manger",
+                    "l'ambiance leur est confortable et qu'il n'est pas nécessaire d'ajuster la température",
+                    "la température est trop chaude ou il y a un courant d'air"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment maintenir une température constante dans la zone de démarrage ?",
+                  "options": [
+                    "En ne nettoyant pas l'environnement",
+                    "En maintenant une propreté rigoureuse",
+                    "En surveillant régulièrement la température et en ajustant le chauffage en conséquence"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment éviter la mortalité chez les poussins ?",
+                  "options": [
+                    "En maintenant des niveaux de température et d'humidité constants",
+                    "En nettoyant la poussinière tous les jours",
+                    "En leur servant de l'eau propre"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Comment réduire le risque de maladies chez les poussins ?",
+                  "options": [
+                    "En ne nettoyant pas l'environnement",
+                    "En maintenant une propreté rigoureuse",
+                    "En utilisant des produits chimiques nocifs"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi éviter l'installation de l'élevage près de zones contaminées ?",
+                  "options": [
+                    "Pour éviter la propagation de maladies, de parasites ou de produits chimiques aux poussins.",
+                    "Pour encourager la croissance des poussins.",
+                    "Pour éviter le bruit des voisins."
+                  ],
+                  "correct_index": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 4 : Alimentation et formulation de provende",
+      "slug": "alimentation-et-formulation-de-provende",
+      "description": "Types d'aliments, besoins nutritionnels, fabrication et formulation de la provende.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "L'alimentation des volailles est un facteur clé pour assurer croissance, santé et productivité. Les aliments sont formulés pour chaque stade de croissance selon les besoins nutritionnels...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Alimentation",
+          "lessons": [
+            {
+              "title": "Alimentation",
+              "content": "Les animaux bio ont une alimentation végétale, variée, saine et équilibrée issue de l'agriculture biologique, d'origine connue, adaptée à l'animal et produite principalement sur la ferme ou localement...",
+              "quiz": []
+            },
+            {
+              "title": "Les différents types d'aliments de poulets",
+              "content": "Trois types d'aliments : aliment de démarrage (poulets de moins de six semaines, riche en protéines, calories et minéraux), de croissance et de finition...",
+              "quiz": []
+            },
+            {
+              "title": "Quelle alimentation pour les volailles ?",
+              "content": "L'alimentation est essentielle pour la production de viande et d'œufs. Le manque de nourriture et d'eau réduit la résistance aux parasites et aux maladies et augmente la mortalité...",
+              "quiz": []
+            },
+            {
+              "title": "Les besoins nutritionnels des poulets",
+              "content": "Protéines (développement musculaire), glucides (énergie), lipides (fonctions cellulaires), vitamines et minéraux (fonctions métaboliques) et eau...",
+              "quiz": []
+            },
+            {
+              "title": "Les sources d'alimentation pour les poulets",
+              "content": "Deux catégories : les aliments complets et les aliments supplémentaires, ajoutés pour répondre à des besoins spécifiques...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Provende",
+          "lessons": [
+            {
+              "title": "Fabrication de la provende",
+              "content": "La provende est un aliment équilibré fabriqué à partir de maïs, blé, soja, minéraux et vitamines, à la maison ou par des entreprises spécialisées...",
+              "quiz": []
+            },
+            {
+              "title": "Les ingrédients pour la fabrication de provende pour les poulets",
+              "content": "Ingrédients de base : maïs, blé et soja (protéines, glucides, lipides), auxquels on ajoute minéraux et vitamines...",
+              "quiz": []
+            },
+            {
+              "title": "Les étapes pour fabriquer de la provende pour les poulets",
+              "content": "Mesurer les ingrédients de base, les mélanger uniformément, broyer, ajouter vitamines et minéraux, stocker...",
+              "quiz": []
+            },
+            {
+              "title": "Limites d'utilisation de certaines matières premières",
+              "content": "Respecter des limites d'incorporation en raison des facteurs antinutritionnels (ex. sorgho rouge riche en tanins, tourteau de coton)...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Composition (formulation) de la provende et transition",
+          "lessons": [
+            {
+              "title": "Les différentes formules alimentaires selon vos besoins",
+              "content": "Exemple de provende poussins : 60 % maïs concassé, 20 % tourteau de soja, 10 % farine de poisson, 5 % farine de viande, 3 % phosphate bicalcique, 1,5 % sel, 0,5 % prémix vitamines-minéraux...",
+              "quiz": []
+            },
+            {
+              "title": "Les 3 formules alimentaires de 500 kg de provende : démarrage, croissance et finition",
+              "content": "Démarrage 500 kg : 200 kg farine de maïs, 100 kg tourteau de soja, 50 kg farine de blé, 50 kg farine d'orge, 50 kg son de blé, 25 kg levure de bière, 20 kg phosphate bicalcique, 5 kg sel, 1 kg vitamines et minéraux...",
+              "quiz": []
+            },
+            {
+              "title": "Trois formules alimentaires de 1000 kg de provende : démarrage, croissance et finition",
+              "content": "Démarrage 1000 kg : 450 kg maïs concassé, 300 kg tourteau de soja, 100 kg farine de blé, 50 kg carbonate de calcium, 30 kg levure de bière, 20 kg sel, 10 kg lysine...",
+              "quiz": []
+            },
+            {
+              "title": "La transition alimentaire",
+              "content": "La transition doit être progressive, sur 7 à 10 jours, en mélangeant le nouvel aliment à l'ancien pour éviter les troubles digestifs...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "La fabrication de provende est une tâche importante pour assurer une alimentation équilibrée : mesure, mélange, broyage, ajout de vitamines et minéraux et stockage approprié...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 4",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Quelle est la principale caractéristique de l'aliment de démarrage pour poulets ?",
+                  "options": [
+                    "Riche en matières grasses",
+                    "Riche en protéines, calories et minéraux",
+                    "Faible en calories"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quels sont les types d'aliments pour poulets ?",
+                  "options": [
+                    "Aliment de base, de croissance et de finition",
+                    "Aliment de base, de développement et de maturité",
+                    "Aliment de démarrage, de croissance et de finition"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quel est le régime pour les poules pondeuses ?",
+                  "options": [
+                    "Riche en protéines",
+                    "Moyennement riche en protéines",
+                    "Faible en protéines"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Que se passe-t-il si les poulets ne reçoivent pas une alimentation suffisante ?",
+                  "options": [
+                    "Ils développent une résistance aux parasites et aux maladies",
+                    "Ils deviennent plus gros et plus gras",
+                    "Leur mortalité augmente"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quand l'aliment de finition est-il utilisé ?",
+                  "options": [
+                    "Pour les poulets de moins de six semaines",
+                    "Pour les poulets de six à douze semaines",
+                    "Pour les poulets de douze semaines ou plus"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Pourquoi suivre les recommandations du fabricant ou consulter un nutritionniste avicole ?",
+                  "options": [
+                    "Les besoins nutritionnels peuvent varier selon la race, le sexe et d'autres facteurs",
+                    "Les poulets ne peuvent pas digérer certains aliments",
+                    "Les poulets peuvent devenir obèses"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Pourquoi stocker les aliments dans un endroit sec et propre ?",
+                  "options": [
+                    "Pour éviter la contamination des aliments qui peut disséminer les maladies",
+                    "Pour garder les aliments frais plus longtemps",
+                    "Pour empêcher les autres animaux de voler la nourriture"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Comment faire du complément de nourriture pour les poulets ?",
+                  "options": [
+                    "En utilisant uniquement des aliments locaux",
+                    "En stockant les vitamines et minéraux longtemps",
+                    "En utilisant les ressources locales"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "À cause du gossypol du tourteau de coton, ne jamais dépasser :",
+                  "options": [
+                    "30 % de tourteau de coton",
+                    "10 % de tourteau de coton",
+                    "50 % de tourteau de coton"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Parmi les étapes pour fabriquer la provende :",
+                  "options": [
+                    "Cultiver le maïs, le soja, et les stocker",
+                    "Broyer les ingrédients, former des granulés, ajouter de l'huile",
+                    "Mesurer les ingrédients de base, les mélanger, les broyer"
+                  ],
+                  "correct_index": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 5 : Fabrication des asticots et bonnes pratiques pour bien nourrir les poulets",
+      "slug": "fabrication-des-asticots",
+      "description": "Production d'asticots et de termites comme source de protéines pour les poussins et poulets.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Fabrication des asticots et les bonnes pratiques pour nourrir les poulets",
+          "lessons": [
+            {
+              "title": "Fabrication des asticots",
+              "content": "Élever des larves de mouches soldat noires pour nourrir les animaux de ferme tels que les poulets : excellente source de protéines...",
+              "quiz": []
+            },
+            {
+              "title": "Production des asticots",
+              "content": "Produire les asticots avec les fientes de cailles : prélever les fientes sous les cages, les verser dans des seaux, ajouter de l'eau ; quand le mélange est homogène, les mouches viennent pondre dessus...",
+              "quiz": []
+            },
+            {
+              "title": "Techniques simples pour la confection d'asticots et de termites",
+              "content": "Asticots et termites sont des sources d'énergie bon marché, uniquement en complément d'autres aliments, conseillés pour les petits poussins...",
+              "quiz": []
+            },
+            {
+              "title": "Fabrication des asticots avec les larves de mouches",
+              "content": "Étape 1 : élever les larves de mouches soldat noires à partir de déchets organiques (restes de fruits et légumes, grains...)",
+              "quiz": []
+            },
+            {
+              "title": "Les bonnes pratiques pour nourrir les poulets",
+              "content": "Utiliser une alimentation de qualité supérieure, essentielle pour la croissance, la santé et la productivité...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "La fabrication d'asticots est une pratique courante dans l'élevage de volailles : source de protéines et de nutriments pour les poussins...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "La fabrication des asticots est une pratique prometteuse pour l'alimentation des poulets : qualité nutritionnelle, coûts et durabilité environnementale...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 5",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Pourquoi donner des asticots et des termites aux petits poussins ?",
+                  "options": [
+                    "Parce que cela leur donne plus d'énergie",
+                    "Parce que c'est moins cher que la nourriture pour poussins",
+                    "Parce qu'ils sont riches en protéines, dont les poussins ont besoin."
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Pourquoi placer le pot d'asticots loin des places publiques ?",
+                  "options": [
+                    "Parce que l'odeur pourrait déranger",
+                    "Parce que les asticots pourraient s'échapper",
+                    "Parce que les gens pourraient les voler"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Comment récupère-t-on les termites élevées dans un pot ?",
+                  "options": [
+                    "En les aspirant avec un aspirateur",
+                    "En vidant le pot devant le poulailler",
+                    "En les attrapant à la main"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment élever des termites pour nourrir les poulets ?",
+                  "options": [
+                    "Avec un pot rempli de terre et de feuilles mortes",
+                    "Avec de la bouse de vache et de la paille dans un pot",
+                    "En les achetant chez un fournisseur spécialisé"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pendant combien de temps peut-on ajouter des termites et des asticots à la nourriture des poussins ?",
+                  "options": [
+                    "Seulement les 2 premières semaines",
+                    "Seulement les 4 premières semaines",
+                    "Pendant les 6 premières semaines"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment élever des asticots pour nourrir les petits poussins ?",
+                  "options": [
+                    "En les laissant se nourrir d'abats de volaille",
+                    "En mélangeant du sang, des abats et de la bouse de vache dans un pot rempli d'eau",
+                    "En les nourrissant avec des aliments pour chats"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment collecte-t-on les asticots ?",
+                  "options": [
+                    "En les sortant du pot avec les mains nues",
+                    "En faisant couler doucement de l'eau dans le pot pour qu'ils flottent",
+                    "En les aspirant avec un aspirateur"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Combien de temps faut-il pour que les asticots soient prêts à être collectés ?",
+                  "options": [
+                    "1 à 2 jours",
+                    "3 à 4 jours",
+                    "5 à 10 jours selon la température"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quels autres aliments donner aux poussins en plus des asticots et des termites ?",
+                  "options": [
+                    "Des substituts de céréales et des tourteaux",
+                    "Des fruits et légumes frais",
+                    "Du pain et des biscuits"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Pendant combien de temps peut-on donner une ration complète aux poussins ?",
+                  "options": [
+                    "Pendant les 2 premières semaines",
+                    "Pendant les 4 premières semaines",
+                    "Pendant les 6 premières semaines"
+                  ],
+                  "correct_index": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 6 : La ponte chez les poules",
+      "slug": "la-ponte-chez-les-poules",
+      "description": "Fonctionnement de la ponte, stimulation et calcul du taux de ponte.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "La ponte est un processus vital dans le cycle de vie des poules, essentiel pour la production d'œufs. Le taux de ponte dépend de plusieurs facteurs...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "La ponte chez les poules",
+          "lessons": [
+            {
+              "title": "Comment s'effectue la ponte chez les poules ?",
+              "content": "La ponte est le processus par lequel les poules produisent des œufs ; les poules pondeuses sont élevées spécifiquement pour pondre un grand nombre d'œufs...",
+              "quiz": []
+            },
+            {
+              "title": "Quels sont les facteurs qui affectent la ponte ?",
+              "content": "Produire un œuf chaque jour demande beaucoup de ressources ; la mue, le picage, la croissance et l'hiver sont des périodes de stress qui nécessitent des compléments alimentaires...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Stimulation de la ponte chez les poules",
+          "lessons": [
+            {
+              "title": "Stimuler la ponte chez la poule",
+              "content": "Que donner à manger aux poules pour qu'elles pondent ?...",
+              "quiz": []
+            },
+            {
+              "title": "La soupe matinale et les orties pour stimuler la ponte",
+              "content": "Donner aux poules du pain trempé dans du lait chaud et du blé germé dès le matin, ainsi que des orties, pour relancer la ponte...",
+              "quiz": []
+            },
+            {
+              "title": "Besoins nutritionnels dans l'alimentation de la poule",
+              "content": "Besoins spécifiques en protéines et calcium ; il faut environ 24 à 28 h pour fabriquer un œuf...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Calcul du taux de ponte",
+          "lessons": [
+            {
+              "title": "Pourquoi faut-il calculer le taux de ponte ?",
+              "content": "Le calcul du taux de ponte permet de contrôler chaque jour la production du troupeau et d'intervenir rapidement en cas de chute de ponte...",
+              "quiz": []
+            },
+            {
+              "title": "Comment se fait le calcul du taux de ponte ?",
+              "content": "Le taux de ponte est calculé en fonction du nombre initial de poules mises en place et du nombre de poules vivantes au moment de la mesure...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "La ponte est influencée par la saison, la génétique, l'alimentation, le stress et l'environnement...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 6",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Qu'est-ce qui peut affecter la production d'œufs chez les poules ?",
+                  "options": [
+                    "Le temps qu'il fait",
+                    "Le nombre de prédateurs dans l'environnement",
+                    "La qualité de l'eau potable"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Qu'est-ce que la ponte chez les poules ?",
+                  "options": [
+                    "Le processus de reproduction des poules",
+                    "Le processus de production d'œufs chez les poules",
+                    "Le processus de couvaison des œufs"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi les éleveurs augmentent-ils les rations en période de ponte ?",
+                  "options": [
+                    "Pour permettre aux poules de produire plus d'œufs",
+                    "Pour permettre aux poules de se constituer une couche de graisse et se maintenir au chaud",
+                    "Pour permettre aux poules de mieux digérer"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "De quoi se compose l'appareil reproducteur de la poule ?",
+                  "options": [
+                    "L'ovaire, le cloaque et le ventricule",
+                    "L'ovaire, le cloaque et l'oviducte",
+                    "L'ovaire, le gésier et l'oviducte"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Dans quelle partie de l'oviducte commence la formation de l'albumen ?",
+                  "options": [
+                    "L'infundibulum",
+                    "L'ampoule",
+                    "Le magnum"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment stimuler la ponte des poules ?",
+                  "options": [
+                    "En augmentant la durée de la nuit",
+                    "En diminuant la température ambiante",
+                    "En prolongeant les heures de lumière du jour"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment est influencé le cycle de ponte chez les poules ?",
+                  "options": [
+                    "Par la lumière artificielle",
+                    "Par la nourriture",
+                    "Par l'exercice physique"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Combien de temps dure en moyenne le cycle de ponte chez la poule ?",
+                  "options": [
+                    "12 heures",
+                    "24 heures",
+                    "36 heures"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quelles mesures hors alimentation peuvent aider à stimuler la ponte ?",
+                  "options": [
+                    "L'exposition au soleil contrôlée",
+                    "L'augmentation de la quantité d'eau potable",
+                    "L'augmentation de la quantité de nourriture"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Que faire pour assurer une ponte satisfaisante et régulière ?",
+                  "options": [
+                    "Remplir l'abreuvoir d'eau propre en toute circonstance",
+                    "Remplir la mangeoire tous les deux jours",
+                    "Ne pas laisser les poules gambader dans le jardin"
+                  ],
+                  "correct_index": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 7 : Incubation des œufs",
+      "slug": "incubation-des-oeufs",
+      "description": "Étapes de l'incubation artificielle, préparation de l'incubateur, développement de l'embryon et mirage des œufs.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "L'incubation des œufs est une étape cruciale : elle consiste à maintenir les œufs dans des conditions optimales de température et d'humidité pour permettre le développement de l'embryon...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Les étapes de l'incubation artificielle",
+          "lessons": [
+            {
+              "title": "Les étapes clés de l'incubation",
+              "content": "En général, les poules pondeuses (Goliath) pondent un œuf toutes les 24 à 26 heures. Il est recommandé de ramasser les œufs au moins une fois par jour. Conserver les œufs fécondés dans un endroit frais et sec entre 12 et 15 °C...",
+              "quiz": []
+            },
+            {
+              "title": "La préparation de l'incubateur",
+              "content": "Nettoyer l'incubateur à l'eau chaude savonneuse, rincer, puis le stériliser avec un désinfectant avant utilisation...",
+              "quiz": []
+            },
+            {
+              "title": "Le développement de l'embryon",
+              "content": "Durant les 21 jours d'incubation : les œufs n'aiment ni les vibrations ni les chocs ; changer le taux d'humidité à la fin du 19e jour ; éclosion le 21e jour...",
+              "quiz": []
+            },
+            {
+              "title": "Les composants de l'œuf",
+              "content": "L'œuf est constitué du vitellus (jaune), de l'albumen (blanc), d'une coquille calcaire poreuse et d'une chambre à air. L'embryon a besoin de chaleur, d'air, d'humidité et de mouvement (retournement)...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Le mirage des œufs",
+          "lessons": [
+            {
+              "title": "Bref rappel sur la méthode naturelle",
+              "content": "La poule pond au mieux 1 œuf par jour, commence à couver après une dizaine d'œufs, pendant 21 jours en moyenne ; de 10 œufs naissent 8 à 10 poussins...",
+              "quiz": []
+            },
+            {
+              "title": "Que faire si on n'a pas de mire-œuf ?",
+              "content": "On peut fabriquer son propre mire-œuf avec une lampe de poche puissante et un anneau de carton qui concentre le faisceau lumineux...",
+              "quiz": []
+            },
+            {
+              "title": "Comment réaliser le mirage d'un œuf",
+              "content": "Le mirage permet de voir la structure interne de l'œuf par transparence, avant et pendant la couvaison (2 séances de mirage avant l'éclosion) ; retirer les œufs non fécondés ou fêlés...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 7",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Pourquoi est-il recommandé de ramasser les œufs au moins une fois par jour ?",
+                  "options": [
+                    "Pour éviter que les poules ne les mangent",
+                    "Pour éviter qu'ils ne soient cassés ou souillés",
+                    "Pour les stocker correctement"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment peut-on marquer les œufs pour avoir un point de repère ?",
+                  "options": [
+                    "Avec un marqueur permanent",
+                    "Avec un crayon à papier",
+                    "Avec une peinture"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment stocker les œufs pour minimiser la perte d'humidité ?",
+                  "options": [
+                    "Avec le côté pointu vers le haut",
+                    "Avec le côté pointu vers le bas",
+                    "Peu importe, cela n'affecte pas l'humidité"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Combien de temps maximum les œufs fécondés peuvent-ils être stockés avant la couveuse ?",
+                  "options": [
+                    "3 jours",
+                    "7 jours",
+                    "10 jours"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Combien de fois par jour faut-il retourner les œufs ?",
+                  "options": [
+                    "Une fois par jour",
+                    "Deux fois par jour",
+                    "Trois fois par jour"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quelle est la fréquence de ponte des poules pondeuses en général ?",
+                  "options": [
+                    "Une fois tous les 24 à 26 jours",
+                    "Une fois tous les 24 à 26 heures",
+                    "Une fois toutes les semaines"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quelle est la capacité d'éclosion des œufs fécondés après une semaine de conservation ?",
+                  "options": [
+                    "45 %",
+                    "65 %",
+                    "90 %"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Pourquoi ne pas laver les œufs avant la mise en couveuse ?",
+                  "options": [
+                    "Cela peut enlever la couche protectrice naturelle de l'œuf",
+                    "Cela les rend plus difficiles à transporter",
+                    "Cela peut les endommager"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "À quelle humidité conserver les œufs avant l'incubation ?",
+                  "options": [
+                    "60 à 65 %",
+                    "70 à 75 %",
+                    "75 à 80 %"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "À quelle température les œufs doivent-ils être conservés ?",
+                  "options": [
+                    "Entre 10 et 12 °C",
+                    "Entre 12 et 15 °C",
+                    "Entre 15 et 18 °C"
+                  ],
+                  "correct_index": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 8 : Sexage des poussins",
+      "slug": "sexage-des-poussins",
+      "description": "Avantages et méthodes du sexage des poussins.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Avantage et méthodes du sexage des poussins",
+          "lessons": [
+            {
+              "title": "Pourquoi sexer les poussins ?",
+              "content": "Le sexage est l'action de trier les animaux en fonction de leur sexe. Sous d'autres cieux, le sexage a un enjeu économique...",
+              "quiz": []
+            },
+            {
+              "title": "Les différentes méthodes de sexage des poussins",
+              "content": "Plusieurs méthodes, plus ou moins précises : observation des plumes, de la crête, de la couleur des pattes, ultrasons, analyse ADN...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "Le sexage des poussins est une étape cruciale dans la production avicole : identifier le sexe dès la naissance pour séparer mâles et femelles et optimiser la production...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "Le sexage est une pratique courante dans l'industrie avicole ; la plupart des méthodes sont invasives...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 8",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Qu'est-ce que le sexage des poussins ?",
+                  "options": [
+                    "L'action de trier les animaux en fonction de leur âge",
+                    "L'action de trier les animaux en fonction de leur sexe",
+                    "L'action de trier les animaux en fonction de leur couleur"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi le sexage des poussins est-il important ?",
+                  "options": [
+                    "Pour éviter la consanguinité dans l'élevage",
+                    "Pour connaître le nombre de poulets à venir dans l'élevage",
+                    "Toutes les réponses précédentes"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Pourquoi le sexage est-il effectué dès la naissance ?",
+                  "options": [
+                    "Parce qu'il est plus facile de les identifier avant qu'ils ne grandissent",
+                    "Parce que les poussins grandissent trop vite",
+                    "Parce que les poussins sont plus dociles à la naissance"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment se fait le sexage des poussins par les ailes ?",
+                  "options": [
+                    "En observant la couleur des plumes",
+                    "En mesurant la longueur des ailes",
+                    "En observant la position des plumes"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment se fait le sexage par la crête ?",
+                  "options": [
+                    "En observant la taille de la crête",
+                    "En observant la couleur de la crête",
+                    "En observant la forme de la crête"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment le sexage est-il souvent effectué dans les grandes exploitations ?",
+                  "options": [
+                    "De manière manuelle",
+                    "À l'aide de machines spéciales",
+                    "Avec des ultrasons"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Certaines races de poulets sont plus faciles à sexer que d'autres.",
+                  "options": [
+                    "Vrai",
+                    "Faux"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Quelle est la méthode de sexage la plus précise ?",
+                  "options": [
+                    "Observation des plumes",
+                    "Observation de la couleur des pattes",
+                    "Analyse ADN"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quelle est la méthode de sexage la moins fiable ?",
+                  "options": [
+                    "Observation des plumes",
+                    "Observation de la couleur des pattes",
+                    "Ultrasons"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quelle méthode de sexage utilise les ultrasons ?",
+                  "options": [
+                    "Observation des plumes",
+                    "Observation de la couleur des pattes",
+                    "Sexage par ultrasons"
+                  ],
+                  "correct_index": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 9 : La santé des volailles par les plantes",
+      "slug": "la-sante-des-volailles-par-les-plantes",
+      "description": "La santé des volailles est un élément clé pour garantir une production de viande et d'œufs de qualité : principales maladies, détection, diagnostic et traitements par les plantes.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "La santé animale vise à préserver la santé et le bien-être des animaux d'élevage...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Maladies en aviculture",
+          "lessons": [
+            {
+              "title": "Les maladies virales",
+              "content": "Maladie de Marek : n'apparaît que chez les oiseaux de plus de 16 semaines (paralysie des ailes et des pattes). Choléra aviaire, Newcastle, etc. avec leurs symptômes...",
+              "quiz": []
+            },
+            {
+              "title": "Les maladies d'origine bactérienne, fongus, parasite et désordre alimentaire",
+              "content": "Beaucoup de maladies bactériennes peuvent être traitées avec des antibiotiques naturels ; il faut diagnostiquer la maladie pour choisir la bonne plante...",
+              "quiz": []
+            },
+            {
+              "title": "Maladies nutritionnelles",
+              "content": "Symptômes : déformation des os, perte des plumes, boiterie ; meilleur traitement : un supplément alimentaire si détecté à temps...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "La santé des volailles par les plantes",
+          "lessons": [
+            {
+              "title": "La vertu des plantes",
+              "content": "Les plantes aux propriétés médicinales aident à prévenir et traiter certaines maladies courantes tout en renforçant le système immunitaire...",
+              "quiz": []
+            },
+            {
+              "title": "Le caïlcédrat, la vernonia, le neem",
+              "content": "Caïlcédrat : nettoyer et tremper les gousses 3 jours dans l'eau, donner l'eau 1 à 2 fois par semaine pour le déparasitage...",
+              "quiz": []
+            },
+            {
+              "title": "Augmenter la ponte chez les poules pondeuses",
+              "content": "Le Centre Songhaï a conclu qu'un extrait foliaire de moringa améliore la qualité des œufs et augmente le taux de ponte...",
+              "quiz": []
+            },
+            {
+              "title": "Le moringa",
+              "content": "La poudre de moringa : vaccin naturel, désintoxique, donne de l'appétit, excellent complément...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "La vaccination",
+          "lessons": [
+            {
+              "title": "La vaccination en aviculture biologique et rôle du vaccin",
+              "content": "La vaccination est autorisée en bio, de même que les antiparasitaires, l'homéopathie et la phytothérapie ; le nombre de traitements chimiques curatifs est limité...",
+              "quiz": []
+            },
+            {
+              "title": "La menthe",
+              "content": "Les poules aiment manger de la menthe, surtout en été, plante utile contre les maladies...",
+              "quiz": []
+            },
+            {
+              "title": "L'ortie",
+              "content": "L'ortie africaine : ressource pour l'agriculture, l'élevage et la santé...",
+              "quiz": []
+            },
+            {
+              "title": "Le thym",
+              "content": "Le thym est antibactérien, antiseptique respiratoire et intestinal, stimulant général...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "L'utilisation de plantes pour prévenir et traiter les maladies aviaires est une approche prometteuse et naturelle...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 9",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Quelles méthodes de traitement sont autorisées en aviculture biologique ?",
+                  "options": [
+                    "Les traitements allopathiques chimiques en curatif",
+                    "Les antibiotiques",
+                    "Les traitements homéopathiques et phytothérapiques"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quelle maladie ne peut apparaître que chez les oiseaux de plus de 16 semaines ?",
+                  "options": [
+                    "Choléra aviaire",
+                    "Maladie de Marek",
+                    "Typhoïde aviaire"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Les maladies d'origine bactérienne sont :",
+                  "options": [
+                    "Newcastle, grippe aviaire, fongus",
+                    "Parasites, désordres nutritionnels, coryza infectieuse",
+                    "Marek, Gumboro, bronchite"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Les symptômes de la maladie de Newcastle sont :",
+                  "options": [
+                    "Perte d'appétit, respiration forte, fientes verdâtres, paralysie et mort soudaine",
+                    "Elle les renforce",
+                    "Diarrhée, problème respiratoire, perte d'appétit, caroncule et crête bleue"
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Pourquoi les animaux doivent-ils être assoiffés avant de leur donner de la Vernonia ?",
+                  "options": [
+                    "Pour qu'ils soient obligés de boire l'eau de la plante",
+                    "Pour qu'ils n'aient plus soif après avoir bu l'eau de la plante",
+                    "Pour qu'ils supportent mieux l'amertume de la plante"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Quelle est la plante la plus efficace contre les virus chez les poulets ?",
+                  "options": [
+                    "Le neem",
+                    "L'ortie",
+                    "Le Moringa Oleifera"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment se débarrasser des poux et parasites externes ?",
+                  "options": [
+                    "Bain d'eau savonneuse",
+                    "Bains de poussière",
+                    "Bain de kérosène ou de pétrole puis bains de poussière"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Comment protéger les animaux contre les prédateurs ?",
+                  "options": [
+                    "Construire un mur autour de l'enclos",
+                    "Répandre une solution de soufre et de diluant autour de l'enclos",
+                    "Les vacciner contre les prédateurs"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Comment fonctionne le vaccin ?",
+                  "options": [
+                    "Il guérit la maladie",
+                    "Il prépare le système immunitaire à affronter la maladie",
+                    "Il contribue à la croissance des poussins"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Quelle plante peut remplacer le soja en apport de protéines ?",
+                  "options": [
+                    "Le moringa",
+                    "Le thym",
+                    "L'ortie"
+                  ],
+                  "correct_index": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module 10 : Hygiène et mesures de biosécurité",
+      "slug": "hygiene-et-mesures-de-biosecurite",
+      "description": "Mesures d'hygiène et de biosécurité pour prévenir la propagation des maladies en aviculture.",
+      "price": null,
+      "price_note": "Accès via les produits \"Formation en aviculture - Module complet\" (81 200 FCFA) ou \"Formation complète ... 10 modules\" (83 000 FCFA)",
+      "instructor": "Prof. Madougou",
+      "language": "fr",
+      "modules": [
+        {
+          "title": "Introduction",
+          "lessons": [
+            {
+              "title": "Introduction",
+              "content": "L'hygiène et les mesures de biosécurité sont essentielles pour prévenir la propagation des maladies animales et assurer la qualité des produits alimentaires...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Hygiène et biosécurité",
+          "lessons": [
+            {
+              "title": "Les différentes mesures de biosécurité",
+              "content": "L'hygiène et la biosécurité sont primordiales en aviculture pour garantir la santé des oiseaux, prévenir les maladies et maintenir une production durable et rentable...",
+              "quiz": []
+            },
+            {
+              "title": "Comment réussir son hygiène et biosécurité ?",
+              "content": "Chaque éleveur doit mettre en place un système de biosécurité basé sur l'hygiène et la prévention pour diminuer les maladies infectieuses...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Réussir sa biosécurité en aviculture",
+          "lessons": [
+            {
+              "title": "Meilleures pratiques pour une hygiène et biosécurité réussies",
+              "content": "Vaccination dans l'eau de boisson : l'éleveur se lave les mains ou porte des gants ; l'eau ne doit pas contenir de désinfectant ni de chlore pendant au moins 48 h avant ; oiseaux privés d'eau 2 à 3 h...",
+              "quiz": []
+            },
+            {
+              "title": "Observation des animaux",
+              "content": "Observer ses animaux ; au moindre symptôme ou changement de comportement, agir rapidement : le traitement est souvent efficace s'il est fait à temps...",
+              "quiz": []
+            }
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "lessons": [
+            {
+              "title": "Conclusion",
+              "content": "L'hygiène et la biosécurité sont des éléments clés de la santé et de la productivité des volailles ; des mesures strictes doivent être mises en place...",
+              "quiz": []
+            },
+            {
+              "title": "Quiz Module 10",
+              "content": "",
+              "quiz": [
+                {
+                  "question": "Quels sont les protocoles de vaccination suivis pour prévenir la propagation de maladies ?",
+                  "options": [
+                    "Les oiseaux doivent être vaccinés contre les maladies aviaires.",
+                    "Les oiseaux doivent être vaccinés contre les maladies terrestres.",
+                    "Les oiseaux doivent être vaccinés contre les maladies fongiques."
+                  ],
+                  "correct_index": 0
+                },
+                {
+                  "question": "Qu'est-ce que les pratiques d'hygiène en aviculture ?",
+                  "options": [
+                    "Les mesures prises pour prévenir la propagation de maladies dans une exploitation avicole.",
+                    "Les mesures prises pour maintenir un environnement propre et sain dans l'exploitation avicole.",
+                    "Les mesures prises pour loger les travailleurs extérieurs."
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Qu'est-ce que la quarantaine en aviculture ?",
+                  "options": [
+                    "La restriction de l'accès aux personnes étrangères",
+                    "Le contrôle des mouvements des oiseaux entre les groupes",
+                    "L'isolement des oiseaux nouvellement acquis ou malades pour éviter la propagation de maladies"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Qu'est-ce que la biosécurité en aviculture ?",
+                  "options": [
+                    "Le traitement médicamenteux des oiseaux",
+                    "Les mesures prises pour prévenir l'entrée et la propagation de maladies dans une exploitation avicole",
+                    "L'alimentation des oiseaux"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi surveiller en permanence les signes de maladies ?",
+                  "options": [
+                    "Pour savoir quand changer de vaccin",
+                    "Pour prendre des mesures nécessaires dès que les maladies apparaissent",
+                    "Pour savoir quand changer l'aliment"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi vacciner les oiseaux contre les maladies aviaires ?",
+                  "options": [
+                    "Pour augmenter la production",
+                    "Pour prévenir la propagation de maladies",
+                    "Pour améliorer la qualité de la viande"
+                  ],
+                  "correct_index": 1
+                },
+                {
+                  "question": "Pourquoi les animaux doivent-ils être assoiffés avant de leur donner de la Vernonia ?",
+                  "options": [
+                    "Pour qu'ils soient obligés de boire l'eau de la plante",
+                    "Pour qu'ils n'aient plus soif après avoir bu l'eau de la plante",
+                    "Pour qu'ils supportent mieux l'amertume de la plante"
+                  ],
+                  "correct_index": 2
+                },
+                {
+                  "question": "Combien de fois faut-il faire le vermifuge aux poulets ?",
+                  "options": [
+                    "2 fois par an",
+                    "4 fois par an",
+                    "Autant de fois que le besoin se fait sentir"
+                  ],
+                  "correct_index": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [],
+  "testimonials": [
+    {
+      "name": "Kouamé Junior",
+      "country": "Côte d'Ivoire",
+      "text": "A commandé 2 000 poussins Goliath de race pure et en a perdu 10 pendant le transport. Salue la rapidité de livraison et le suivi."
+    },
+    {
+      "name": "Diare Lancine",
+      "country": "Togo",
+      "text": "A démarré avec 300 poussins ; environ 250 restaient au moment de l'avis."
+    },
+    {
+      "name": "Gueye Mohamed Mbacke",
+      "country": "Sénégal",
+      "text": "Commande groupée de 1 200 poussins livrée en août 2022 avec une seule perte sur 24 cartons."
+    },
+    {
+      "name": "Mountaga Gaye",
+      "country": "Sénégal",
+      "text": "A commandé 500 poussins, une seule perte sur 510."
+    },
+    {
+      "name": "Oumar Sére",
+      "country": "Burkina Faso",
+      "company": "Ferme Fatima International",
+      "text": "A commandé 500 poussins, décrits comme résistants aux maladies."
+    },
+    {
+      "name": "Mamadou Dembélé",
+      "country": "Mali",
+      "company": "AviPlus-Mali",
+      "text": "A reçu 1 050 poussins en novembre 2021 sans aucune mortalité."
+    },
+    {
+      "name": "Madeleine Tongtong",
+      "country": "Cameroun",
+      "text": "A commandé 500 poussins par avion vers Douala avec une seule perte."
+    }
+  ]
+}
