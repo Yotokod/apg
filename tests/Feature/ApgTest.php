@@ -53,12 +53,13 @@ class ApgTest extends TestCase
 
     public function test_branching_quiz_follows_chosen_path(): void
     {
-        $course = Course::where('slug', 'demarrer-elevage-goliath')->firstOrFail();
-        $lesson = $course->lessons()->first();
+        $node = \App\Models\QuizNode::where('is_start', true)
+            ->whereHas('options', fn ($q) => $q->where('is_correct', true)->whereNotNull('next_node_id'))->firstOrFail();
+        $lesson = $node->lesson ?? \App\Models\Lesson::findOrFail($node->lesson_id);
+        $course = Course::findOrFail($lesson->module->course_id);
         $user = User::factory()->create();
         Enrollment::create(['user_id' => $user->id, 'course_id' => $course->id, 'paid' => true]);
-        $node = $lesson->nodes()->where('is_start', true)->first();
-        $good = $node->options()->where('is_correct', true)->first();
+        $good = $node->options()->where('is_correct', true)->whereNotNull('next_node_id')->first();
 
         Livewire::actingAs($user)->test(Quiz::class, ['lessonId' => $lesson->id])
             ->assertSet('nodeId', $node->id)
