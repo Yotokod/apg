@@ -108,5 +108,12 @@
   "status.pending": "En attente",
   "status.paid": "Payée",
   "status.shipped": "Expédiée",
-  "status.cancelled": "Annulée"
+  "status.cancelled": "Annulée",
+  "home.testimonials": "Ils nous font confiance",
+  "home.stat1": "produits",
+  "home.stat2": "formations",
+  "home.stat3": "leçons",
+  "lesson.complete": "Marquer comme terminée",
+  "lesson.done": "Leçon terminée",
+  "account.payment_pending": "Paiement en cours de vérification, nous vous confirmons très vite."
 }

@@ -79,12 +79,41 @@ class ApgTest extends TestCase
             ->call('back')->assertSet('index', 0)->assertSet('state.cash', Simulator::START_CASH);
     }
 
+    public function test_register_login_and_account(): void
+    {
+        Livewire::test(\App\Livewire\Register::class)->set('name', 'Awa')->set('email', 'awa@test.com')->set('password', 'secret123')
+            ->call('register')->assertHasNoErrors()->assertRedirect(route('account'));
+        $this->assertAuthenticated();
+        $this->get('/compte')->assertOk();
+        auth()->logout();
+        Livewire::test(\App\Livewire\Login::class)->set('email', 'awa@test.com')->set('password', 'bad')->call('login')->assertHasErrors('email');
+    }
+
+    public function test_free_course_enrol_and_lesson_complete(): void
+    {
+        $course = Course::create(['title' => ['fr' => 'Gratuit'], 'slug' => 'gratuit', 'price' => 0]);
+        $lesson = $course->modules()->create(['title' => ['fr' => 'M'], 'position' => 0])->lessons()->create(['title' => ['fr' => 'L'], 'position' => 0]);
+        $u = User::factory()->create();
+        Livewire::actingAs($u)->test(\App\Livewire\CourseShow::class, ['slug' => 'gratuit'])->call('enroll');
+        $this->assertTrue(Enrollment::where('user_id', $u->id)->where('paid', true)->exists());
+        Livewire::actingAs($u)->test(\App\Livewire\LessonPlayer::class, ['id' => $lesson->id])->call('complete');
+        $this->assertNotNull(\App\Models\LessonProgress::where('lesson_id', $lesson->id)->value('completed_at'));
+    }
+
+    public function test_contact_validation_and_chat_fallback(): void
+    {
+        Livewire::test(\App\Livewire\Contact::class)->call('send')->assertHasErrors(['name', 'email', 'message']);
+        Livewire::test(\App\Livewire\Contact::class)->set('name', 'A B')->set('email', 'a@b.co')->set('message', 'Bonjour !')->call('send')->assertSet('sent', true);
+        Livewire::test(\App\Livewire\ChatWidget::class)->set('input', 'Quel est le prix ?')->call('send');
+        $this->assertSame(['user', 'bot'], \App\Models\ChatMessage::orderBy('id')->pluck('role')->all());
+    }
+
     public function test_admin_panel_access_by_role(): void
     {
         $this->actingAs(User::factory()->create(['role' => 'customer']))->get('/admin')->assertForbidden();
         $admin = User::where('role', 'superadmin')->first();
         $this->actingAs($admin)->get('/admin')->assertOk();
-        foreach (['products', 'orders', 'courses', 'quiz-nodes', 'payment-gateways', 'plans', 'sim-steps', 'site-settings'] as $r) {
+        foreach (['products', 'orders', 'courses', 'quiz-nodes', 'payment-gateways', 'plans', 'sim-steps', 'site-settings', 'users', 'testimonials', 'enrollments', 'chat-messages'] as $r) {
             $this->actingAs($admin)->get("/admin/$r")->assertOk();
         }
     }

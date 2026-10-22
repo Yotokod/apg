@@ -12,6 +12,12 @@
         </div>
     </section>
 
+    <div class="mx-auto -mt-8 grid max-w-5xl grid-cols-3 gap-3 px-4">
+        @foreach ([['fa-egg', $stats[0], 'home.stat1'], ['fa-book-open-reader', $stats[1], 'home.stat2'], ['fa-circle-play', $stats[2], 'home.stat3']] as [$i, $n, $k])
+            <div class="card relative z-10 p-4 text-center"><i class="fa-solid {{ $i }} text-brand-600"></i><p class="text-xl font-extrabold">{{ $n }}</p><p class="truncate text-xs text-stone-500">{{ __($k) }}</p></div>
+        @endforeach
+    </div>
+
     <div class="mx-auto max-w-7xl space-y-14 px-4 py-12">
         <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             @foreach ([['fa-truck-fast', 'home.f1'], ['fa-shield-heart', 'home.f2'], ['fa-graduation-cap', 'home.f3'], ['fa-earth-africa', 'home.f4']] as [$i, $k])
@@ -23,8 +29,9 @@
             <div class="mb-4 flex items-end justify-between"><h2 class="text-2xl font-extrabold">{{ __('home.products') }}</h2><a href="{{ route('shop') }}" wire:navigate class="text-sm font-semibold text-brand-700">{{ __('home.see_all') }} →</a></div>
             <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($products as $p)
-                    <a href="{{ route('shop', ['cat' => $p->category]) }}" wire:navigate class="card p-4">
-                        <p class="truncate font-bold">{{ $p->tr('name') }}</p><p class="mt-1 font-extrabold text-brand-700">{{ fcfa($p->price) }}</p>
+                    <a href="{{ route('shop', ['cat' => $p->category]) }}" wire:navigate class="card group flex items-center gap-4 p-4">
+                        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-2xl text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white dark:bg-stone-800"><i class="fa-solid {{ category_icon($p->category) }}"></i></span>
+                        <span class="min-w-0"><span class="line-clamp-2 font-bold leading-snug">{{ $p->tr('name') }}</span><span class="mt-1 block font-extrabold text-brand-700 dark:text-brand-500">{{ fcfa($p->price) }}</span></span>
                     </a>
                 @endforeach
             </div>
@@ -42,6 +49,24 @@
             <div class="grid gap-5 sm:grid-cols-3">
                 @foreach ($courses as $c)
                     <a href="{{ route('courses.show', $c->slug) }}" wire:navigate class="card p-5"><i class="fa-solid fa-book-open-reader text-brand-600"></i><p class="mt-2 truncate font-bold">{{ $c->tr('title') }}</p><p class="line-clamp-2 text-sm text-stone-600 dark:text-stone-400">{{ $c->tr('description') }}</p></a>
+                @endforeach
+            </div>
+        </section>
+        @endif
+
+        @if ($testimonials->isNotEmpty())
+        <section>
+            <h2 class="mb-4 text-2xl font-extrabold">{{ __('home.testimonials') }}</h2>
+            <div class="grid gap-5 md:grid-cols-3">
+                @foreach ($testimonials as $t)
+                    <figure class="card flex flex-col gap-3 p-6">
+                        <i class="fa-solid fa-quote-left text-2xl text-accent-500" aria-hidden="true"></i>
+                        <blockquote class="line-clamp-5 text-sm leading-relaxed text-stone-700 dark:text-stone-300">{{ $t->text }}</blockquote>
+                        <figcaption class="mt-auto flex items-center gap-3 pt-2">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 font-bold text-white">{{ mb_substr($t->name, 0, 1) }}</span>
+                            <span class="text-sm"><strong class="block">{{ $t->name }}</strong><span class="text-stone-500">{{ $t->country }}</span></span>
+                        </figcaption>
+                    </figure>
                 @endforeach
             </div>
         </section>

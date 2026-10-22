@@ -47,6 +47,9 @@ class DatabaseSeeder extends Seeder
 
             return;
         }
+        foreach ($d['testimonials'] ?? [] as $t) {
+            \App\Models\Testimonial::firstOrCreate(['name' => $t['name'], 'text' => $t['text']], ['country' => $t['country'] ?? null]);
+        }
         foreach ($d['products'] ?? [] as $p) {
             Product::updateOrCreate(['slug' => $p['slug'] ?? Str::slug($p['name'])], [
                 'name' => ['fr' => $p['name']], 'description' => ['fr' => $p['description_fr'] ?? ''],

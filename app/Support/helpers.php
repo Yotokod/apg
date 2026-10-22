@@ -36,3 +36,21 @@ if (! function_exists('fcfa')) {
         return number_format($n, 0, ',', ' ').' '.site('currency', 'FCFA');
     }
 }
+
+if (! function_exists('category_icon')) {
+    function category_icon(?string $c): string
+    {
+        $c = mb_strtolower((string) $c);
+
+        return match (true) {
+            str_contains($c, 'aviculture'), str_contains($c, 'poussin') => 'fa-dove',
+            str_contains($c, 'viande'), str_contains($c, 'poulet') => 'fa-drumstick-bite',
+            str_contains($c, 'oeuf'), str_contains($c, 'œuf') => 'fa-egg',
+            str_contains($c, 'caille') => 'fa-feather',
+            str_contains($c, 'pintade') => 'fa-feather-pointed',
+            str_contains($c, 'formation') => 'fa-graduation-cap',
+            str_contains($c, 'guide') => 'fa-book',
+            default => 'fa-leaf',
+        };
+    }
+}

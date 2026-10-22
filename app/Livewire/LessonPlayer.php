@@ -17,6 +17,15 @@ class LessonPlayer extends Component
             ->where('course_id', $this->lesson->module->course_id)->where('paid', true)->exists(), 403);
     }
 
+    public function complete(): void
+    {
+        \App\Models\LessonProgress::firstOrCreate(
+            ['user_id' => auth()->id(), 'lesson_id' => $this->lesson->id],
+            ['completed_at' => now()],
+        )->update(['completed_at' => now()]);
+        $this->dispatch('toast', message: __('lesson.done'));
+    }
+
     public function render()
     {
         $siblings = $this->lesson->module->course->lessons()->orderBy('course_modules.position')->orderBy('lessons.position')->get();

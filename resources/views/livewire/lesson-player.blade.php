@@ -16,6 +16,8 @@
             <livewire:quiz :lesson-id="$lesson->id" :key="'quiz'.$lesson->id" />
         @endif
 
+        <button wire:click="complete" wire:loading.attr="disabled" class="btn-accent"><i class="fa-solid fa-circle-check"></i> {{ __('lesson.complete') }}</button>
+
         <div class="flex justify-between">
             @if ($prev) <a href="{{ route('lesson', $prev->id) }}" wire:navigate class="btn-ghost"><i class="fa-solid fa-arrow-left"></i> {{ __('courses.prev') }}</a> @else <span></span> @endif
             @if ($next) <a href="{{ route('lesson', $next->id) }}" wire:navigate class="btn-primary">{{ __('courses.next') }} <i class="fa-solid fa-arrow-right"></i></a> @endif
