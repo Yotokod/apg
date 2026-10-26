@@ -7,9 +7,22 @@ use Illuminate\Support\Facades\Http;
 /** AI replies when an API key is set in Admin > Settings (ai_api_key), otherwise a simple FAQ fallback. */
 class ChatBot
 {
+    private function apiKey(): ?string
+    {
+        $stored = site('ai_api_key');
+        if (! $stored) {
+            return null;
+        }
+        try {
+            return \Illuminate\Support\Facades\Crypt::decryptString($stored);
+        } catch (\Throwable) {
+            return null;
+        }
+    }
+
     public function reply(string $sid, string $text): string
     {
-        $key = site('ai_api_key');
+        $key = $this->apiKey();
         if ($key) {
             try {
                 $r = Http::withHeaders(['x-api-key' => $key, 'anthropic-version' => '2023-06-01'])->timeout(20)

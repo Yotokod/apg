@@ -8,7 +8,7 @@
             <button wire:click="restart" class="btn-ghost">{{ __('quiz.restart') }}</button>
         </div>
     @elseif ($node)
-        <div class="mb-4 h-2 overflow-hidden rounded-full bg-stone-200 dark:bg-stone-800" role="progressbar" aria-valuenow="{{ $step }}">
+        <div class="mb-4 h-2 overflow-hidden rounded-full bg-stone-200 dark:bg-stone-800" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ min(100, $step * 20) }}" aria-label="{{ __('quiz.step', ['n' => $step]) }}">
             <div class="h-full bg-brand-600 transition-all" style="width: {{ min(100, $step * 20) }}%"></div>
         </div>
         <p class="mb-1 text-xs font-semibold uppercase text-stone-500">{{ __('quiz.step', ['n' => $step]) }}</p>

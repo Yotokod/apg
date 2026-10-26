@@ -36,6 +36,11 @@ class PaymentGatewayResource extends Resource
     protected static ?string $modelLabel = 'Moyens de paiement';
     protected static ?string $pluralModelLabel = 'Moyens de paiement';
 
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->role === 'superadmin';
+    }
+
     public static function form(Schema $schema): Schema
     {
         return $schema->components([

@@ -1,0 +1,60 @@
+/* Animated SVG illustrations (resources/views/components/illustrations/*). transform/opacity only. */
+.ill {
+    --i-or: #f97316; --i-or-d: #d9480f; --i-ink: #1a1a44; --i-ink-d: #0b0b2b;
+    --i-cream: #fff4ec; --i-peach: #ffe3d0; --i-amber: #ffb347; --i-yellow: #ffd166;
+    --i-green: #4fa65f; --i-green-l: #a7d98c; --i-red: #e5383b; --i-shell: #fffaf3;
+    display: block; width: 100%; height: auto; overflow: visible;
+}
+.ill * { transform-box: fill-box; transform-origin: center; }
+.ill [class*='ill-a-'] { animation-duration: var(--t, 3s); animation-delay: var(--d, 0s); animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+.ill .o-b { transform-origin: 50% 100%; }
+.ill .o-l { transform-origin: 0 50%; }
+.ill .o-bl { transform-origin: 0 100%; }
+
+.ill-a-float { animation-name: ill-float; }
+.ill-a-spin { animation-name: ill-spin; animation-timing-function: linear !important; }
+.ill-a-pulse { animation-name: ill-pulse; }
+.ill-a-twinkle { animation-name: ill-twinkle; }
+.ill-a-peck { animation-name: ill-peck; }
+.ill-a-grow { animation-name: ill-grow; }
+.ill-a-drive { animation-name: ill-drive; }
+.ill-a-drift { animation-name: ill-drift; animation-timing-function: linear !important; }
+.ill-a-fall { animation-name: ill-fall; animation-timing-function: ease-in !important; }
+.ill-a-rise { animation-name: ill-rise; }
+.ill-a-sway { animation-name: ill-sway; }
+.ill-a-flip { animation-name: ill-flip; }
+.ill-a-seq { animation-name: ill-seq; }
+.ill-a-wobble { animation-name: ill-wobble; }
+.ill-a-peek { animation-name: ill-peek; }
+.ill-a-cap { animation-name: ill-cap; }
+.ill-a-needle { animation-name: ill-needle; }
+.ill-a-inject { animation-name: ill-inject; }
+.ill-a-fly { animation-name: ill-fly; animation-timing-function: linear !important; }
+
+/* Resting (reduced-motion) poses */
+.ill .rest-cap { transform: translate(34px, -50px) rotate(24deg); }
+.ill .rest-peek { transform: none; }
+
+@keyframes ill-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes ill-spin { to { transform: rotate(360deg); } }
+@keyframes ill-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .85; } }
+@keyframes ill-twinkle { 0%, 100% { transform: scale(.4); opacity: .2; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes ill-peck { 0%, 55%, 100% { transform: rotate(0); } 70% { transform: rotate(14deg); } 85% { transform: rotate(2deg); } }
+@keyframes ill-grow { 0% { transform: scaleY(0); } 35%, 85% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+@keyframes ill-drive { 0%, 100% { transform: translateY(0); } 25% { transform: translateY(-2px); } 75% { transform: translateY(1.5px); } }
+@keyframes ill-drift { from { transform: translateX(-40px); } to { transform: translateX(440px); } }
+@keyframes ill-fall { 0% { transform: translateY(-14px); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(34px); opacity: 0; } }
+@keyframes ill-rise { 0% { transform: translateY(8px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(-26px); opacity: 0; } }
+@keyframes ill-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes ill-flip { 0%, 100% { transform: scaleX(1) translateY(0); } 25% { transform: scaleX(.15) translateY(-6px); } 50% { transform: scaleX(-1) translateY(0); } 75% { transform: scaleX(.15) translateY(-6px); } }
+@keyframes ill-seq { 0%, 40%, 100% { opacity: .5; transform: scale(1); } 10%, 30% { opacity: 1; transform: scale(1.08); } }
+@keyframes ill-wobble { 0%, 28%, 100% { transform: rotate(0); } 5% { transform: rotate(-6deg); } 10% { transform: rotate(6deg); } 15% { transform: rotate(-4deg); } 20% { transform: rotate(4deg); } 24% { transform: rotate(-2deg); } }
+@keyframes ill-peek { 0%, 28%, 100% { transform: translateY(52px); } 45%, 85% { transform: translateY(0); } }
+@keyframes ill-cap { 0%, 28%, 100% { transform: none; } 36% { transform: translate(34px, -50px) rotate(24deg); } 85% { transform: translate(34px, -50px) rotate(24deg); } 95% { transform: none; } }
+@keyframes ill-needle { 0%, 100% { transform: rotate(-28deg); } 50% { transform: rotate(24deg); } }
+@keyframes ill-inject { 0%, 100% { transform: translateX(0); } 45%, 60% { transform: translateX(22px); } }
+@keyframes ill-fly { from { transform: translate(-60px, 12px); } to { transform: translate(520px, -22px); } }
+
+@media (prefers-reduced-motion: reduce) {
+    .ill, .ill * { animation: none !important; transition: none !important; }
+}

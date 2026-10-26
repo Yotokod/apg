@@ -37,7 +37,7 @@ class SiteSettings extends Page
     public function mount(): void
     {
         $keys = ['name', 'short_name', 'phone', 'whatsapp', 'email', 'cities', 'primary_color', 'accent_color', 'logo', 'app_mode', 'home_page', 'ai_api_key', 'ai_model'];
-        $this->form->fill(collect($keys)->mapWithKeys(fn ($k) => [$k => site($k)])->all());
+        $this->form->fill(collect($keys)->mapWithKeys(fn ($k) => [$k => $k === 'ai_api_key' ? '' : site($k)])->all());
     }
 
     public function form(Schema $schema): Schema
@@ -63,6 +63,12 @@ class SiteSettings extends Page
     public function save(): void
     {
         foreach ($this->form->getState() as $k => $v) {
+            if ($k === 'ai_api_key') {
+                if (! $v) {
+                    continue; // blank = keep current key
+                }
+                $v = \Illuminate\Support\Facades\Crypt::encryptString($v);
+            }
             Setting::updateOrCreate(['key' => $k], ['value' => $v]);
         }
         Cache::forget('settings.all');

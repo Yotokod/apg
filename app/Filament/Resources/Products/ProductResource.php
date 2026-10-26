@@ -41,7 +41,7 @@ class ProductResource extends Resource
     Select::make('category')->options(['poulet' => 'Poulet', 'poussin' => 'Poussin', 'oeuf' => 'Œuf', 'caille' => 'Caille', 'pintade' => 'Pintade'])->required(),
     TextInput::make('price')->numeric()->required()->suffix('FCFA'),
     TextInput::make('stock')->numeric()->default(0),
-    FileUpload::make('image')->image()->directory('products'),
+    FileUpload::make('image')->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])->maxSize(4096)->disk('public')->directory('products'),
     Toggle::make('is_active')->default(true),
         ]);
     }

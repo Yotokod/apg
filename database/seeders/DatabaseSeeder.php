@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::firstOrCreate(['email' => 'admin@apg.test'], ['name' => 'Super Admin', 'password' => 'password', 'role' => 'superadmin']);
+        $this->seedAdmin();
 
         foreach (array_keys(PaymentManager::GATEWAYS) as $i => $code) {
             [$name, $type] = PaymentManager::GATEWAYS[$code];
@@ -36,6 +36,23 @@ class DatabaseSeeder extends Seeder
         $this->seedProducts();
         $this->seedSimulator();
         $this->seedPlans();
+        $this->call([ProductImageSeeder::class, GallerySeeder::class, PostSeeder::class]);
+    }
+
+    /** Demo admin only in local/testing; elsewhere ADMIN_EMAIL + ADMIN_INITIAL_PASSWORD are required. */
+    private function seedAdmin(): void
+    {
+        if (app()->environment(['local', 'testing'])) {
+            $email = 'admin@apg.test';
+            $password = 'password';
+        } else {
+            $email = env('ADMIN_EMAIL');
+            $password = env('ADMIN_INITIAL_PASSWORD');
+            if (! $email || ! $password) {
+                throw new \RuntimeException('Set ADMIN_EMAIL and ADMIN_INITIAL_PASSWORD to create the first superadmin.');
+            }
+        }
+        User::unguarded(fn () => User::firstOrCreate(['email' => $email], ['name' => 'Super Admin', 'password' => $password, 'role' => 'superadmin']));
     }
 
     /** Import content extracted from the legacy WordPress site, if present. */

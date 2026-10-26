@@ -1,4 +1,4 @@
-<div wire:poll.10s
+<div wire:poll.30s.visible
      x-data="{ open: false, shown: true, scrolling: false, t: null, iv: null,
         init() {
             const hideWhileScrolling = () => { this.scrolling = true; this.shown = false; clearTimeout(this.t); this.t = setTimeout(() => { this.scrolling = false; this.shown = true }, 5000) };

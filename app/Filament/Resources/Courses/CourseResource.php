@@ -50,7 +50,7 @@ class CourseResource extends Resource
             TextInput::make('title.fr')->label('Leçon FR')->required(), TextInput::make('title.en')->label('Lesson EN'),
             Textarea::make('content.fr')->label('Contenu FR')->rows(5), Textarea::make('content.en')->label('Content EN')->rows(5),
             TextInput::make('video_url')->label('Vidéo (embed URL)')->url(),
-            FileUpload::make('motion_file')->label('Animation Lottie (.json)')->disk('public')->directory('motion')->acceptedFileTypes(['application/json']),
+            FileUpload::make('motion_file')->label('Animation Lottie (.json)')->disk('public')->directory('motion')->maxSize(2048)->acceptedFileTypes(['application/json']),
             TextInput::make('motion_url')->label('Motion design explicatif (optionnel, embed URL)')->url(),
           ]),
       ]),
