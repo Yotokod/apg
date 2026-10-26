@@ -7,7 +7,7 @@
     <title>{{ $title ?? site('name') }}</title>
     <meta name="theme-color" content="{{ site('primary_color') }}">
     <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="icon" href="{{ site('logo') }}">
+    <link rel="icon" href="/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -19,8 +19,8 @@
     <header class="sticky top-0 z-30 px-3 pt-3">
         <nav class="card mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2" aria-label="Main">
             <a href="{{ route('home') }}" class="flex items-center gap-2 font-extrabold text-brand-700 dark:text-brand-500" wire:navigate>
-                <img src="{{ site('logo') }}" alt="" class="h-9 w-9">
-                <span class="truncate">{{ site('short_name') }}</span>
+                <img src="{{ site('logo') }}" alt="{{ site('name') }}" class="h-10 w-auto">
+                
             </a>
             <div class="hidden items-center gap-1 md:flex">
                 @foreach ([['shop', 'nav.shop', 'fa-store'], ['courses', 'nav.courses', 'fa-graduation-cap'], ['simulator', 'nav.simulator', 'fa-chart-line'], ['contact', 'nav.contact', 'fa-envelope']] as [$r, $k, $i])
@@ -74,7 +74,7 @@
     <footer class="mt-16 border-t border-stone-200 bg-white py-10 dark:border-stone-800 dark:bg-stone-900">
         <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:grid-cols-3">
             <div>
-                <div class="flex items-center gap-2 font-extrabold text-brand-700 dark:text-brand-500"><img src="{{ site('logo') }}" alt="" class="h-8 w-8">{{ site('name') }}</div>
+                <div class="flex items-center gap-2 font-extrabold text-brand-700 dark:text-brand-500"><img src="{{ site('logo') }}" alt="{{ site('name') }}" class="h-12 w-auto"></div>
                 <p class="mt-2 text-sm text-stone-600 dark:text-stone-400">{{ site('tagline') }}</p>
             </div>
             <div class="text-sm">

@@ -29,15 +29,15 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName(config('site_identity.name'))
-            ->brandLogo(asset('images/logo.svg'))
-            ->brandLogoHeight('2rem')
-            ->favicon(asset('images/logo.svg'))
+            ->brandLogo(asset('images/logo-main.png'))
+            ->brandLogoHeight('2.5rem')
+            ->favicon(asset('images/favicon.png'))
             ->font('Plus Jakarta Sans')
             ->topNavigation()
             ->maxContentWidth('7xl')
             ->spa()
             ->colors([
-                'primary' => Color::Emerald,
+                'primary' => Color::Orange,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')

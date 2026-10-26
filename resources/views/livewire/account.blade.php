@@ -2,7 +2,7 @@
     <x-page-hero :title="__('nav.account')" :subtitle="auth()->user()->name" icon="fa-user" />
     <div class="mx-auto grid max-w-5xl gap-6 px-4 py-8 md:grid-cols-2">
         @if (session('status') === 'payment_pending')
-            <p class="card md:col-span-2 bg-amber-50 p-4 text-sm font-medium dark:bg-stone-800"><i class="fa-solid fa-hourglass-half text-accent-500"></i> {{ __('account.payment_pending') }}</p>
+            <p class="card md:col-span-2 bg-brand-50 p-4 text-sm font-medium dark:bg-stone-800"><i class="fa-solid fa-hourglass-half text-accent-500"></i> {{ __('account.payment_pending') }}</p>
         @endif
         <section class="card p-5"><h2 class="mb-3 font-extrabold">{{ __('nav.courses') }}</h2>
             @forelse ($enrollments as $e)

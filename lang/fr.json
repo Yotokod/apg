@@ -115,5 +115,7 @@
   "home.stat3": "leçons",
   "lesson.complete": "Marquer comme terminée",
   "lesson.done": "Leçon terminée",
-  "account.payment_pending": "Paiement en cours de vérification, nous vous confirmons très vite."
+  "account.payment_pending": "Paiement en cours de vérification, nous vous confirmons très vite.",
+  "motion.toggle": "Lecture / pause",
+  "motion.replay": "Rejouer l’animation"
 }

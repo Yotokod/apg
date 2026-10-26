@@ -115,5 +115,7 @@
   "home.stat3": "lessons",
   "lesson.complete": "Mark as complete",
   "lesson.done": "Lesson completed",
-  "account.payment_pending": "Payment is being verified, we will confirm shortly."
+  "account.payment_pending": "Payment is being verified, we will confirm shortly.",
+  "motion.toggle": "Play / pause",
+  "motion.replay": "Replay animation"
 }

@@ -17,7 +17,7 @@
         <div wire:loading.remove class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             @forelse ($products as $p)
                 <article class="card flex flex-col overflow-hidden">
-                    <div class="flex h-40 items-center justify-center bg-gradient-to-br from-brand-100 to-amber-100 text-6xl text-brand-600 dark:from-stone-800 dark:to-stone-700">
+                    <div class="flex h-40 items-center justify-center bg-gradient-to-br from-brand-100 to-brand-100 text-6xl text-brand-600 dark:from-stone-800 dark:to-stone-700">
                         @if ($p->image) <img src="{{ asset('storage/'.$p->image) }}" alt="{{ $p->tr('name') }}" loading="lazy" class="h-full w-full object-cover">
                         @else <i class="fa-solid {{ category_icon($p->category) }}"></i> @endif
                     </div>

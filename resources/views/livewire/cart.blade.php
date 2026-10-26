@@ -6,7 +6,7 @@
                 <h2 class="text-xl font-extrabold text-brand-700"><i class="fa-solid fa-circle-check"></i> {{ __('cart.thanks', ['id' => $order->id]) }}</h2>
                 <p>{{ __('cart.total') }}: <strong>{{ fcfa($order->total) }}</strong></p>
                 @if ($chosen?->type === 'transfer')
-                    <div class="rounded-xl bg-amber-50 p-4 text-sm dark:bg-stone-800">
+                    <div class="rounded-xl bg-brand-50 p-4 text-sm dark:bg-stone-800">
                         <p class="whitespace-pre-line">{{ $chosen->instructions[app()->getLocale()] ?? $chosen->instructions['fr'] ?? __('cart.transfer_default') }}</p>
                         <a class="btn-accent mt-3" target="_blank" rel="noopener"
                            href="https://www.openstreetmap.org/search?query={{ urlencode($chosen->name.' '.$order->city) }}">

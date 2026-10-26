@@ -16,13 +16,13 @@
         <div class="grid gap-2">
             @foreach ($node->options as $o)
                 @php
-                    $state = $picked ? ($o->is_correct ? 'border-brand-600 bg-brand-50 dark:bg-brand-700/20' : ($picked === $o->id ? 'border-red-500 bg-red-50 dark:bg-red-900/20' : 'opacity-60')) : 'hover:border-brand-600';
+                    $state = $picked ? ($o->is_correct ? 'border-green-600 bg-green-50 dark:bg-green-900/20' : ($picked === $o->id ? 'border-red-500 bg-red-50 dark:bg-red-900/20' : 'opacity-60')) : 'hover:border-brand-600';
                 @endphp
                 <button wire:click="pick({{ $o->id }})" @disabled($picked) class="min-h-11 rounded-xl border-2 border-stone-200 px-4 py-3 text-left transition dark:border-stone-700 {{ $state }}">{{ $o->tr('label') }}</button>
             @endforeach
         </div>
         @if ($picked)
-            @if ($node->explanation)<p class="mt-3 rounded-xl bg-amber-50 p-3 text-sm dark:bg-stone-800"><i class="fa-solid fa-lightbulb text-accent-500"></i> {{ $node->tr('explanation') }}</p>@endif
+            @if ($node->explanation)<p class="mt-3 rounded-xl bg-brand-50 p-3 text-sm dark:bg-stone-800"><i class="fa-solid fa-lightbulb text-accent-500"></i> {{ $node->tr('explanation') }}</p>@endif
             <button wire:click="next" class="btn-primary mt-4">{{ __('quiz.continue') }} <i class="fa-solid fa-arrow-right"></i></button>
         @endif
     @endif

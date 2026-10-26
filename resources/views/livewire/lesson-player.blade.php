@@ -3,6 +3,9 @@
     <div class="mx-auto max-w-4xl space-y-6 px-4 py-8">
         <a href="{{ route('courses.show', $lesson->module->course->slug) }}" wire:navigate class="text-sm text-brand-700"><i class="fa-solid fa-arrow-left"></i> {{ $lesson->module->course->tr('title') }}</a>
 
+        @if ($lesson->motion_file)
+            <x-motion :src="asset('storage/'.$lesson->motion_file)" :label="$lesson->tr('title')" />
+        @endif
         @if ($lesson->motion_url)
             <div class="card overflow-hidden"><div class="aspect-video"><iframe src="{{ $lesson->motion_url }}" class="h-full w-full" loading="lazy" allowfullscreen title="Motion"></iframe></div></div>
         @endif

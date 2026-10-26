@@ -45,7 +45,7 @@ class SiteSettings extends Page
         return $schema->statePath('data')->components([
             Section::make('Identité')->columns(2)->schema([
                 TextInput::make('name')->required(), TextInput::make('short_name'),
-                TextInput::make('logo')->label('Logo (URL ou /images/logo.svg)'),
+                TextInput::make('logo')->label('Logo (URL ou /images/logo-main.png)'),
                 TextInput::make('phone'), TextInput::make('whatsapp'), TextInput::make('email')->email(), TextInput::make('cities'),
                 ColorPicker::make('primary_color'), ColorPicker::make('accent_color'),
             ]),
