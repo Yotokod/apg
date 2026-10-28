@@ -58,7 +58,7 @@
     <header class="sticky top-0 z-30 px-3 pt-3">
         <nav class="card mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-2" aria-label="{{ __('nav.main') }}">
             <a href="{{ route('home') }}" class="flex shrink-0 items-center" wire:navigate aria-label="{{ site('name') }}">
-                <img src="{{ site('logo') }}" alt="{{ site('name') }}" width="120" height="40" class="h-10 w-auto">
+                <img src="{{ site('logo') }}" alt="{{ site('name') }}" width="120" height="40" class="h-10 w-auto max-[359px]:h-8">
             </a>
             <div class="hidden items-center gap-1 lg:flex">
                 @foreach ($menus as $m)
@@ -74,7 +74,7 @@
                     <livewire:cart-badge />
                 </a>
                 <a href="{{ route('lang', app()->getLocale() === 'fr' ? 'en' : 'fr') }}" class="btn-ghost !px-3" aria-label="{{ __('nav.language') }}">
-                    <i class="fa-solid fa-globe" aria-hidden="true"></i> {{ strtoupper(app()->getLocale() === 'fr' ? 'en' : 'fr') }}
+                    <i class="fa-solid fa-globe" aria-hidden="true"></i><span class="max-[359px]:sr-only"> {{ strtoupper(app()->getLocale() === 'fr' ? 'en' : 'fr') }}</span>
                 </a>
                 <button type="button" class="btn-ghost !px-3" @click="dark = !dark" aria-label="{{ __('nav.theme') }}">
                     <i class="fa-solid" :class="dark ? 'fa-sun' : 'fa-moon'" aria-hidden="true"></i>

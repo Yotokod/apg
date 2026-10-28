@@ -7,11 +7,11 @@
             ['fa-heart-crack', 'sim.hud.mortality', 'pct(hud.mortalityPct)', "hud.mortalityPct >= 15 ? 'text-red-600' : 'text-ink-900 dark:text-white'"],
             ['fa-wheat-awn', 'sim.hud.feed', 'kg(hud.feedKg)', 'text-ink-900 dark:text-white'],
         ] as [$icon, $label, $value, $color])
-            <div class="card flex min-w-0 items-center gap-2 px-3 py-2">
+            <div class="card flex min-w-0 items-center gap-2 px-2.5 py-2 sm:px-3">
                 <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-700 dark:bg-brand-800/30 dark:text-brand-100"><i class="fa-solid {{ $icon }}" aria-hidden="true"></i></span>
                 <div class="min-w-0">
-                    <dt class="truncate text-xs text-stone-500 dark:text-stone-400">{{ __($label) }}</dt>
-                    <dd class="truncate text-base font-extrabold tabular-nums" @if (str_contains($color, '?')) :class="{{ $color }}" @else class="{{ $color }}" @endif x-text="{{ $value }}"></dd>
+                    <dt class="text-xs leading-tight text-stone-500 dark:text-stone-400">{{ __($label) }}</dt>
+                    <dd class="break-words text-sm font-extrabold leading-tight tabular-nums sm:text-base" @if (str_contains($color, '?')) :class="{{ $color }}" @else class="{{ $color }}" @endif x-text="{{ $value }}"></dd>
                 </div>
             </div>
         @endforeach

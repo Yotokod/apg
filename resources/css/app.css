@@ -54,3 +54,9 @@
 /* Motion system: JS adds .motion-ready, then reveals [data-reveal] on scroll (see resources/js/motion.js) */
 .motion-ready [data-reveal]:not(.is-in) { opacity: 0; transform: translateY(16px); }
 [data-reveal] { transition: opacity .5s ease, transform .5s ease; transition-delay: var(--d, 0ms); }
+
+/* Very small phones (≤359px): keep the navbar controls inside the viewport */
+@media (max-width: 359px) {
+    header nav .btn-ghost, header nav .btn-primary { padding-inline: 0.4rem; min-width: 2.75rem; }
+    header nav .flex.items-center.gap-1 { gap: 0.125rem; }
+}
