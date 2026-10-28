@@ -12,7 +12,7 @@ class Lesson extends Model
     protected $guarded = [];
 
     public $timestamps = false;
-    protected function casts(): array { return ['title' => 'array', 'content' => 'array']; }
+    protected function casts(): array { return ['title' => 'array', 'content' => 'array', 'scenes' => 'array']; }
 
     public function module(): BelongsTo { return $this->belongsTo(CourseModule::class, 'course_module_id'); }
 

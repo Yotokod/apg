@@ -11,7 +11,16 @@
                     <p>{{ __('pages.about.'.$k, ['name' => site('name')]) }}</p>
                 @endforeach
             </div>
-            <x-pages.illu name="farm-house" icon="fa-house-chimney" class="mx-auto max-w-md" />
+            @php($photos = \App\Models\GalleryItem::where('category', 'poulets')->where('position', '<', 0)->whereIn('image', ['gallery/apg-reproducteur-cuivre-1.jpg', 'gallery/apg-reproducteur-creme-1.jpg', 'gallery/apg-reproducteur-gris-1.jpg'])->get())
+            @if ($photos->count())
+                <div class="grid grid-cols-3 gap-2" data-stagger>
+                    @foreach ($photos as $ph)
+                        <img src="{{ \App\Support\SiteData::imageUrl($ph->image) }}" alt="{{ $ph->tr('alt') }}" loading="lazy" width="400" height="533" class="aspect-[3/4] w-full rounded-2xl object-cover shadow-sm {{ $loop->index === 1 ? 'mt-6' : '' }}">
+                    @endforeach
+                </div>
+            @else
+                <x-pages.illu name="farm-house" icon="fa-house-chimney" class="mx-auto max-w-md" />
+            @endif
         </section>
 
         {{-- Real counts only --}}

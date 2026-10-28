@@ -1,0 +1,243 @@
+{
+  "version": "2.0",
+  "params": [
+    {"key": "min_flock", "value": 500, "unit": "birds", "status": "apg", "group": "flock", "label": {"fr": "Commande minimale de poussins", "en": "Minimum chick order"}, "note": {"fr": "Donnée APG : 500 poussins minimum.", "en": "APG data: 500 chicks minimum."}},
+    {"key": "chick_price_benin", "value": 900, "unit": "fcfa_bird", "status": "apg", "group": "flock", "label": {"fr": "Prix poussin – Bénin", "en": "Chick price – Benin"}, "note": {"fr": "Boutique APG : carton de 50 = 45 000 FCFA.", "en": "APG shop: box of 50 = 45,000 FCFA."}},
+    {"key": "chick_price_togo", "value": 1100, "unit": "fcfa_bird", "status": "apg", "group": "flock", "label": {"fr": "Prix poussin – Togo / Burkina", "en": "Chick price – Togo / Burkina"}, "note": {"fr": "Boutique APG : carton de 50 = 55 000 FCFA.", "en": "APG shop: box of 50 = 55,000 FCFA."}},
+    {"key": "chick_price_world", "value": 1300, "unit": "fcfa_bird", "status": "apg", "group": "flock", "label": {"fr": "Prix poussin – autres pays", "en": "Chick price – other countries"}, "note": {"fr": "Boutique APG : carton de 50 = 65 000 FCFA.", "en": "APG shop: box of 50 = 65,000 FCFA."}},
+    {"key": "male_ratio", "value": 10, "unit": "ratio", "status": "hypothese", "group": "flock", "label": {"fr": "Femelles par mâle (reproduction)", "en": "Females per male (breeding)"}, "note": {"fr": "À valider avec APG selon la souche.", "en": "To be validated with APG for the strain."}},
+
+    {"key": "ration_low_g", "value": 25, "unit": "g_day", "status": "apg", "group": "feed", "label": {"fr": "Ration chair basse", "en": "Broiler ration (low)"}, "note": {"fr": "Hypothèse APG à comparer, pas une ration fixe.", "en": "APG hypothesis to compare, not a fixed ration."}},
+    {"key": "ration_high_g", "value": 30, "unit": "g_day", "status": "apg", "group": "feed", "label": {"fr": "Ration chair haute", "en": "Broiler ration (high)"}, "note": {"fr": "Hypothèse APG à comparer, pas une ration fixe.", "en": "APG hypothesis to compare, not a fixed ration."}},
+    {"key": "breeder_start_g", "value": 25, "unit": "g_day", "status": "apg", "group": "feed", "label": {"fr": "Ration de départ (progressive)", "en": "Starting ration (progressive)"}, "note": {"fr": "Règle APG reproducteurs : 25 g en semaine 1.", "en": "APG breeder rule: 25 g in week 1."}},
+    {"key": "breeder_step_g", "value": 5, "unit": "g_week", "status": "apg", "group": "feed", "label": {"fr": "Hausse hebdomadaire", "en": "Weekly increase"}, "note": {"fr": "+5 g par semaine.", "en": "+5 g per week."}},
+    {"key": "breeder_cap_week", "value": 20, "unit": "week", "status": "apg", "group": "feed", "label": {"fr": "Semaine plafond de la règle", "en": "Rule cap week"}, "note": {"fr": "S20 = 120 g/j. Le repère 140 g ne découle pas de cette règle : non utilisé, pas d'extrapolation.", "en": "Week 20 = 120 g/day. The 140 g figure does not follow from this rule: not used, no extrapolation."}},
+    {"key": "adlib_extra_pct", "value": 20, "unit": "pct", "status": "hypothese", "group": "feed", "label": {"fr": "Surconsommation « à volonté »", "en": "Ad-lib over-consumption"}, "note": {"fr": "Hypothèse pédagogique.", "en": "Teaching hypothesis."}},
+    {"key": "feed_price_kg", "value": 350, "unit": "fcfa_kg", "status": "hypothese", "group": "feed", "label": {"fr": "Prix de l'aliment", "en": "Feed price"}, "note": {"fr": "Valeur par défaut à remplacer par votre prix local.", "en": "Default value: replace with your local price."}},
+    {"key": "feed_waste_pct", "value": 5, "unit": "pct", "status": "hypothese", "group": "feed", "label": {"fr": "Gaspillage d'aliment", "en": "Feed waste"}, "note": {"fr": "Paramètre séparé de la ration.", "en": "Kept separate from the ration."}},
+
+    {"key": "density_adult", "value": 4, "unit": "birds_m2", "status": "generique", "group": "building", "label": {"fr": "Densité adultes", "en": "Adult density"}, "note": {"fr": "Repère générique ; dépend du système, du climat et de la ventilation. Surface utile hors annexes.", "en": "Generic benchmark; depends on system, climate and ventilation. Usable area excluding annexes."}},
+    {"key": "density_brooder", "value": 25, "unit": "birds_m2", "status": "generique", "group": "building", "label": {"fr": "Densité poussinière", "en": "Brooder density"}, "note": {"fr": "Repère 20–25 poussins/m².", "en": "Benchmark 20–25 chicks/m²."}},
+    {"key": "build_cost_m2", "value": 15000, "unit": "fcfa_m2", "status": "hypothese", "group": "building", "label": {"fr": "Coût de construction", "en": "Building cost"}, "note": {"fr": "Bâtiment simple ; à remplacer par un devis local.", "en": "Simple house; replace with a local quote."}},
+    {"key": "building_life_years", "value": 10, "unit": "years", "status": "hypothese", "group": "building", "label": {"fr": "Durée d'amortissement", "en": "Depreciation period"}, "note": {"fr": "Amortissement linéaire au prorata de la durée du lot.", "en": "Straight-line, pro rata of the cycle length."}},
+    {"key": "clean_cost_m2", "value": 500, "unit": "fcfa_m2", "status": "hypothese", "group": "building", "label": {"fr": "Nettoyage / désinfection", "en": "Cleaning / disinfection"}, "note": {"fr": "Si réutilisation d'un bâtiment.", "en": "When reusing a building."}},
+
+    {"key": "temp_w1", "value": 32, "unit": "celsius", "status": "generique", "group": "heat", "label": {"fr": "Température semaine 1 (min.)", "en": "Week 1 temperature (min.)"}, "note": {"fr": "À hauteur des poussins : 32–35 °C.", "en": "At chick level: 32–35 °C."}},
+    {"key": "temp_w2", "value": 29, "unit": "celsius", "status": "generique", "group": "heat", "label": {"fr": "Température semaine 2 (min.)", "en": "Week 2 temperature (min.)"}, "note": {"fr": "29–32 °C.", "en": "29–32 °C."}},
+    {"key": "temp_w3", "value": 26, "unit": "celsius", "status": "generique", "group": "heat", "label": {"fr": "Température semaine 3 (min.)", "en": "Week 3 temperature (min.)"}, "note": {"fr": "26–29 °C.", "en": "26–29 °C."}},
+    {"key": "temp_w4", "value": 23, "unit": "celsius", "status": "generique", "group": "heat", "label": {"fr": "Température semaine 4 (min.)", "en": "Week 4 temperature (min.)"}, "note": {"fr": "23–26 °C ; transfert selon plumage et comportement.", "en": "23–26 °C; transfer depending on feathering and behaviour."}},
+    {"key": "temp_span", "value": 3, "unit": "celsius", "status": "generique", "group": "heat", "label": {"fr": "Amplitude de la plage", "en": "Range width"}, "note": {"fr": "Plage = minimum + amplitude.", "en": "Range = minimum + width."}},
+    {"key": "brooding_weeks", "value": 3, "unit": "week", "status": "generique", "group": "heat", "label": {"fr": "Durée en zone de démarrage", "en": "Time in the brooding area"}, "note": {"fr": "Environ 3 semaines ; transfert dès S4 selon plumage, température et comportement.", "en": "About 3 weeks; transfer from week 4 depending on feathering, temperature and behaviour."}},
+    {"key": "heat_gas_per_bird", "value": 120, "unit": "fcfa_bird", "status": "hypothese", "group": "heat", "label": {"fr": "Chauffage gaz/charbon ventilé", "en": "Gas/charcoal heating (ventilated)"}, "note": {"fr": "Énergie de démarrage par poussin.", "en": "Brooding energy per chick."}},
+    {"key": "heat_elec_per_bird", "value": 180, "unit": "fcfa_bird", "status": "hypothese", "group": "heat", "label": {"fr": "Chauffage électrique", "en": "Electric heating"}, "note": {"fr": "Selon tarif et coupures locales.", "en": "Depends on local tariff and outages."}},
+    {"key": "heat_charcoal_per_bird", "value": 60, "unit": "fcfa_bird", "status": "hypothese", "group": "heat", "label": {"fr": "Braises en local fermé", "en": "Embers in a closed house"}, "note": {"fr": "Choix déconseillé (monoxyde de carbone).", "en": "Not advised (carbon monoxide)."}},
+
+    {"key": "vet_plan_per_bird", "value": 200, "unit": "fcfa_bird", "status": "hypothese", "group": "health", "label": {"fr": "Plan sanitaire vétérinaire", "en": "Veterinary health plan"}, "note": {"fr": "Le programme réel est défini par votre vétérinaire.", "en": "The real programme is set by your vet."}},
+    {"key": "antibiotic_per_bird", "value": 150, "unit": "fcfa_bird", "status": "hypothese", "group": "health", "label": {"fr": "Antibiotiques systématiques", "en": "Routine antibiotics"}, "note": {"fr": "Coût d'un choix déconseillé.", "en": "Cost of a discouraged choice."}},
+    {"key": "vet_call_cost", "value": 25000, "unit": "fcfa", "status": "hypothese", "group": "health", "label": {"fr": "Intervention vétérinaire d'urgence", "en": "Emergency vet visit"}, "note": {"fr": "Forfait indicatif.", "en": "Indicative fee."}},
+    {"key": "litter_per_bird", "value": 50, "unit": "fcfa_bird", "status": "hypothese", "group": "costs", "label": {"fr": "Litière", "en": "Litter"}, "note": {"fr": "Copeaux, paille…", "en": "Shavings, straw…"}},
+    {"key": "misc_per_bird", "value": 75, "unit": "fcfa_bird", "status": "hypothese", "group": "costs", "label": {"fr": "Eau, électricité, petit matériel", "en": "Water, power, small equipment"}, "note": {"fr": "Forfait par sujet.", "en": "Flat rate per bird."}},
+    {"key": "labour_month", "value": 60000, "unit": "fcfa_month", "status": "hypothese", "group": "costs", "label": {"fr": "Main-d'œuvre", "en": "Labour"}, "note": {"fr": "Charge fixe mensuelle.", "en": "Monthly fixed cost."}},
+    {"key": "contract_cost", "value": 50000, "unit": "fcfa", "status": "hypothese", "group": "costs", "label": {"fr": "Transport des livraisons sous contrat", "en": "Contract delivery transport"}, "note": {"fr": "Forfait par lot.", "en": "Flat rate per flock."}},
+
+    {"key": "weight_45d_kg", "value": 1.5, "unit": "kg", "status": "apg", "group": "growth", "label": {"fr": "Poids vif vers 45 jours", "en": "Live weight around 45 days"}, "note": {"fr": "Objectif indicatif APG (> 1,5 kg ; autre indication > 1 kg). Jamais garanti.", "en": "APG indicative target (> 1.5 kg; other indication > 1 kg). Never guaranteed."}},
+    {"key": "weight_35d_kg", "value": 1.0, "unit": "kg", "status": "hypothese", "group": "growth", "label": {"fr": "Poids vif à 35 jours", "en": "Live weight at 35 days"}, "note": {"fr": "Hypothèse pédagogique.", "en": "Teaching hypothesis."}},
+    {"key": "weight_60d_kg", "value": 2.0, "unit": "kg", "status": "hypothese", "group": "growth", "label": {"fr": "Poids vif à 2 mois", "en": "Live weight at 2 months"}, "note": {"fr": "À valider avec une courbe signée.", "en": "To validate with a signed growth curve."}},
+    {"key": "breeder_max_weight_kg", "value": 5, "unit": "kg", "status": "apg", "group": "growth", "label": {"fr": "Poids max. reproducteurs", "en": "Breeder max. weight"}, "note": {"fr": "Éviter l'engraissement ; à valider mâle/femelle.", "en": "Avoid fattening; to validate for males/females."}},
+    {"key": "carcass_yield_pct", "value": 75, "unit": "pct", "status": "hypothese", "group": "growth", "label": {"fr": "Rendement carcasse", "en": "Carcass yield"}, "note": {"fr": "Poids congelé vendu / poids vif.", "en": "Frozen weight sold / live weight."}},
+
+    {"key": "lay_start_week", "value": 24, "unit": "week", "status": "hypothese", "group": "laying", "label": {"fr": "Début de ponte", "en": "Laying start"}, "note": {"fr": "À valider pour la souche Goliath.", "en": "To validate for the Goliath strain."}},
+    {"key": "laying_target_eggs", "value": 320, "unit": "eggs", "status": "apg", "group": "laying", "label": {"fr": "Objectif de ponte par femelle", "en": "Laying target per hen"}, "note": {"fr": "« Jusqu'à ~320 œufs » : objectif, jamais une garantie. Le calcul se fait période par période.", "en": "\"Up to ~320 eggs\": a target, never a guarantee. Computed period by period."}},
+    {"key": "egg_loss_pct", "value": 3, "unit": "pct", "status": "hypothese", "group": "laying", "label": {"fr": "Œufs cassés / sales", "en": "Broken / dirty eggs"}, "note": {"fr": "Pertes séparées de la ponte.", "en": "Losses kept separate from laying."}},
+    {"key": "fertility_pct", "value": 90, "unit": "pct", "status": "generique", "group": "laying", "label": {"fr": "Fertilité", "en": "Fertility"}, "note": {"fr": "Sur œufs chargés.", "en": "Of loaded eggs."}},
+    {"key": "hatch_pct", "value": 85, "unit": "pct", "status": "generique", "group": "laying", "label": {"fr": "Éclosion", "en": "Hatchability"}, "note": {"fr": "Dénominateur choisi dans le simulateur : œufs fertiles (défaut) ou œufs chargés.", "en": "Denominator chosen in the simulator: fertile eggs (default) or loaded eggs."}},
+    {"key": "incubation_cost_egg", "value": 75, "unit": "fcfa_egg", "status": "hypothese", "group": "laying", "label": {"fr": "Coût d'incubation", "en": "Incubation cost"}, "note": {"fr": "Énergie, main-d'œuvre, matériel.", "en": "Energy, labour, equipment."}},
+
+    {"key": "frozen_price_kg", "value": 3000, "unit": "fcfa_kg", "status": "apg", "group": "sales", "label": {"fr": "Poulet Goliath congelé", "en": "Frozen Goliath chicken"}, "note": {"fr": "Prix boutique APG.", "en": "APG shop price."}},
+    {"key": "egg_price", "value": 100, "unit": "fcfa_egg", "status": "hypothese", "group": "sales", "label": {"fr": "Œuf de table", "en": "Table egg"}, "note": {"fr": "Prix local à saisir.", "en": "Enter your local price."}},
+    {"key": "fertile_egg_price", "value": 200, "unit": "fcfa_egg", "status": "hypothese", "group": "sales", "label": {"fr": "Œuf fécondé vendu", "en": "Fertile egg sold"}, "note": {"fr": "Prix local à saisir.", "en": "Enter your local price."}},
+    {"key": "chick_sale_price", "value": 600, "unit": "fcfa_bird", "status": "hypothese", "group": "sales", "label": {"fr": "Poussin produit vendu", "en": "Own chick sold"}, "note": {"fr": "Les débouchés doivent exister.", "en": "Buyers must exist."}},
+    {"key": "reform_price_bird", "value": 3500, "unit": "fcfa_bird", "status": "hypothese", "group": "sales", "label": {"fr": "Oiseau de réforme", "en": "Spent bird"}, "note": {"fr": "Vente en fin de ponte.", "en": "Sold at end of lay."}},
+
+    {"key": "mort_prudent", "value": 10, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Mortalité – prudent", "en": "Mortality – cautious"}, "note": {"fr": "Sur l'effectif de départ, cycle complet.", "en": "Of starting flock, full cycle."}},
+    {"key": "mort_inter", "value": 6, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Mortalité – intermédiaire", "en": "Mortality – middle"}, "note": {"fr": "Sur l'effectif de départ, cycle complet.", "en": "Of starting flock, full cycle."}},
+    {"key": "mort_favorable", "value": 4, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Mortalité – favorable", "en": "Mortality – favourable"}, "note": {"fr": "Sur l'effectif de départ, cycle complet.", "en": "Of starting flock, full cycle."}},
+    {"key": "lay_prudent", "value": 55, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Taux de ponte – prudent", "en": "Laying rate – cautious"}, "note": {"fr": "Moyenne sur la période de ponte.", "en": "Average over the laying period."}},
+    {"key": "lay_inter", "value": 65, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Taux de ponte – intermédiaire", "en": "Laying rate – middle"}, "note": {"fr": "Moyenne sur la période de ponte.", "en": "Average over the laying period."}},
+    {"key": "lay_favorable", "value": 75, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Taux de ponte – favorable", "en": "Laying rate – favourable"}, "note": {"fr": "Moyenne sur la période de ponte.", "en": "Average over the laying period."}},
+    {"key": "feedf_prudent", "value": 110, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Prix aliment – prudent", "en": "Feed price – cautious"}, "note": {"fr": "% du prix de l'aliment.", "en": "% of feed price."}},
+    {"key": "feedf_inter", "value": 100, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Prix aliment – intermédiaire", "en": "Feed price – middle"}, "note": {"fr": "% du prix de l'aliment.", "en": "% of feed price."}},
+    {"key": "feedf_favorable", "value": 95, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Prix aliment – favorable", "en": "Feed price – favourable"}, "note": {"fr": "% du prix de l'aliment.", "en": "% of feed price."}},
+    {"key": "pricef_prudent", "value": 90, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Prix de vente – prudent", "en": "Sale price – cautious"}, "note": {"fr": "% des prix de vente.", "en": "% of sale prices."}},
+    {"key": "pricef_inter", "value": 100, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Prix de vente – intermédiaire", "en": "Sale price – middle"}, "note": {"fr": "% des prix de vente.", "en": "% of sale prices."}},
+    {"key": "pricef_favorable", "value": 105, "unit": "pct", "status": "hypothese", "group": "scenario", "label": {"fr": "Prix de vente – favorable", "en": "Sale price – favourable"}, "note": {"fr": "% des prix de vente.", "en": "% of sale prices."}}
+  ],
+  "nodes": [
+    {"code": "intro", "chapter": 1, "scene": "farm", "kind": "goal", "icon": "fa-flag", "next": "flock",
+     "title": {"fr": "Votre projet d'élevage commence", "en": "Your farm project begins"},
+     "body": {"fr": "Le soleil se lève sur votre terrain. Avant de commander vos poussins Goliath, choisissez votre objectif de production : il change toute la suite de l'histoire.", "en": "The sun rises over your land. Before ordering your Goliath chicks, choose your production goal: it changes the whole story."},
+     "choices": [
+       {"code": "goal_chair", "icon": "fa-drumstick-bite", "label": {"fr": "Poulets de chair", "en": "Meat chickens"}, "hint": {"fr": "Cycle court (≈ 45 jours à 2 mois), vente au kilo.", "en": "Short cycle (≈ 45 days to 2 months), sold by the kilo."}, "effects": {"set.goal": "chair", "set.ration": "r25"}},
+       {"code": "goal_oeufs", "icon": "fa-egg", "label": {"fr": "Œufs de table", "en": "Table eggs"}, "hint": {"fr": "Femelles seules, ponte sur 18 à 24 mois, pas de poussins.", "en": "Hens only, laying over 18 to 24 months, no chicks."}, "effects": {"set.goal": "oeufs", "set.ration": "prog"}},
+       {"code": "goal_repro", "icon": "fa-dove", "label": {"fr": "Reproduction", "en": "Breeding"}, "hint": {"fr": "Coqs + poules : œufs fécondés, incubation, poussins.", "en": "Roosters + hens: fertile eggs, incubation, chicks."}, "effects": {"set.goal": "repro", "set.ration": "prog"}}
+     ]},
+    {"code": "flock", "chapter": 1, "scene": "chicks", "kind": "flock", "icon": "fa-dove", "next": "building",
+     "title": {"fr": "Combien de poussins commander ?", "en": "How many chicks to order?"},
+     "body": {"fr": "Faites glisser le curseur (commande minimale APG : 500), choisissez votre zone de livraison et le scénario à tester.", "en": "Drag the slider (APG minimum order: 500), pick your delivery area and the scenario to test."},
+     "choices": [
+       {"code": "order", "icon": "fa-truck-fast", "label": {"fr": "Valider la commande", "en": "Confirm the order"}, "hint": {"fr": "Les poussins sont réservés.", "en": "The chicks are booked."}, "effects": {}}
+     ]},
+    {"code": "building", "chapter": 2, "scene": "house", "kind": "building", "icon": "fa-warehouse", "next": "site",
+     "title": {"fr": "Où vont vivre vos oiseaux ?", "en": "Where will your birds live?"},
+     "body": {"fr": "La surface utile se calcule avec la densité : environ 4 sujets/m² pour les adultes, 20 à 25 poussins/m² en poussinière (hors magasin, sas et local technique).", "en": "Usable area comes from density: about 4 birds/m² for adults, 20 to 25 chicks/m² in the brooder (excluding store, airlock and technical room)."},
+     "choices": [
+       {"code": "build_new", "icon": "fa-hammer", "label": {"fr": "Construire un bâtiment adapté", "en": "Build a suitable house"}, "hint": {"fr": "Investissement amorti, densité repère.", "en": "Depreciated investment, benchmark density."}, "effects": {"set.buildMode": "new"}},
+       {"code": "build_reuse", "icon": "fa-broom", "label": {"fr": "Rénover un hangar existant", "en": "Refurbish an existing shed"}, "hint": {"fr": "Nettoyage et désinfection, pas d'investissement.", "en": "Cleaning and disinfection, no investment."}, "effects": {"set.buildMode": "reuse"}},
+       {"code": "build_crowd", "icon": "fa-people-arrows", "label": {"fr": "Tout serrer dans un petit local (8/m²)", "en": "Cram everyone into a small room (8/m²)"}, "hint": {"fr": "Moins cher… mais risqué.", "en": "Cheaper… but risky."}, "bad": true,
+        "effects": {"set.buildMode": "reuse", "set.density": "8", "add.mortalityExtra": "6", "flag": "overcrowded"},
+        "tip": {"fr": "Doubler la densité augmente la chaleur, l'humidité de la litière, le stress et la transmission des maladies. Repère générique : environ 4 sujets/m² adultes (500 sujets → 125 m² utiles).", "en": "Doubling density raises heat, litter moisture, stress and disease spread. Generic benchmark: about 4 adult birds/m² (500 birds → 125 m² usable)."}}
+     ]},
+    {"code": "site", "chapter": 2, "scene": "site", "kind": "story", "icon": "fa-map-location-dot", "next": "arrival",
+     "title": {"fr": "Préparer le site", "en": "Prepare the site"},
+     "body": {"fr": "Avant l'arrivée des poussins, le site doit être sain. Quel emplacement retenez-vous ?", "en": "Before the chicks arrive, the site must be healthy. Which location do you pick?"},
+     "choices": [
+       {"code": "site_good", "icon": "fa-house-circle-check", "label": {"fr": "Site drainé, toit étanche, litière sèche, ventilation sans courant d'air", "en": "Drained site, tight roof, dry litter, draught-free ventilation"}, "hint": {"fr": "Base d'une bonne biosécurité.", "en": "The basis of good biosecurity."}, "effects": {}},
+       {"code": "site_low", "icon": "fa-water", "label": {"fr": "Terrain bas près d'une mare, litière humide", "en": "Low ground near a pond, damp litter"}, "hint": {"fr": "Aucuns travaux à prévoir.", "en": "No works needed."}, "bad": true,
+        "effects": {"add.mortalityExtra": "5", "flag": "wet_site"},
+        "tip": {"fr": "Un site inondable et une litière humide favorisent coccidiose et maladies respiratoires ; l'eau stagnante attire oiseaux sauvages et rongeurs. Choisissez un site drainé, non inondable, protégé des nuisibles.", "en": "A flood-prone site and damp litter favour coccidiosis and respiratory disease; standing water attracts wild birds and rodents. Choose a drained, flood-free, pest-proof site."}}
+     ]},
+    {"code": "arrival", "chapter": 3, "scene": "chicks", "kind": "story", "icon": "fa-truck", "next": "heat",
+     "title": {"fr": "Jour 1 : arrivée des poussins", "en": "Day 1: the chicks arrive"},
+     "body": {"fr": "Le camion arrive. Les poussins ont voyagé : que faites-vous en premier ?", "en": "The truck arrives. The chicks have travelled: what do you do first?"},
+     "choices": [
+       {"code": "arrival_good", "icon": "fa-clipboard-check", "label": {"fr": "Eau propre et aliment tout de suite, compter, noter faibles et morts", "en": "Clean water and feed right away, count, record weak and dead chicks"}, "hint": {"fr": "Le suivi de mortalité commence au jour 1.", "en": "Mortality tracking starts on day 1."}, "effects": {}},
+       {"code": "arrival_wait", "icon": "fa-bed", "label": {"fr": "Les laisser se reposer quelques heures sans eau", "en": "Let them rest a few hours without water"}, "hint": {"fr": "Ils ont l'air fatigués.", "en": "They look tired."}, "bad": true,
+        "effects": {"add.mortalityExtra": "3"},
+        "tip": {"fr": "Les poussins doivent trouver eau propre et aliment immédiatement. Vérifiez leur état, retirez et enregistrez faibles et morts : c'est la base du suivi.", "en": "Chicks must find clean water and feed immediately. Check their condition, remove and record weak and dead chicks: this is the basis of monitoring."}}
+     ]},
+    {"code": "heat", "chapter": 3, "scene": "thermo", "kind": "heat", "icon": "fa-temperature-half", "next": "read_cold",
+     "title": {"fr": "Programme de chauffage", "en": "Heating programme"},
+     "body": {"fr": "La température se lit à hauteur des poussins et baisse chaque semaine (programme ci-dessous). Quelle source de chaleur installez-vous ?", "en": "Temperature is read at chick level and lowered every week (programme below). Which heat source do you install?"},
+     "choices": [
+       {"code": "heat_gas", "icon": "fa-fire-flame-simple", "label": {"fr": "Éleveuse gaz/charbon + ventilation contrôlée", "en": "Gas/charcoal brooder + controlled ventilation"}, "hint": {"fr": "Surveiller le monoxyde de carbone.", "en": "Watch for carbon monoxide."}, "effects": {"add.extraPerBird": "@heat_gas_per_bird"}},
+       {"code": "heat_elec", "icon": "fa-lightbulb", "label": {"fr": "Lampes chauffantes électriques", "en": "Electric heat lamps"}, "hint": {"fr": "Sans combustion, mais dépend du courant.", "en": "No combustion, but depends on power."}, "effects": {"add.extraPerBird": "@heat_elec_per_bird"}},
+       {"code": "heat_closed", "icon": "fa-door-closed", "label": {"fr": "Braises de charbon dans le bâtiment fermé", "en": "Charcoal embers in the closed house"}, "hint": {"fr": "La solution la moins chère.", "en": "The cheapest option."}, "bad": true,
+        "effects": {"add.extraPerBird": "@heat_charcoal_per_bird", "add.mortalityExtra": "8", "flag": "co_risk"},
+        "tip": {"fr": "Une combustion en local fermé produit du monoxyde de carbone, invisible et mortel pour les poussins comme pour l'éleveur. Ventilez toujours, sans courant d'air direct sur les poussins.", "en": "Combustion in a closed room produces carbon monoxide, invisible and deadly for chicks and farmers alike. Always ventilate, without direct draughts on the chicks."}}
+     ]},
+    {"code": "read_cold", "chapter": 3, "scene": "huddle", "kind": "behaviour", "icon": "fa-eye", "next": "read_hot",
+     "title": {"fr": "Jour 3 : lisez le comportement", "en": "Day 3: read the behaviour"},
+     "body": {"fr": "Les poussins sont tous en tas sous la source de chaleur et piaillent fort. Que se passe-t-il ?", "en": "The chicks are all piled up under the heat source and cheeping loudly. What is going on?"},
+     "choices": [
+       {"code": "cold_ok", "icon": "fa-temperature-arrow-up", "label": {"fr": "Ils ont froid : remonter la chaleur, supprimer les courants d'air", "en": "They are cold: raise the heat, stop draughts"}, "hint": {"fr": "Regroupés sous la chaleur = froid.", "en": "Huddled under heat = cold."}, "effects": {}},
+       {"code": "cold_hot", "icon": "fa-temperature-arrow-down", "label": {"fr": "Ils ont trop chaud : baisser la chaleur", "en": "They are too hot: lower the heat"}, "hint": {"fr": "Ils sont serrés…", "en": "They are packed…"}, "bad": true,
+        "effects": {"add.mortalityExtra": "3"},
+        "tip": {"fr": "Regroupés sous la chaleur = froid. Éloignés, haletants, ailes écartées = trop chaud. Répartis et actifs = confort.", "en": "Huddled under heat = cold. Far away, panting, wings spread = too hot. Spread out and active = comfortable."}},
+       {"code": "cold_fine", "icon": "fa-face-smile", "label": {"fr": "Tout va bien, ils dorment", "en": "All good, they are sleeping"}, "hint": {"fr": "Rien à changer.", "en": "Nothing to change."}, "bad": true,
+        "effects": {"add.mortalityExtra": "2"},
+        "tip": {"fr": "Des poussins entassés qui piaillent ne dorment pas : ils ont froid. Le comportement est le meilleur thermomètre.", "en": "Piled-up cheeping chicks are not sleeping: they are cold. Behaviour is the best thermometer."}}
+     ]},
+    {"code": "read_hot", "chapter": 3, "scene": "panting", "kind": "behaviour", "icon": "fa-eye", "next": "feed",
+     "title": {"fr": "Semaine 2, 14 h : nouvelle observation", "en": "Week 2, 2 pm: new observation"},
+     "body": {"fr": "Les poussins se sont éloignés de la source ; ils halètent bec ouvert, ailes écartées.", "en": "The chicks have moved away from the heat; they pant with open beaks, wings spread."},
+     "choices": [
+       {"code": "hot_ok", "icon": "fa-wind", "label": {"fr": "Trop chaud : réduire la chaleur, aérer sans courant d'air direct", "en": "Too hot: reduce heat, ventilate without direct draught"}, "hint": {"fr": "Éloignés et haletants = chaud.", "en": "Away and panting = hot."}, "effects": {}},
+       {"code": "hot_more", "icon": "fa-fire", "label": {"fr": "Ajouter une source de chaleur", "en": "Add another heat source"}, "hint": {"fr": "Ils semblent fatigués.", "en": "They look tired."}, "bad": true,
+        "effects": {"add.mortalityExtra": "5"},
+        "tip": {"fr": "Bec ouvert et ailes écartées sont des signes de coup de chaleur. En semaine 2, la plage repère est d'environ 29–32 °C à hauteur des poussins.", "en": "Open beaks and spread wings are signs of heat stress. In week 2 the benchmark range is about 29–32 °C at chick level."}},
+       {"code": "hot_water", "icon": "fa-bottle-water", "label": {"fr": "Ne rien régler, juste ajouter de l'eau", "en": "Change nothing, just add water"}, "hint": {"fr": "L'eau rafraîchit.", "en": "Water cools them down."}, "bad": true,
+        "effects": {"add.mortalityExtra": "2"},
+        "tip": {"fr": "L'eau fraîche aide, mais la cause reste : il faut corriger la température et la ventilation.", "en": "Cool water helps, but the cause remains: correct temperature and ventilation."}}
+     ]},
+    {"code": "feed", "chapter": 4, "scene": "feed", "kind": "feed", "icon": "fa-wheat-awn", "next": "biosec",
+     "title": {"fr": "Quelle ration distribuer ?", "en": "Which ration to feed?"},
+     "body": {"fr": "Aliment par jour = sujets vivants × ration ÷ 1 000. Choisissez le format de sac et comparez les rations : les morts ne consomment plus.", "en": "Feed per day = live birds × ration ÷ 1,000. Pick the bag size and compare rations: dead birds no longer eat."},
+     "choices": [
+       {"code": "feed_25", "icon": "fa-weight-scale", "goals": ["chair"], "label": {"fr": "Ration 25 g/sujet/jour", "en": "Ration 25 g/bird/day"}, "hint": {"fr": "Hypothèse APG basse.", "en": "APG low hypothesis."}, "effects": {"set.ration": "r25"}},
+       {"code": "feed_30", "icon": "fa-scale-unbalanced", "goals": ["chair"], "label": {"fr": "Ration 30 g/sujet/jour", "en": "Ration 30 g/bird/day"}, "hint": {"fr": "Hypothèse APG haute.", "en": "APG high hypothesis."}, "effects": {"set.ration": "r30"}},
+       {"code": "feed_prog", "icon": "fa-chart-line", "label": {"fr": "Ration progressive : 25 g puis +5 g/semaine", "en": "Progressive ration: 25 g then +5 g/week"}, "hint": {"fr": "Règle APG : semaine 20 = 120 g.", "en": "APG rule: week 20 = 120 g."}, "effects": {"set.ration": "prog"}},
+       {"code": "feed_adlib", "icon": "fa-utensils", "goals": ["oeufs", "repro"], "label": {"fr": "Aliment à volonté", "en": "Unlimited feed"}, "hint": {"fr": "Les poules mangent ce qu'elles veulent.", "en": "Hens eat as much as they like."}, "bad": true,
+        "effects": {"set.ration": "adlib", "mul.layingFactor": "0.9", "flag": "overweight"},
+        "tip": {"fr": "Les reproducteurs ne doivent pas s'engraisser : cible APG d'environ 5 kg maximum (à valider mâle/femelle). Le gras réduit ponte et fertilité. Corrigez progressivement, jamais de restriction brutale.", "en": "Breeders must not get fat: APG target of about 5 kg maximum (to validate for males/females). Fat reduces laying and fertility. Correct gradually, never with a sudden restriction."}},
+       {"code": "feed_scraps", "icon": "fa-bowl-rice", "label": {"fr": "Restes de cuisine et maïs seul", "en": "Kitchen scraps and maize only"}, "hint": {"fr": "Presque gratuit.", "en": "Almost free."}, "bad": true,
+        "effects": {"mul.feedPriceFactor": "0.6", "mul.weightFactor": "0.7", "mul.layingFactor": "0.6", "add.mortalityExtra": "3", "flag": "poor_feed"},
+        "tip": {"fr": "Une ration déséquilibrée ralentit croissance et ponte et fragilise les oiseaux : l'économie sur l'aliment est perdue à la vente.", "en": "An unbalanced ration slows growth and laying and weakens birds: the feed savings are lost at sale time."}}
+     ]},
+    {"code": "biosec", "chapter": 5, "scene": "vaccine", "kind": "story", "icon": "fa-shield-virus", "next": "routine",
+     "title": {"fr": "Santé et biosécurité", "en": "Health and biosecurity"},
+     "body": {"fr": "Un voisin vous propose un « cocktail » d'antibiotiques à mettre dans l'eau. Comment protégez-vous votre lot ?", "en": "A neighbour offers an antibiotic \"cocktail\" for the drinking water. How do you protect your flock?"},
+     "choices": [
+       {"code": "bio_vet", "icon": "fa-user-doctor", "label": {"fr": "Plan sanitaire avec un vétérinaire local, pédiluve, visites limitées", "en": "Health plan with a local vet, footbath, limited visits"}, "hint": {"fr": "Prévention adaptée à votre zone.", "en": "Prevention suited to your area."}, "next": "routine", "effects": {"add.extraPerBird": "@vet_plan_per_bird"}},
+       {"code": "bio_ab", "icon": "fa-pills", "label": {"fr": "Antibiotiques systématiques dans l'eau, sans avis", "en": "Routine antibiotics in the water, no advice"}, "hint": {"fr": "« Comme ça, pas de maladie. »", "en": "\"That way, no disease.\""}, "next": "outbreak", "bad": true,
+        "effects": {"add.extraPerBird": "@antibiotic_per_bird", "add.mortalityExtra": "2", "flag": "antibiotics"},
+        "tip": {"fr": "Pas de médicaments systématiques : ils coûtent, favorisent les résistances et ne remplacent pas l'hygiène. Vaccins et traitements se décident avec un vétérinaire local.", "en": "No routine medication: it costs money, breeds resistance and does not replace hygiene. Vaccines and treatments are decided with a local vet."}},
+       {"code": "bio_none", "icon": "fa-door-open", "label": {"fr": "Aucune mesure : les visiteurs entrent librement", "en": "No measures: visitors walk in freely"}, "hint": {"fr": "Zéro dépense.", "en": "Zero spending."}, "next": "outbreak", "bad": true,
+        "effects": {"add.mortalityExtra": "4", "flag": "no_biosecurity"},
+        "tip": {"fr": "Limitez contacts entre lots et visiteurs, protégez des rongeurs et oiseaux sauvages : influenza aviaire, Newcastle, Gumboro… entrent souvent par les personnes, le matériel et les animaux.", "en": "Limit contact between flocks and visitors, keep rodents and wild birds out: avian influenza, Newcastle, Gumboro… often come in with people, equipment and animals."}}
+     ]},
+    {"code": "routine", "chapter": 5, "scene": "farm", "kind": "story", "icon": "fa-clipboard-list", "next": "chair=growth;oeufs=laying;repro=laying",
+     "title": {"fr": "Semaine 5 : contrôle de routine", "en": "Week 5: routine check"},
+     "body": {"fr": "Le vétérinaire passe : le lot est homogène et actif. Comment organisez-vous le suivi quotidien ?", "en": "The vet visits: the flock is even and active. How do you organise daily monitoring?"},
+     "choices": [
+       {"code": "routine_log", "icon": "fa-book", "label": {"fr": "Registre quotidien : eau, aliment, mortalité, température", "en": "Daily log: water, feed, mortality, temperature"}, "hint": {"fr": "Détecter tôt les problèmes.", "en": "Spot problems early."}, "effects": {}},
+       {"code": "routine_skip", "icon": "fa-forward", "label": {"fr": "Contrôler une fois par semaine pour gagner du temps", "en": "Check once a week to save time"}, "hint": {"fr": "Plus de temps libre.", "en": "More free time."}, "bad": true,
+        "effects": {"add.mortalityExtra": "2"},
+        "tip": {"fr": "Un suivi quotidien détecte tôt la baisse de consommation, une mortalité anormale ou un abreuvoir en panne. Mortalité = morts ÷ effectif au début de la période.", "en": "Daily checks catch falling intake, abnormal mortality or a broken drinker early. Mortality = deaths ÷ flock at the start of the period."}}
+     ]},
+    {"code": "outbreak", "chapter": 5, "scene": "alert", "kind": "story", "icon": "fa-triangle-exclamation", "next": "chair=growth;oeufs=laying;repro=laying",
+     "title": {"fr": "Alerte : mortalité brutale !", "en": "Alert: sudden deaths!"},
+     "body": {"fr": "Plusieurs oiseaux meurent en une nuit ; certains respirent mal et tremblent. Que faites-vous ?", "en": "Several birds die overnight; some breathe badly and tremble. What do you do?"},
+     "choices": [
+       {"code": "out_vet", "icon": "fa-phone", "label": {"fr": "Isoler, appeler immédiatement le vétérinaire / l'autorité, bloquer les visites", "en": "Isolate, call the vet / authority immediately, stop visits"}, "hint": {"fr": "Réagir vite limite les pertes.", "en": "Acting fast limits losses."}, "effects": {"add.extraFixed": "@vet_call_cost", "add.mortalityExtra": "4"}},
+       {"code": "out_wait", "icon": "fa-hourglass-half", "label": {"fr": "Attendre quelques jours pour voir", "en": "Wait a few days and see"}, "hint": {"fr": "Peut-être que ça passera.", "en": "Maybe it will pass."}, "bad": true,
+        "effects": {"add.mortalityExtra": "25", "flag": "outbreak_ignored"},
+        "tip": {"fr": "Signes respiratoires ou nerveux + mortalité brutale = appel immédiat au vétérinaire ou à l'autorité vétérinaire : certaines maladies (influenza aviaire, Newcastle) sont à déclaration obligatoire.", "en": "Respiratory or nervous signs + sudden deaths = call the vet or veterinary authority immediately: some diseases (avian influenza, Newcastle) are notifiable."}},
+       {"code": "out_sell", "icon": "fa-hand-holding-dollar", "label": {"fr": "Vendre vite les malades au marché", "en": "Quickly sell the sick birds at the market"}, "hint": {"fr": "Récupérer un peu d'argent.", "en": "Recover some money."}, "bad": true,
+        "effects": {"add.mortalityExtra": "10", "mul.priceFactor": "0.85", "flag": "sold_sick"},
+        "tip": {"fr": "Vendre des oiseaux malades propage la maladie à d'autres élevages et expose les consommateurs. Isolez et appelez le vétérinaire.", "en": "Selling sick birds spreads the disease to other farms and exposes consumers. Isolate and call the vet."}}
+     ]},
+    {"code": "growth", "chapter": 6, "scene": "growth", "kind": "story", "icon": "fa-seedling", "next": "sale",
+     "title": {"fr": "Quand vendre vos poulets ?", "en": "When to sell your chickens?"},
+     "body": {"fr": "Objectif APG indicatif : plus de 1,5 kg vers 45 jours (fourchette 1–1,5 kg, jamais garantie). Garder plus longtemps = plus d'aliment.", "en": "APG indicative target: over 1.5 kg around 45 days (range 1–1.5 kg, never guaranteed). Keeping longer = more feed."},
+     "choices": [
+       {"code": "sell_45", "icon": "fa-calendar-check", "label": {"fr": "Vendre vers 45 jours", "en": "Sell around 45 days"}, "hint": {"fr": "Objectif indicatif APG.", "en": "APG indicative target."}, "effects": {"set.saleDay": "45", "set.weightKg": "@weight_45d_kg"}},
+       {"code": "sell_60", "icon": "fa-calendar-plus", "label": {"fr": "Prolonger jusqu'à 2 mois", "en": "Keep until 2 months"}, "hint": {"fr": "Plus lourds, mais plus d'aliment et de main-d'œuvre.", "en": "Heavier, but more feed and labour."}, "effects": {"set.saleDay": "60", "set.weightKg": "@weight_60d_kg"}},
+       {"code": "sell_35", "icon": "fa-calendar-minus", "label": {"fr": "Vendre à 35 jours, besoin de trésorerie", "en": "Sell at 35 days, need cash"}, "hint": {"fr": "De l'argent plus tôt.", "en": "Money sooner."}, "bad": true,
+        "effects": {"set.saleDay": "35", "set.weightKg": "@weight_35d_kg"},
+        "tip": {"fr": "À 35 jours les oiseaux sont loin de l'objectif indicatif : le kilo vendu chute alors que poussins et chauffage sont déjà payés.", "en": "At 35 days birds are far from the indicative target: kilos sold drop while chicks and heating are already paid for."}}
+     ]},
+    {"code": "laying", "chapter": 6, "scene": "eggs", "kind": "laying", "icon": "fa-egg", "next": "oeufs=sale;repro=incubation",
+     "title": {"fr": "La ponte démarre", "en": "Laying begins"},
+     "body": {"fr": "Œufs par jour = femelles vivantes × taux de ponte (ex. 400 × 80 % = 320). Les œufs cassés ou sales sont déduits à part. Quand réformer ?", "en": "Eggs per day = live hens × laying rate (e.g. 400 × 80% = 320). Broken or dirty eggs are deducted separately. When to cull?"},
+     "choices": [
+       {"code": "reform_18", "icon": "fa-hourglass-start", "label": {"fr": "Réforme à 18 mois", "en": "Cull at 18 months"}, "hint": {"fr": "Cycle plus court.", "en": "Shorter cycle."}, "effects": {"set.reformMonths": "18"}},
+       {"code": "reform_24", "icon": "fa-hourglass-end", "label": {"fr": "Réforme à 24 mois", "en": "Cull at 24 months"}, "hint": {"fr": "Plus de jours de ponte, plus d'aliment.", "en": "More laying days, more feed."}, "effects": {"set.reformMonths": "24"}},
+       {"code": "collect_rare", "icon": "fa-basket-shopping", "label": {"fr": "Ramasser les œufs tous les 2 jours", "en": "Collect eggs every 2 days"}, "hint": {"fr": "Moins de travail.", "en": "Less work."}, "bad": true,
+        "effects": {"add.eggLossExtra": "10"},
+        "tip": {"fr": "Les œufs laissés au nid se cassent, se salissent ou sont couvés : ramassez-les au moins deux fois par jour.", "en": "Eggs left in the nest break, get dirty or get brooded: collect at least twice a day."}}
+     ]},
+    {"code": "incubation", "chapter": 6, "scene": "incubator", "kind": "incubation", "icon": "fa-temperature-low", "next": "sale",
+     "title": {"fr": "Incubation et éclosion", "en": "Incubation and hatching"},
+     "body": {"fr": "Répartissez vos œufs : un œuf ne compte qu'une fois (table, incubation ou vente fécondé). Le taux d'éclosion doit toujours nommer son dénominateur.", "en": "Split your eggs: each egg counts once (table, incubation or sold fertile). Hatchability must always name its denominator."},
+     "choices": [
+       {"code": "inc_candle", "icon": "fa-magnifying-glass", "label": {"fr": "Mirage à J7, incubateur contrôlé (température, humidité, retournement)", "en": "Candling on day 7, controlled incubator (temperature, humidity, turning)"}, "hint": {"fr": "Éclosion repère.", "en": "Benchmark hatchability."}, "effects": {}},
+       {"code": "inc_blind", "icon": "fa-eye-slash", "label": {"fr": "Incuber sans contrôle", "en": "Incubate without checks"}, "hint": {"fr": "Plus simple.", "en": "Simpler."}, "bad": true,
+        "effects": {"add.hatchExtra": "-15"},
+        "tip": {"fr": "Sans mirage ni contrôle de température et d'humidité, l'éclosion chute. Repère générique : fertilité 90 %, éclosion 85 % des œufs fertiles.", "en": "Without candling or temperature/humidity control, hatchability falls. Generic benchmark: 90% fertility, 85% hatch of fertile eggs."}}
+     ]},
+    {"code": "sale", "chapter": 7, "scene": "truck", "kind": "sale", "icon": "fa-store", "next": "report",
+     "title": {"fr": "Vendre votre production", "en": "Sell your production"},
+     "body": {"fr": "Vos clients vous attendent. Quel circuit de vente choisissez-vous ?", "en": "Your customers are waiting. Which sales channel do you choose?"},
+     "choices": [
+       {"code": "sale_direct", "icon": "fa-store", "label": {"fr": "Clients directs et restaurants prospectés à l'avance", "en": "Direct customers and restaurants found in advance"}, "hint": {"fr": "Prix de référence.", "en": "Reference price."}, "effects": {}},
+       {"code": "sale_contract", "icon": "fa-handshake", "label": {"fr": "Contrat avec hôtels et supermarchés (+5 %)", "en": "Contract with hotels and supermarkets (+5%)"}, "hint": {"fr": "Livraisons régulières à organiser.", "en": "Regular deliveries to organise."}, "effects": {"mul.priceFactor": "1.05", "add.extraFixed": "@contract_cost"}},
+       {"code": "sale_rush", "icon": "fa-person-running", "label": {"fr": "Brader à un intermédiaire au dernier moment (−20 %)", "en": "Dump on a middleman at the last minute (−20%)"}, "hint": {"fr": "Vente immédiate.", "en": "Instant sale."}, "bad": true,
+        "effects": {"mul.priceFactor": "0.8", "flag": "rushed_sale"},
+        "tip": {"fr": "Vendre dans l'urgence fait perdre la marge. Préparez vos débouchés avant la fin du cycle.", "en": "Selling in a rush loses your margin. Line up buyers before the end of the cycle."}}
+     ]},
+    {"code": "report", "chapter": 8, "scene": "report", "kind": "ending", "icon": "fa-file-lines", "next": null,
+     "title": {"fr": "Rapport final", "en": "Final report"},
+     "body": {"fr": "Voici le bilan de votre lot. Estimation indicative, pas une garantie.", "en": "Here is your flock's result. Indicative estimate, not a guarantee."},
+     "choices": []}
+  ]
+}

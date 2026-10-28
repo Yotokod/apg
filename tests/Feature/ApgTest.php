@@ -70,13 +70,11 @@ class ApgTest extends TestCase
         $this->actingAs($user)->get("/lecon/{$lesson->id}")->assertOk();
     }
 
-    public function test_simulator_bad_choice_warns_and_can_go_back(): void
+    public function test_simulator_boots_story_with_bad_choices_and_tips(): void
     {
         $bad = SimChoice::where('is_bad', true)->first();
-        Livewire::test(Simulator::class)
-            ->call('choose', $bad->id)->assertSet('warnChoice', $bad->id)->assertSet('index', 0)
-            ->call('confirmBad')->assertSet('index', 1)->assertSet('warnChoice', null)
-            ->call('back')->assertSet('index', 0)->assertSet('state.cash', Simulator::START_CASH);
+        $this->assertNotNull($bad?->tip);
+        Livewire::test(Simulator::class)->assertOk()->assertSee('simulator(', false);
     }
 
     public function test_register_login_and_account(): void

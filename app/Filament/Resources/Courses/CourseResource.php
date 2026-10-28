@@ -52,6 +52,21 @@ class CourseResource extends Resource
             TextInput::make('video_url')->label('Vidéo (embed URL)')->url(),
             FileUpload::make('motion_file')->label('Animation Lottie (.json)')->disk('public')->directory('motion')->maxSize(2048)->acceptedFileTypes(['application/json']),
             TextInput::make('motion_url')->label('Motion design explicatif (optionnel, embed URL)')->url(),
+            Repeater::make('scenes')->label(__('lesson.admin.scenes'))->helperText(__('lesson.admin.scenes_help'))
+              ->collapsed()->reorderable()->defaultItems(0)->columns(2)->columnSpanFull()
+              ->itemLabel(fn (array $state) => $state['title']['fr'] ?? __('lesson.admin.scene'))
+              ->schema([
+                Select::make('illustration')->label(__('lesson.admin.illustration'))
+                  ->options(fn () => collect(\App\Livewire\LessonPlayer::SCENES)->keys()->mapWithKeys(fn ($k) => [$k => __('lesson.scene_keys.'.$k)])->all()),
+                TextInput::make('icon')->label(__('lesson.admin.icon'))->regex('/^fa-[a-z0-9-]+$/')->maxLength(40),
+                TextInput::make('title.fr')->label(__('lesson.admin.title_fr'))->required()->maxLength(120),
+                TextInput::make('title.en')->label(__('lesson.admin.title_en'))->maxLength(120),
+                Textarea::make('caption.fr')->label(__('lesson.admin.caption_fr'))->rows(3)->maxLength(600),
+                Textarea::make('caption.en')->label(__('lesson.admin.caption_en'))->rows(3)->maxLength(600),
+                TagsInput::make('points.fr')->label(__('lesson.admin.points_fr')),
+                TagsInput::make('points.en')->label(__('lesson.admin.points_en')),
+                TextInput::make('duration')->label(__('lesson.admin.duration'))->numeric()->minValue(3)->maxValue(30)->default(8),
+              ]),
           ]),
       ]),
         ]);

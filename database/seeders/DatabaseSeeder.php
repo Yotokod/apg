@@ -8,8 +8,6 @@ use App\Models\PaymentGateway;
 use App\Models\Plan;
 use App\Models\Product;
 use App\Models\QuizNode;
-use App\Models\SimChoice;
-use App\Models\SimStep;
 use App\Models\User;
 use App\Services\PaymentManager;
 use Illuminate\Database\Seeder;
@@ -34,9 +32,10 @@ class DatabaseSeeder extends Seeder
 
         $this->seedFromScrape();
         $this->seedProducts();
-        $this->seedSimulator();
+        $this->call(SimulatorSeeder::class);
         $this->seedPlans();
-        $this->call([ProductImageSeeder::class, GallerySeeder::class, PostSeeder::class]);
+        $this->call([ProductImageSeeder::class, GallerySeeder::class, ApgPhotosSeeder::class, PostSeeder::class]);
+        $this->call(LessonSceneSeeder::class);
     }
 
     /** Demo admin only in local/testing; elsewhere ADMIN_EMAIL + ADMIN_INITIAL_PASSWORD are required. */
@@ -156,41 +155,5 @@ class DatabaseSeeder extends Seeder
         }
         Plan::create(['name' => ['fr' => 'Starter', 'en' => 'Starter'], 'price' => 10000, 'features' => ['1 boutique', '10 produits']]);
         Plan::create(['name' => ['fr' => 'Pro', 'en' => 'Pro'], 'price' => 25000, 'features' => ['Produits illimités', 'Formations', 'Support prioritaire']]);
-    }
-
-    private function seedSimulator(): void
-    {
-        if (SimStep::exists()) {
-            return;
-        }
-        $steps = [
-            ['housing', 'Le bâtiment', 'Where will your birds live?', [
-                ['Bâtiment ventilé, 8 sujets/m² (400 000 FCFA)', -400000, 0, 0, 0, false, null],
-                ['Hangar de fortune surpeuplé (100 000 FCFA)', -100000, 0, 15, 0, true, 'Un bâtiment surpeuplé et mal ventilé augmente le stress, les maladies et la mortalité (+15 points). Mieux vaut investir dans un bâtiment adapté.'],
-            ]],
-            ['chicks', 'L’achat des poussins', 'How many chicks do you buy?', [
-                ['200 poussins Goliath sélectionnés (240 000 FCFA)', -240000, 200, 0, 0, false, null],
-                ['200 poussins non vaccinés pas chers (120 000 FCFA)', -120000, 200, 12, 0, true, 'Des poussins non vaccinés d’origine inconnue sont fragiles : la mortalité grimpe. L’économie initiale est vite perdue.'],
-            ]],
-            ['feed', 'L’alimentation', 'What feeding strategy?', [
-                ['Aliment complet adapté à chaque phase (150 000 FCFA)', -150000, 0, 0, 10, false, null],
-                ['Restes et maïs seul (30 000 FCFA)', -30000, 0, 10, -15, true, 'Une alimentation déséquilibrée ralentit la croissance : poids de vente plus faible et mortalité plus élevée.'],
-            ]],
-            ['health', 'La santé', 'How do you manage vaccination?', [
-                ['Calendrier de vaccination suivi (40 000 FCFA)', -40000, 0, -3, 0, false, null],
-                ['Aucune vaccination (0 FCFA)', 0, 0, 20, 0, true, 'Sans vaccination, une épidémie (Newcastle, Gumboro) peut décimer l’élevage. La prévention coûte bien moins cher.'],
-            ]],
-            ['sale', 'La vente', 'How do you sell?', [
-                ['Vente directe aux clients et restaurants', 0, 0, 0, 15, false, null],
-                ['Vente à un intermédiaire pressé (prix bradé)', 0, 0, 0, -20, true, 'Vendre en urgence à un intermédiaire réduit fortement votre marge. Préparez vos débouchés avant la fin du cycle.'],
-            ]],
-        ];
-        foreach ($steps as $i => [$code, $title, $body, $choices]) {
-            $s = SimStep::create(['code' => $code, 'position' => $i, 'title' => ['fr' => $title], 'body' => ['fr' => 'Choisissez avec soin : chaque décision a un impact.']]);
-            foreach ($choices as [$label, $cash, $birds, $mort, $rev, $bad, $tip]) {
-                SimChoice::create(['sim_step_id' => $s->id, 'label' => ['fr' => $label], 'cash' => $cash, 'birds' => $birds,
-                    'mortality' => $mort, 'revenue_pct' => $rev, 'is_bad' => $bad, 'tip' => $tip ? ['fr' => $tip] : null]);
-            }
-        }
     }
 }

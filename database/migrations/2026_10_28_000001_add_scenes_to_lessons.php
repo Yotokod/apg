@@ -1,0 +1,20 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('lessons', function (Blueprint $t) {
+            $t->json('scenes')->nullable(); // built-in animated explainer steps (see LessonPlayer::SCENES)
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('lessons', fn (Blueprint $t) => $t->dropColumn('scenes'));
+    }
+};
