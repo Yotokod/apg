@@ -1,0 +1,955 @@
+{
+ "site": "https://africa-poulets-goliath.com",
+ "fetched": "2026-10-29T00:47:38.716Z",
+ "courses": [
+  {
+   "slug": "module-7-incubation-des-oeufs-v2",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/introductioncopy-2/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/les-etapes-cles-de-lincubationcopy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/la-preparation-de-lincubateurcopy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/le-developpement-de-lembryon-copy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/les-composants-de-loeufcopy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/bref-rappel-sur-la-methode-naturelle-copy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/que-faire-si-on-na-pas-de-mire-oeuf-copy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/comment-realiser-le-mirage-dun-oeufcopy/",
+    "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/quizzes/quizzes-module-7copy/"
+   ],
+   "sections": [
+    {
+     "title": "LES ÉTAPES DE L\\'INCUBATION ARTIFICIELLE",
+     "items": [
+      {
+       "title": "LES ÉTAPES CLÉS DE L’INCUBATION",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/les-etapes-cles-de-lincubationcopy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La préparation de l’incubateur",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/la-preparation-de-lincubateurcopy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Le développement de l’embryon.",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/le-developpement-de-lembryon-copy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les composants de l’œuf",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/les-composants-de-loeufcopy/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LE MIRAGE DES ŒUFS",
+     "items": [
+      {
+       "title": "Bref rappel sur la méthode naturelle.Copy",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/bref-rappel-sur-la-methode-naturelle-copy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Que faire si on n’a pas de mire-œuf ?Copy",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/que-faire-si-on-na-pas-de-mire-oeuf-copy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Comment réaliser le mirage d’un œufCopy",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/lessons/comment-realiser-le-mirage-dun-oeufcopy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES Module 7:Copy",
+       "url": "https://africa-poulets-goliath.com/courses/module-7-incubation-des-oeufs-v2/quizzes/quizzes-module-7copy/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "module-8-sexage-des-poussins-v2",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/lessons/pourquoi-sexer-les-poussins-copy/",
+    "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/lessons/les-differentes-methodes-de-sexage-des-poussinscopy/",
+    "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/lessons/introductioncopy/",
+    "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/lessons/conclusioncopy/",
+    "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/quizzes/quizzes-module-8copy/"
+   ],
+   "sections": [
+    {
+     "title": "INTRODUCTION",
+     "items": [
+      {
+       "title": "IntroductionCopy",
+       "url": "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/lessons/introductioncopy/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "ConclusionCopy",
+       "url": "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/lessons/conclusioncopy/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES Module 8Copy",
+       "url": "https://africa-poulets-goliath.com/courses/module-8-sexage-des-poussins-v2/quizzes/quizzes-module-8copy/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "the-secrets-to-drawing",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/introduction-10/",
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/les-differentes-mesures-de-biosecurite/",
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/comment-reussir-son-hygiene-et-biosecurite/",
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/meilleures-pratiques-pour-une-hygiene-et-biosecurite-reussite/",
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/observations-des-animaux/",
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/conclusion-7/",
+    "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/quizzes/quiz-module-10/"
+   ],
+   "sections": [
+    {
+     "title": "HYGIÈNE ET BIOSÉCURITÉ",
+     "items": [
+      {
+       "title": "Les différentes mesures de biosécurité",
+       "url": "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/les-differentes-mesures-de-biosecurite/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Comment réussir son hygiène et biosécurité?",
+       "url": "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/comment-reussir-son-hygiene-et-biosecurite/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "RÉUSSIR SA BIOSÉCURITÉ EN AVICUTURE",
+     "items": [
+      {
+       "title": "Meilleures pratiques pour une hygiène et biosécurité réussite",
+       "url": "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/meilleures-pratiques-pour-une-hygiene-et-biosecurite-reussite/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Observations des animaux",
+       "url": "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/observations-des-animaux/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "Conclusion",
+       "url": "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/lessons/conclusion-7/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Quiz Module 10",
+       "url": "https://africa-poulets-goliath.com/courses/the-secrets-to-drawing/quizzes/quiz-module-10/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "prenatal-yoga",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/introduction-9/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/les-maladies-virales/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/les-maladies-dorigine-bacterienne-fongus-parasite-et-desordre-alimentaire/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/maladies-nutritionnelles/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/la-sante-des-volailles-par-les-plantes/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/le-cailcedrat-la-vernonia-le-neem/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/augmenter-la-ponte-chez-les-poules-pondeuses/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/le-moringa/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/la-vaccination-en-aviculture-biologique-et-role-du-vaccin/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/la-menthe/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/lortie/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/le-thym/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/conclusion-6/",
+    "https://africa-poulets-goliath.com/courses/prenatal-yoga/quizzes/quiz-module-9/"
+   ],
+   "sections": [
+    {
+     "title": "MALADIES EN AVICULTURE",
+     "items": [
+      {
+       "title": "Les maladies Virales",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/les-maladies-virales/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les maladies d’origine bactérienne, fongus, parasite et désordre alimentaire.",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/les-maladies-dorigine-bacterienne-fongus-parasite-et-desordre-alimentaire/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Maladies nutritionnelles",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/maladies-nutritionnelles/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LA SANTÉ DES VOLAILLES PAR LES PLANTES",
+     "items": [
+      {
+       "title": "La vertue des plantes",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/la-sante-des-volailles-par-les-plantes/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Le Caïlcédrat, la vernonia, le neem",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/le-cailcedrat-la-vernonia-le-neem/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Augmenter la ponte chez les poules pondeuses",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/augmenter-la-ponte-chez-les-poules-pondeuses/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Le Moringa",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/le-moringa/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LA VACCINATION",
+     "items": [
+      {
+       "title": "La vaccination en aviculture biologique et Rôle du vaccin",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/la-vaccination-en-aviculture-biologique-et-role-du-vaccin/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "LA MENTHE",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/la-menthe/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "L’ortie",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/lortie/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Le thym",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/le-thym/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "Conclusion",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/lessons/conclusion-6/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Quiz Module 9",
+       "url": "https://africa-poulets-goliath.com/courses/prenatal-yoga/quizzes/quiz-module-9/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "the-art-of-black-and-white-photography",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/introduction-5/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/comment-seffectue-la-ponte-chez-les-poules/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/quels-sont-les-facteurs-qui-affectent-la-ponte/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/stipuler-la-ponte-chez-la-poule/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/la-soupe-matinale-et-les-orties-pour-stimuler-la-ponte/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/besoins-nutritionnels-dans-lalimentation-de-la-poule/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/pourquoi-faut-il-calculer-le-taux-de-ponte/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/comment-se-fait-le-calcul-du-taux-de-ponte/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/conclusion-3/",
+    "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/quizzes/quizzes-module-6/"
+   ],
+   "sections": [
+    {
+     "title": "LA PONTE CHEZ LES POULES",
+     "items": [
+      {
+       "title": "Comment s’effectue la ponte chez les poules ?",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/comment-seffectue-la-ponte-chez-les-poules/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Quels sont les facteurs qui affectent la ponte ?",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/quels-sont-les-facteurs-qui-affectent-la-ponte/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "STIMULATION DE LA PONTE CHEZ LES POULES",
+     "items": [
+      {
+       "title": "Stipuler la ponte chez la poule",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/stipuler-la-ponte-chez-la-poule/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La soupe matinale et les orties pour stimuler la ponte.",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/la-soupe-matinale-et-les-orties-pour-stimuler-la-ponte/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Besoins nutritionnels dans l’alimentation de la poule",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/besoins-nutritionnels-dans-lalimentation-de-la-poule/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CALCULE DU TAUX DE PONTE",
+     "items": [
+      {
+       "title": "Pourquoi faut-il calculer le taux de ponte ?",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/pourquoi-faut-il-calculer-le-taux-de-ponte/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Comment se fait le calcul du taux de ponte?",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/comment-se-fait-le-calcul-du-taux-de-ponte/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "Conclusion",
+     "items": [
+      {
+       "title": "Conclusion",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/lessons/conclusion-3/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES Module 6",
+       "url": "https://africa-poulets-goliath.com/courses/the-art-of-black-and-white-photography/quizzes/quizzes-module-6/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "master-of-business-administration",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/fabrication-des-asticots/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/production-des-asticots/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/techniques-simples-pour-la-confection-dasticots-et-de-termites/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/fabrication-des-asticots-avec-les-larves-de-mouches/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/les-bonnes-pratiques-pour-nourrir-les-poulets/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/introduction-7/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/conclusion-4/",
+    "https://africa-poulets-goliath.com/courses/master-of-business-administration/quizzes/module-5/"
+   ],
+   "sections": [
+    {
+     "title": "INTRODUCTION",
+     "items": [
+      {
+       "title": "Introduction",
+       "url": "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/introduction-7/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "Conclusion",
+       "url": "https://africa-poulets-goliath.com/courses/master-of-business-administration/lessons/conclusion-4/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES Module 5",
+       "url": "https://africa-poulets-goliath.com/courses/master-of-business-administration/quizzes/module-5/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "introduction-to-adobe-photoshop",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/introduction-4/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/alimentation/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-differents-types-daliments-de-poulets/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/quelle-alimentation-pour-les-volailles/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-besoins-nutritionnels-des-poulets/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-sources-dalimentation-pour-les-poulets/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/fabrication-de-la-provende/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-ingredients-pour-la-fabrication-de-provende-pour-les-poulets/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-etapes-pour-fabriquer-de-la-provende-pour-les-poulets-sont-les-suivantes/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/limites-dutilisation-de-certaines-matieres-premieres/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-differentes-formules-alimentaires-selon-vos-besoins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-3-formules-alimentaires-de-500kg-de-provende-a-savoir-demarrage-croissance-et-finition/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/trois-formules-alimentaires-de-1000kg-de-provende-demarrage-croissance-et-finition/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/la-transition-alimentaire/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/conclusion-2/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/quizzes/module-4/"
+   ],
+   "sections": [
+    {
+     "title": "ALIMENTATION",
+     "items": [
+      {
+       "title": "Alimentation",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/alimentation/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "LES DIFFÉRENTS TYPES D’ALIMENTS DE POULETS",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-differents-types-daliments-de-poulets/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Quelle alimentation pour les volailles?",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/quelle-alimentation-pour-les-volailles/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les besoins nutritionnels des poulets",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-besoins-nutritionnels-des-poulets/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les sources d’alimentation pour les poulets",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-sources-dalimentation-pour-les-poulets/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "PROVENDE",
+     "items": [
+      {
+       "title": "Fabrication de la Provende",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/fabrication-de-la-provende/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les ingrédients pour la fabrication de provende pour les poulets",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-ingredients-pour-la-fabrication-de-provende-pour-les-poulets/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les étapes pour fabriquer de la provende pour les poulets sont les suivantes:",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-etapes-pour-fabriquer-de-la-provende-pour-les-poulets-sont-les-suivantes/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Limites d’utilisation de certaines matières premières :",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/limites-dutilisation-de-certaines-matieres-premieres/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "COMPOSITION (FORMULATION) DE LA PROVENDE ET TRANSITION",
+     "items": [
+      {
+       "title": "Les différentes Formules alimentaires selon vos besoins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-differentes-formules-alimentaires-selon-vos-besoins/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les 3 formules alimentaires de 500kg de Provende à savoir : démarrage, croissance et finition",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/les-3-formules-alimentaires-de-500kg-de-provende-a-savoir-demarrage-croissance-et-finition/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Trois Formules alimentaires de 1000kg de Provende: démarrage, croissance et finition :",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/trois-formules-alimentaires-de-1000kg-de-provende-demarrage-croissance-et-finition/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La transition alimentaire",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/la-transition-alimentaire/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "Conclusion",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/lessons/conclusion-2/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES Module 4",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-adobe-photoshop/quizzes/module-4/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "introduction-to-marketing",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/introduction-2/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/presentation-du-cours-et-de-limportance-du-demarrage-reussi-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/objectifs-du-cours/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-conditions-de-bases-pour-un-demarrage-reussi/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-proprete-de-lenvironnement/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-parametres-de-temperature-et-dhumidite/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/limportance-de-la-proprete-et-de-lenvironnement/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-ventilation-et-la-qualite-de-lair/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-selection-des-poussins-et-la-gestion-des-arrivees/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/lalimentation-et-labreuvoir-des-poussins-des-leur-arrivee/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-soins-et-les-traitements-de-base-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-vaccination-et-les-traitements-preventifs/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-surveillance-et-la-gestion-des-maladies/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-gestion-de-leclairage-et-du-cycle-jour-nuit/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-surveillance-de-la-croissance-et-du-developpement-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-gestion-des-taux-de-mortalite/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-meilleures-pratiques-pour-lalimentation-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-meilleures-pratiques-pour-la-gestion-de-lenvironnement/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-meilleures-pratiques-pour-la-gestion-des-maladies-et-les-parasites/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-poussiniere-et-suivi-du-comportement-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/recapitulatif-des-points-cles-du-cours/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/conseils-pour-le-maintient-de-la-reussite-du-demarrage-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/perspectives-davenir-pour-lelevage-des-poussins/",
+    "https://africa-poulets-goliath.com/courses/introduction-to-marketing/quizzes/module-3/"
+   ],
+   "sections": [
+    {
+     "title": "LES CONDITIONS DE BASES POUR UN DÉMARRAGE RÉUSSI",
+     "items": [
+      {
+       "title": "Choix du site pour l’installation de l’élevage",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-conditions-de-bases-pour-un-demarrage-reussi/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La propreté de l’environnement",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-proprete-de-lenvironnement/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les paramètres de température et d’humidité",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-parametres-de-temperature-et-dhumidite/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "L’importance de la propreté et de l’environnement",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/limportance-de-la-proprete-et-de-lenvironnement/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La ventilation et la qualité de l’air",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-ventilation-et-la-qualite-de-lair/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LA PRÉPARATION DES POUSSINS",
+     "items": [
+      {
+       "title": "La sélection des poussins et la gestion des arrivées",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-selection-des-poussins-et-la-gestion-des-arrivees/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "L’alimentation et l’abreuvoir des poussins dès leur arrivée",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/lalimentation-et-labreuvoir-des-poussins-des-leur-arrivee/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LES SOINS ET LES TRAITEMENT DE BASE DES POUSSINS",
+     "items": [
+      {
+       "title": "Les soins de base des poussins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-soins-et-les-traitements-de-base-des-poussins/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La vaccination et les traitements préventifs",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-vaccination-et-les-traitements-preventifs/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La surveillance et la gestion des maladies",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-surveillance-et-la-gestion-des-maladies/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LA GESTION DE L\\'ÉLEVAGE PENDANT LA PÉRIODE DE DÉMARRAGE",
+     "items": [
+      {
+       "title": "La gestion de l’éclairage et du cycle jour/nuit",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-gestion-de-leclairage-et-du-cycle-jour-nuit/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La surveillance de la croissance et du développement des poussins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-surveillance-de-la-croissance-et-du-developpement-des-poussins/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La gestion des taux de mortalité",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-gestion-des-taux-de-mortalite/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LES MEILLEURES PRATIQUES POUR UN ÉLEVAGE RÉUSSI",
+     "items": [
+      {
+       "title": "Les meilleures pratiques pour l’alimentation des poussins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-meilleures-pratiques-pour-lalimentation-des-poussins/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les meilleures pratiques pour la gestion de l’environnement",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-meilleures-pratiques-pour-la-gestion-de-lenvironnement/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Les meilleures pratiques pour la gestion des maladies et les parasites.",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/les-meilleures-pratiques-pour-la-gestion-des-maladies-et-les-parasites/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "La poussinière et suivi du comportement des poussins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/la-poussiniere-et-suivi-du-comportement-des-poussins/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "Récapitulation des points clés du cours",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/recapitulatif-des-points-cles-du-cours/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Conseils pour le maintient de la réussite du démarrage des poussins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/conseils-pour-le-maintient-de-la-reussite-du-demarrage-des-poussins/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "Perspectives d’avenir pour l’élevage des poussins",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/lessons/perspectives-davenir-pour-lelevage-des-poussins/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZEZ Module 3:",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-to-marketing/quizzes/module-3/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "introduction-learnpress-lms-plugin",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/introduction-3/",
+    "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/le-choix-de-lemplacement-2/",
+    "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/les-normes-a-respecter-pour-la-construction-dun-batiment-de-volaille/",
+    "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/exemple-de-construction-dun-batiment-de-1000-poulets-goliath/",
+    "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/conclusion/",
+    "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/quizzes/quizzez-module-2/"
+   ],
+   "sections": [
+    {
+     "title": "LE CHOIX DE L’EMPLACEMENT",
+     "items": [
+      {
+       "title": "LE CHOIX DE L’EMPLACEMENT.",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/le-choix-de-lemplacement-2/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "Les Normes à respecter pour la construction d\\'un bâtiment de volaille.",
+     "items": [
+      {
+       "title": "Les Normes à respecter pour la construction d’un bâtiment de volaille.",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/les-normes-a-respecter-pour-la-construction-dun-batiment-de-volaille/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "Exemple de construction d\\'un bâtiment de 1000 poulets Goliath",
+     "items": [
+      {
+       "title": "Exemple de construction d’un bâtiment de 1000 poulets Goliath*",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/exemple-de-construction-dun-batiment-de-1000-poulets-goliath/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CONCLUSION",
+     "items": [
+      {
+       "title": "CONCLUSION",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/lessons/conclusion/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES MODULE 2",
+       "url": "https://africa-poulets-goliath.com/courses/introduction-learnpress-lms-plugin/quizzes/quizzez-module-2/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "generalites-sur-laviculture-biologique",
+   "lessonLinks": [
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/introduction/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/etat-des-lieux-de-laviculture-familiale-en-afrique/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/a-des-solutions-europeennes-mal-adaptees/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/b-quelques-bonnes-pratiques-avicoles-locales/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/hypotheses/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/les-problemes-majeurs-de-laviculture-en-afrique/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/lelevage-bio-en-afrique-un-reve-ou-une-realite/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/a-questions-reponses/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/definitions-des-mots-cles-en-avicultures/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/a-origines-des-volailles/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/logement/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/le-choix-de-la-race-de-volaille-a-elever/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/choix-du-mode-delevage/",
+    "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/quizzes/quizzes-module-1/"
+   ],
+   "sections": [
+    {
+     "title": "ÉTAT DES LIEUX DE L’AVICULTURE FAMILIALE EN AFRIQUE",
+     "items": [
+      {
+       "title": "ÉTAT DES LIEUX DE L’AVICULTURE FAMILIALE EN AFRIQUE",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/etat-des-lieux-de-laviculture-familiale-en-afrique/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "A. DES SOLUTIONS EUROPEENNES MAL ADAPTEES",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/a-des-solutions-europeennes-mal-adaptees/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "B. QUELQUES BONNES PRATIQUES AVICOLES LOCALES",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/b-quelques-bonnes-pratiques-avicoles-locales/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "HYPOTHESES",
+     "items": [
+      {
+       "title": "HYPOTHÈSES",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/hypotheses/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LES PROBLÈMES MAJEURS DE L\\'AVICULTURE EN AFRIQUE",
+     "items": [
+      {
+       "title": "LES PROBLÈMES MAJEURS DE L’AVICULTURE EN AFRIQUE",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/les-problemes-majeurs-de-laviculture-en-afrique/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "L\\'ÉLEVAGE BIO EN AFRIQUE, UN RÊVE OÙ UNE RÉALITÉ",
+     "items": [
+      {
+       "title": "L’ÉLEVAGE BIO EN AFRIQUE, UN RÊVE OÙ UNE RÉALITÉ",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/lelevage-bio-en-afrique-un-reve-ou-une-realite/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "CLARIFICATION CONCEPTUELLE.",
+     "items": [
+      {
+       "title": "A. QUESTIONS REPONSES",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/a-questions-reponses/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "DEFINITIONS DES MOTS CLES EN AVICULTURES",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/definitions-des-mots-cles-en-avicultures/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "ORIGINE DES VOLAILLES ET LOGMENTS",
+     "items": [
+      {
+       "title": "A. ORIGINES DES VOLAILLES",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/a-origines-des-volailles/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "LOGEMENT",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/logement/",
+       "kind": "lesson",
+       "meta": ""
+      }
+     ]
+    },
+    {
+     "title": "LES COMPETENCES TECHNIQUES POUR ETRE UN BON AVICULTEUR",
+     "items": [
+      {
+       "title": "Le choix de la race de volaille à élever",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/le-choix-de-la-race-de-volaille-a-elever/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "CHOIX DU MODE D’ELEVAGE",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/lessons/choix-du-mode-delevage/",
+       "kind": "lesson",
+       "meta": ""
+      },
+      {
+       "title": "QUIZZES MODULE 1",
+       "url": "https://africa-poulets-goliath.com/courses/generalites-sur-laviculture-biologique/quizzes/quizzes-module-1/",
+       "kind": "quiz",
+       "meta": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
