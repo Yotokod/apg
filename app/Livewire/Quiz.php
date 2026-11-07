@@ -7,6 +7,7 @@ use App\Models\Lesson;
 use App\Models\LessonProgress;
 use App\Models\QuizNode;
 use App\Models\QuizOption;
+use App\Services\CertificateService;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Renderless;
 use Livewire\Component;
@@ -93,6 +94,7 @@ class Quiz extends Component
                 ['score' => $this->percent(), 'completed_at' => now()],
             );
             $this->dispatch('lesson-progress');
+            app(CertificateService::class)->issueIfEligible(auth()->user(), Lesson::with('module.course')->findOrFail($this->lessonId)->module->course);
         }
     }
 

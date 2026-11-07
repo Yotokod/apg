@@ -4,8 +4,9 @@
     use Illuminate\Support\Facades\Route;
 
     $metaTitle = $title ?? site('name');
-    $metaDesc = $description ?? __('site.meta_desc');
-    $metaImage = url($image ?? site('logo'));
+    $metaDesc = $description ?? site('seo.description') ?? __('site.meta_desc');
+    $metaImage = url($image ?? site('seo.og_image') ?? site('logo'));
+    $themeCss = \App\Support\Identity::themeCss();
 
     $shopItems = [[route('shop'), __('nav.all_shop'), 'fa-store']];
     foreach (SiteData::categories() as $key => $n) {
@@ -42,12 +43,14 @@
     <meta name="twitter:card" content="summary">
     <meta name="theme-color" content="{{ site('primary_color') }}">
     <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="icon" href="/images/favicon.png">
+    <link rel="icon" href="{{ site('favicon', '/images/favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>if (localStorage.theme === 'dark') document.documentElement.classList.add('dark')</script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if ($themeCss)<style id="theme-overrides">{!! $themeCss !!}</style>@endif
+    <x-site.analytics />
 </head>
 <body class="min-h-screen flex flex-col">
     <a href="#main" class="sr-only z-[80] rounded-xl bg-brand-600 px-4 py-2 text-white focus:not-sr-only focus:fixed focus:left-3 focus:top-3">{{ __('site.skip') }}</a>

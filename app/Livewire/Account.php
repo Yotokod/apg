@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Certificate;
 use App\Models\Enrollment;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,7 @@ class Account extends Component
     {
         return view('livewire.account', [
             'enrollments' => Enrollment::with('course')->where('user_id', auth()->id())->get(),
+            'certificates' => Certificate::where('user_id', auth()->id())->latest('issued_at')->get(),
             'orders' => Order::where('user_id', auth()->id())->latest()->take(10)->get(),
         ])->layout('components.layouts.app', ['title' => __('nav.account')]);
     }

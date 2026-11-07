@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\LessonProgress;
+use App\Services\CertificateService;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -47,6 +48,15 @@ class LessonPlayer extends Component
             ['completed_at' => now()],
         )->update(['completed_at' => now()]);
         $this->dispatch('toast', message: __('lesson.done'));
+        $this->issueCertificate();
+    }
+
+    private function issueCertificate(): void
+    {
+        $certificate = app(CertificateService::class)->issueIfEligible(auth()->user(), $this->lesson->module->course);
+        if ($certificate?->wasRecentlyCreated) {
+            $this->dispatch('toast', message: __('certificate.issued_toast'));
+        }
     }
 
     /** Re-render when the nested quiz records progress. */

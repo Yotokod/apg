@@ -5,28 +5,62 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 
 if (! function_exists('site')) {
-    /** Read a brand/identity value: DB override first, then config/site_identity.php. */
+    /** Keys whose stored value is an uploaded file path on the public disk (returned as a URL). */
+    defined('SITE_FILE_KEYS') || define('SITE_FILE_KEYS', ['logo', 'favicon', 'org.signature', 'org.stamp', 'seo.og_image']);
+
+    /**
+     * Brand/identity value. Order: DB "key.<locale>" -> DB "key" -> config/site_identity.php (dot notation).
+     * Settings are memoised per request; flush with site_flush() after saving.
+     */
     function site(string $key, mixed $default = null): mixed
     {
-        $overrides = Cache::rememberForever('settings.all', function () {
-            try {
-                return Schema::hasTable('settings') ? Setting::pluck('value', 'key')->all() : [];
-            } catch (Throwable) {
-                return [];
-            }
-        });
+        $overrides = site_overrides();
+        $locale = app()->getLocale();
 
-        $value = $overrides[$key] ?? null;
-        if ($value !== null && $value !== '') {
+        $value = null;
+        foreach (["$key.$locale", $key] as $k) {
+            if (($overrides[$k] ?? '') !== '') {
+                $value = $overrides[$k];
+                break;
+            }
+        }
+        if ($value === null) {
+            $value = config("site_identity.$key", $default);
+            if (is_array($value) && isset($value['fr'])) {
+                return $value[$locale] ?? $value['fr'];
+            }
+
             return $value;
         }
 
-        $value = config("site_identity.$key", $default);
-        if (is_array($value) && isset($value['fr'])) {
-            return $value[app()->getLocale()] ?? $value['fr'];
+        if (in_array($key, SITE_FILE_KEYS, true) && ! str_starts_with($value, 'http') && ! str_starts_with($value, '/')) {
+            return asset('storage/'.ltrim($value, '/'));
         }
 
         return $value;
+    }
+
+    /** @return array<string,string|null> */
+    function site_overrides(bool $refresh = false): array
+    {
+        static $memo = null;
+        if ($refresh || $memo === null) {
+            $memo = Cache::rememberForever('settings.all', function () {
+                try {
+                    return Schema::hasTable('settings') ? Setting::pluck('value', 'key')->all() : [];
+                } catch (Throwable) {
+                    return [];
+                }
+            });
+        }
+
+        return $memo;
+    }
+
+    function site_flush(): void
+    {
+        Cache::forget('settings.all');
+        site_overrides(true);
     }
 }
 

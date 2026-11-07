@@ -32,6 +32,35 @@
                             <i class="fa-solid fa-circle-play" aria-hidden="true"></i> {{ count($done) ? __('catalog.courses.resume') : __('catalog.courses.start') }}
                         </a>
                     @endif
+                    @if ($certificate)
+                        <div class="space-y-2 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm dark:border-emerald-900 dark:bg-emerald-950/40" x-data="{ edit: false }">
+                            <p class="flex items-center gap-2 font-bold text-emerald-900 dark:text-emerald-200"><i class="fa-solid fa-award" aria-hidden="true"></i> {{ __('certificate.earned') }}</p>
+                            <p class="truncate text-stone-700 dark:text-stone-300">{{ $certificate->student_name }} · {{ $certificate->number }}</p>
+                            <a href="{{ $certificate->url() }}" target="_blank" rel="noopener" class="btn-accent w-full"><i class="fa-solid fa-print" aria-hidden="true"></i> {{ __('certificate.view') }}</a>
+                            @if ($certificate->canBeRenamed())
+                                <button type="button" class="text-xs font-semibold text-brand-700 underline dark:text-brand-100" x-on:click="edit = !edit" x-bind:aria-expanded="edit">{{ __('certificate.rename') }}</button>
+                                <form x-show="edit" x-cloak wire:submit="renameCertificate" class="space-y-2">
+                                    <label for="cert-name" class="block text-xs font-semibold">{{ __('certificate.name_label') }}</label>
+                                    <input id="cert-name" type="text" wire:model="certName" maxlength="100" autocomplete="name" class="input">
+                                    <p class="text-xs text-stone-600 dark:text-stone-400">{{ __('certificate.name_hint') }}</p>
+                                    @error('certName')<p class="text-xs font-semibold text-red-700">{{ $message }}</p>@enderror
+                                    <button type="submit" class="btn-ghost w-full" wire:loading.attr="disabled" wire:target="renameCertificate"><i class="fa-solid fa-pen" aria-hidden="true"></i> {{ __('certificate.rename_save') }}</button>
+                                </form>
+                            @endif
+                        </div>
+                    @elseif ($canClaim)
+                        <form wire:submit="claimCertificate" class="space-y-2 rounded-xl border border-brand-100 bg-brand-50 p-3 text-sm dark:border-stone-700 dark:bg-stone-800">
+                            <p class="flex items-center gap-2 font-bold"><i class="fa-solid fa-award text-brand-600" aria-hidden="true"></i> {{ __('certificate.ready') }}</p>
+                            <label for="cert-name" class="block text-xs font-semibold">{{ __('certificate.name_label') }}</label>
+                            <input id="cert-name" type="text" wire:model="certName" maxlength="100" autocomplete="name" class="input">
+                            <p class="text-xs text-stone-600 dark:text-stone-400">{{ __('certificate.name_hint') }}</p>
+                            @error('certName')<p class="text-xs font-semibold text-red-700">{{ $message }}</p>@enderror
+                            <button type="submit" class="btn-primary w-full" wire:loading.attr="disabled" wire:target="claimCertificate">
+                                <i class="fa-solid fa-spinner fa-spin" wire:loading wire:target="claimCertificate" aria-hidden="true"></i>
+                                <i class="fa-solid fa-award" wire:loading.remove wire:target="claimCertificate" aria-hidden="true"></i> {{ __('certificate.get') }}
+                            </button>
+                        </form>
+                    @endif
                 @else
                     <p class="text-3xl font-extrabold">{{ $free ? __('courses.free') : fcfa($course->price) }}</p>
                     @if ($pending)<p class="rounded-lg bg-amber-100 p-2 text-sm font-semibold text-amber-900"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> {{ __('catalog.courses.pending') }}</p>@endif

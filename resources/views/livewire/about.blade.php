@@ -7,9 +7,13 @@
         <section class="grid items-center gap-6 md:grid-cols-2" data-reveal aria-labelledby="story-h">
             <div class="space-y-3 text-sm leading-relaxed text-stone-600 dark:text-stone-300 sm:text-base">
                 <h2 id="story-h" class="text-xl font-extrabold text-ink-900 dark:text-white sm:text-2xl">{{ __('pages.about.story_title') }}</h2>
-                @foreach (['story_1', 'story_2', 'story_3'] as $k)
-                    <p>{{ __('pages.about.'.$k, ['name' => site('name')]) }}</p>
-                @endforeach
+                @if ($story)
+                    <div class="space-y-3 [&_a]:underline [&_li]:ml-5 [&_ol]:list-decimal [&_ul]:list-disc" data-about-custom>{!! $story !!}</div>
+                @else
+                    @foreach (['story_1', 'story_2', 'story_3'] as $k)
+                        <p>{{ __('pages.about.'.$k, ['name' => site('name')]) }}</p>
+                    @endforeach
+                @endif
             </div>
             @php($photos = \App\Models\GalleryItem::where('category', 'poulets')->where('position', '<', 0)->whereIn('image', ['gallery/apg-reproducteur-cuivre-1.jpg', 'gallery/apg-reproducteur-creme-1.jpg', 'gallery/apg-reproducteur-gris-1.jpg'])->get())
             @if ($photos->count())
@@ -37,7 +41,7 @@
             <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-brand-600 text-white"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
             <div>
                 <h2 class="text-lg font-extrabold">{{ __('pages.about.mission_title') }}</h2>
-                <p class="text-sm text-stone-700 dark:text-stone-300">{{ __('pages.about.mission_text') }}</p>
+                <p class="text-sm text-stone-700 dark:text-stone-300">{{ site('about.mission') ?: __('pages.about.mission_text') }}</p>
             </div>
         </section>
 

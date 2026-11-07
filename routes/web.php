@@ -34,7 +34,7 @@ Route::post('/paiement/webhook/{gateway}', function (string $gateway) {
 })->middleware('throttle:60,1')->name('payment.webhook');
 
 // Feature route files (one per workstream, see docs/ROADMAP.md)
-foreach (['pages', 'catalog', 'gallery'] as $file) {
+foreach (['pages', 'catalog', 'gallery', 'certificate'] as $file) {
     if (is_file(__DIR__."/$file.php")) {
         require __DIR__."/$file.php";
     }

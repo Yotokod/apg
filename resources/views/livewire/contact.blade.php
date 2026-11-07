@@ -56,8 +56,9 @@
                     ['fa-brands fa-whatsapp', 'cards_whatsapp', site('phone'), 'https://wa.me/'.site('whatsapp'), true],
                     ['fa-solid fa-phone', 'cards_phone', site('phone'), 'tel:'.preg_replace('/\s+/', '', site('phone')), false],
                     ['fa-solid fa-envelope', 'cards_email', site('email'), 'mailto:'.site('email'), false],
-                    ['fa-solid fa-location-dot', 'cards_address', site('address'), null, false],
+                    ['fa-solid fa-location-dot', 'cards_address', site('address'), \App\Support\Identity::safeLink(site('maps_url')), true],
                 ];
+                $hours = site('hours');
             @endphp
             @foreach ($cards as [$icon, $label, $value, $href, $external])
                 <div class="card flex items-center gap-3 p-4">
@@ -69,6 +70,16 @@
                     </div>
                 </div>
             @endforeach
+
+            @if ($hours)
+                <div class="card flex items-start gap-3 p-4">
+                    <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-700 dark:bg-stone-800 dark:text-brand-500"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                    <div class="min-w-0">
+                        <p class="text-xs font-bold uppercase tracking-wide text-stone-600 dark:text-stone-300">{{ __('identity.contact.hours') }}</p>
+                        <p class="whitespace-pre-line font-semibold">{{ $hours }}</p>
+                    </div>
+                </div>
+            @endif
 
             <div class="card p-4">
                 <h2 class="font-extrabold">{{ __('pages.contact.cities_title') }}</h2>

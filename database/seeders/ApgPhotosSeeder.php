@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\GalleryItem;
+use App\Support\ImageThumbs;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -27,7 +28,7 @@ class ApgPhotosSeeder extends Seeder
             if (! $disk->exists($rel)) {
                 $disk->put($rel, File::get($file->getPathname()));
             }
-            $this->thumb($disk->path($rel), $disk->path('thumbs/'.$rel.'.webp'));
+            ImageThumbs::make($rel);
 
             [, $color, $n] = preg_match('/reproducteur-([a-z]+)-(\d+)/', $name, $m) ? $m : [null, 'cuivre', $i + 1];
             $label = self::COLORS[$color] ?? self::COLORS['cuivre'];
@@ -40,14 +41,5 @@ class ApgPhotosSeeder extends Seeder
                 'position' => -100 + $i,
             ]);
         }
-    }
-
-    private function thumb(string $source, string $target): void
-    {
-        if (is_file($target) || ! ($img = @imagecreatefromjpeg($source))) {
-            return;
-        }
-        File::ensureDirectoryExists(dirname($target));
-        imagewebp(imagesx($img) > 1000 ? imagescale($img, 1000) : $img, $target, 78);
     }
 }

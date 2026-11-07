@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Support\ImageThumbs;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 /** Builds web-sized WebP copies (storage/app/public/thumbs/<path>.webp) used by SiteData::imageUrl(). */
@@ -19,42 +19,15 @@ class MediaThumbs extends Command
         $made = 0;
 
         foreach ($disk->allFiles('wp-media') as $path) {
-            if (! preg_match('/\.(jpe?g|png|webp)$/i', $path)) {
+            if ($disk->exists(ImageThumbs::pathFor($path))) {
                 continue;
             }
-            $target = 'thumbs/'.$path.'.webp';
-            if ($disk->exists($target)) {
-                continue;
+            if (ImageThumbs::make($path, false, (int) $this->option('width'), (int) $this->option('quality'))) {
+                $made++;
             }
-            $img = $this->load($disk->path($path));
-            if (! $img) {
-                continue;
-            }
-            $img = $this->fit($img, (int) $this->option('width'));
-            File::ensureDirectoryExists(dirname($disk->path($target)));
-            imagewebp($img, $disk->path($target), (int) $this->option('quality'));
-            $made++;
         }
         $this->info("$made thumbnails created");
 
         return self::SUCCESS;
-    }
-
-    private function load(string $file): ?\GdImage
-    {
-        $img = @imagecreatefromstring((string) file_get_contents($file));
-        if (! $img) {
-            return null;
-        }
-        imagepalettetotruecolor($img);
-        imagealphablending($img, true);
-        imagesavealpha($img, true);
-
-        return $img;
-    }
-
-    private function fit(\GdImage $img, int $maxWidth): \GdImage
-    {
-        return imagesx($img) > $maxWidth ? imagescale($img, $maxWidth) : $img;
     }
 }

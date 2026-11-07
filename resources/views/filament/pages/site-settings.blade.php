@@ -1,3 +1,11 @@
 <x-filament-panels::page>
-    {{ $this->form }}
+    <form wire:submit="save" class="space-y-6">
+        {{ $this->form }}
+
+        <div class="flex justify-end">
+            <x-filament::button type="submit" icon="heroicon-o-check" wire:loading.attr="disabled" wire:target="save">
+                Enregistrer
+            </x-filament::button>
+        </div>
+    </form>
 </x-filament-panels::page>

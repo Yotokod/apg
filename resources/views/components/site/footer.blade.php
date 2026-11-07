@@ -10,7 +10,8 @@
         'footer.company' => $linkSet([['about', 'nav.about'], ['contact', 'nav.contact'], ['faq', 'nav.faq'], ['account', 'nav.account']]),
         'footer.help' => $linkSet([['cgv', 'nav.cgv'], ['confidentialite', 'nav.privacy'], ['mentions-legales', 'nav.legal'], ['cart', 'nav.cart']]),
     ];
-    $socials = ['youtube' => 'fa-youtube', 'tiktok' => 'fa-tiktok', 'facebook' => 'fa-facebook', 'instagram' => 'fa-instagram', 'linkedin' => 'fa-linkedin'];
+    $socials = ['youtube' => 'fa-youtube', 'tiktok' => 'fa-tiktok', 'facebook' => 'fa-facebook', 'instagram' => 'fa-instagram', 'linkedin' => 'fa-linkedin', 'twitter' => 'fa-x-twitter'];
+    $hours = site('hours');
 @endphp
 <footer class="mt-12 bg-ink-900 text-white">
     <div class="mx-auto max-w-7xl px-4 py-8">
@@ -26,12 +27,12 @@
         <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-6">
             <div class="min-w-0 lg:col-span-2">
                 <a href="{{ route('home') }}" wire:navigate class="inline-block rounded-xl bg-white p-2"><img src="{{ site('logo') }}" alt="{{ site('name') }}" width="160" height="48" loading="lazy" class="h-12 w-auto"></a>
-                <p class="mt-3 text-sm text-white/75">{{ __('home.lead') }}</p>
+                <p class="mt-3 text-sm text-white/75">{{ site('footer.pitch') ?: __('home.lead') }}</p>
                 <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-white/60">{{ __('footer.follow') }}</p>
                 <div class="mt-2 flex flex-wrap gap-2">
                     @foreach ($socials as $n => $ic)
-                        @if (config("site_identity.socials.$n"))
-                            <a href="{{ config("site_identity.socials.$n") }}" target="_blank" rel="noopener" aria-label="{{ ucfirst($n) }}" class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-lg transition-colors hover:bg-brand-600"><i class="fa-brands {{ $ic }}" aria-hidden="true"></i></a>
+                        @if (site("socials.$n"))
+                            <a href="{{ site("socials.$n") }}" target="_blank" rel="noopener" aria-label="{{ ucfirst($n) }}" class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-lg transition-colors hover:bg-brand-600"><i class="fa-brands {{ $ic }}" aria-hidden="true"></i></a>
                         @endif
                     @endforeach
                     @if ($wa)<a href="{{ $wa }}" target="_blank" rel="noopener" aria-label="WhatsApp" class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-lg transition-colors hover:bg-brand-600"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>@endif
@@ -65,7 +66,10 @@
             <p class="flex min-w-0 items-center gap-2"><i class="fa-solid fa-phone w-5 text-accent-400" aria-hidden="true"></i><a href="tel:{{ preg_replace('/[^\d+]/', '', site('phone')) }}" class="truncate hover:underline">{{ site('phone') }}</a></p>
             <p class="flex min-w-0 items-center gap-2"><i class="fa-solid fa-envelope w-5 text-accent-400" aria-hidden="true"></i><a href="mailto:{{ site('email') }}" class="truncate hover:underline">{{ site('email') }}</a></p>
             @if ($wa)<p class="flex min-w-0 items-center gap-2"><i class="fa-brands fa-whatsapp w-5 text-accent-400" aria-hidden="true"></i><a href="{{ $wa }}" target="_blank" rel="noopener" class="truncate hover:underline">{{ __('footer.whatsapp') }}</a></p>@endif
-            <p class="flex min-w-0 items-center gap-2"><i class="fa-solid fa-location-dot w-5 text-accent-400" aria-hidden="true"></i><span class="truncate">{{ site('cities') }}</span></p>
+            <p class="flex min-w-0 items-center gap-2" title="{{ site('cities') }}"><i class="fa-solid fa-location-dot w-5 text-accent-400" aria-hidden="true"></i><span class="sr-only">{{ __('identity.footer.address') }}</span><span class="truncate">{{ site('address') ?: site('cities') }}</span></p>
+            @if ($hours)
+                <p class="flex min-w-0 items-start gap-2 sm:col-span-2 lg:col-span-4"><i class="fa-regular fa-clock mt-0.5 w-5 text-accent-400" aria-hidden="true"></i><span class="sr-only">{{ __('identity.footer.hours') }}</span><span class="min-w-0 whitespace-pre-line">{{ $hours }}</span></p>
+            @endif
         </address>
 
         @if ($methods)
