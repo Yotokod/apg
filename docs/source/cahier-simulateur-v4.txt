@@ -1,0 +1,1748 @@
+
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  1 
+AFRICA POUL ETS G OLIATH 
+CAHIER DES CHARGES FONCTIONNEL 
+ET SPÉCIFICATIONS TECHNIQUES 
+Simulateur avicole : chair, œufs, reproduction, incubation et rentabilité 
+Version complète 4.0 
+18 octobre 2026 
+ 
+Document de référence pour APG, le développeur web et le référent technique avicole 
+« Investir dans les poulets, c’est lutter pour l’autosuffisance alimentaire. » 
+Statut — Spécification fonctionnelle enrichie. Les valeurs propriétaires de la souche Goliath et les tarifs APG 
+qui ne sont pas documentés ici restent des paramètres à fournir et signer par APG avant publication. Les 
+repères génériques ne constituent ni une prescription vétérinaire, ni une garantie de performance. 
+ 
+  
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  2 
+Contrôle documentaire 
+Élément Valeur 
+Titre Cahier des charges fonctionnel et spécifications techniques 
+Version 
+4.0 — version complète enrichie à partir du document V2 
+fourni 
+Périmètre 
+Simulateur web d’élevage avicole accessible depuis « 
+Poussins » 
+Public 
+Éleveurs clients et prospects, équipe APG, développeur, 
+référent avicole 
+Statut 
+Document de travail à valider par APG avant développement 
+final et mise en production 
+Devise de référence FCFA, avec devise et pays configurables 
+Sources techniques 
+FAO, W OAH et guides officiels de gestion de reproducteurs 
+(voir Références) 
+ 
+Sommaire 
+ 1. Résumé des décisions structurantes 
+ 2. Contexte, objectifs et périmètre 
+ 3. Parcours utilisateur et profils 
+ 4. Paramètres, gouvernance et traçabilité 
+ 5. Modèle de calcul commun 
+ 6. Modules fonctionnels 
+ 7. Dimensionnement, équipements et ambiance 
+ 8. Module économique et scénarios 
+ 9. Écrans, rapports et expérience utilisateur 
+ 10. Architecture, données et interfaces 
+ 11. Sécurité, confidentialité et exploitation 
+ 12. Qualité, tests et critères de recette 
+ 13. Déploiement et conduite du changement 
+ 14. Registre des risques et décisions à prendre 
+ 15. Choix du site et conception des bâtiments avicoles 
+ 16. Maladies aviaires et signes d’alerte 
+ 17. Prévention des pertes et plan de biosécurité 
+ 18. Fiches de maladies prioritaires documentées 
+ 19. Exigences fonctionnelles de réalisation et de recette 
+ 20. Modèle de données sanitaire et du bâtiment 
+ 21. Calendrier de contrôles et indicateurs de prévention 
+ Annexe A. Jeux de tests de référence 
+ Annexe B. Liste de validation préproduction 
+ Annexe C. Grille de dimensionnement préliminaire des bâtiments 
+ Annexe D. Informations de validation sanitaire à demander au vétérinaire 
+ Annexe E. Fiche de lot quotidienne 
+ Annexe F. Références complémentaires 
+ Références techniques 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  3 
+1. Résumé des décisions structurantes 
+La V2 fournit un socle utile, mais plusieurs paramètres se contredisent ou ne sont pas assez documentés pour 
+servir directement de valeurs par défaut. Cette version les transforme en règles explicites : aucune performance 
+propre à Goliath ne sera annoncée comme acquise sans preuve APG; les calculs distingueront les paramètres 
+génériques, les données APG validées et les hypothèses de l’utilisateur; les résultats seront datés et 
+reproductibles. 
+Point relevé dans V2 Règle retenue dans V4 
+Ration reproducteurs : départ à 25 g puis +5 g/semaine, mais 
+objectif évoqué de 140 g à 20 semaines. 
+Ne pas extrapoler automatiquement. La courbe complète est 
+un jeu de données versionné fourni et validé par APG; 25 g et 
+la progression sont affichés comme hypothèses non validées 
+tant que le tableau manque. 
+Poulets de chair : 25 g ou 30 g/jour, et poids de 1 kg ou 1,5 kg 
+à 45 jours. 
+Ne pas transformer ces chiffres en cible universelle. 
+Enregistrer des courbes par sexe/souche/système si APG les 
+documente, et montrer les scénarios sans promesse. 
+4 sujets adultes/m² et 20–25 poussins/m² utilisés comme 
+repères génériques. 
+Les rendre modifiables et non normatifs; afficher la surface 
+utile, les facteurs de correction et une alerte de validation 
+locale. La densité dépend du type de lot, du système, du 
+climat, de la ventilation, du poids final et des règles locales [1]. 
+320 œufs par femelle souhaités. 
+Ne pas publier comme performance confirmée sans fiche 
+technique Goliath et définition de la période, du dénominateur 
+et des pertes. Calculer une courbe cumulative par période à 
+partir de données validées. 
+Taux d’éclosion pouvant être calculé sur œufs incubés ou sur 
+œufs fertiles. 
+Obliger le choix du dénominateur; interdire de combiner deux 
+bases ou d’appliquer deux fois la fertilité. 
+Marge, rentabilité et investissement initial peu détaillés. 
+Séparer coûts d’exploitation, immobilisations, amortissement, 
+financement, trésorerie et seuil de rentabilité. Interdire les 
+doubles comptes. 
+Manque de critères testables pour le développeur. 
+Ajouter modèle de données, règles d’arrondi, validations, 
+exigences non fonctionnelles et cas de recette chiffrés. 
+ 
+Principe de confiance — Un résultat doit toujours afficher la période, les hypothèses, les unités, la 
+source/version des paramètres et un niveau de confiance. Une valeur manquante ne doit pas être masquée 
+par une valeur par défaut présentée comme officielle. 
+ 
+2. Contexte, objectifs et périmètre 
+2.1 Finalité 
+Le simulateur aide l’éleveur à préparer un projet, estimer ses besoins et comparer des scénarios. Il ne garantit 
+pas un rendement, ne remplace pas un technicien avicole, un vétérinaire, un nutritionniste animal ou un 
+spécialiste de l’incubation. La performance dépend notamment de la génétique, du sexe, de l’aliment réellement 
+consommé, de l’eau, de l’environnement, de la santé, du climat et de la conduite du lot. La FAO rappelle que le 
+logement et la conduite doivent répondre aux besoins physiologiques, environnementaux, nutritionnels et 
+sanitaires de chaque stade [1]. 
+2.2 Objectifs métier 
+ Permettre une première simulation en quelques minutes, puis un mode expert avec paramètres détaillés. 
+ Estimer les quantités et coûts d’aliments par phase, les surfaces, les équipements, la ponte, l’incubation et 
+les flux financiers. 
+ Montrer l’effet de la mortalité, des prix, des performances et des délais sur les résultats. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  4 
+ Fournir un rapport compréhensible, imprimable et exportable, sans présenter les estimations comme des 
+garanties. 
+ Permettre à APG de mettre à jour ses références sans modifier le code et de retirer immédiatement une 
+valeur devenue invalide. 
+2.3 Inclus et hors périmètre 
+Inclus dans le produit Hors périmètre sans décision distincte 
+Simulations indicatives par lot; calculs et comparaisons; suivi 
+réel facultatif; rapport PDF/impression; administration APG des 
+paramètres. 
+Diagnostic de maladie; ordonnance ou vaccination 
+automatique; formulation de ration; prédiction génétique 
+certifiée; crédit/assurance; paiement ou commande; 
+comptabilité fiscale réglementaire. 
+ 
+Le seuil commercial minimal de 500 poussins reste une règle d’offre APG à configurer, et non une contrainte 
+mathématique. Le simulateur doit expliquer ce qui se passe en dessous : refus de simulation commerciale ou 
+parcours indicatif sans demande de devis, selon le choix explicite d’APG. 
+3. Parcours utilisateur et profils 
+3.1 Parcours en étapes 
+1. Choisir pays/région, devise, objectif et système d’élevage. 
+2. Saisir effectif initial, sexe/ratio si connu, date prévue, durée et éventuelles pertes déjà observées. 
+3. Sélectionner la souche et le référentiel technique; si une courbe Goliath validée n’existe pas, le simulateur 
+affiche clairement qu’un résultat de performance spécifique est indisponible. 
+4. Renseigner les coûts locaux ou utiliser une grille tarifaire APG datée. 
+5. Examiner alimentation, bâtiments, chauffage, croissance, reproduction/incubation et économie, selon le 
+parcours. 
+6. Comparer un scénario prudent, un scénario de référence et un scénario favorable; l’utilisateur peut modifier 
+les hypothèses. 
+7. Télécharger le rapport et/ou envoyer une demande de contact à APG après consentement explicite. 
+3.2 Profils et permissions 
+Profil Droits 
+Visiteur/éleveur 
+Créer une simulation locale; modifier ses hypothèses; 
+télécharger son rapport. Aucun accès aux données d’autres 
+utilisateurs. 
+Administrateur APG 
+Créer, modifier, publier, retirer et dater les jeux de paramètres; 
+gérer les tarifs et textes; consulter les journaux de 
+modifications. 
+Référent technique 
+Relire et approuver les paramètres zootechniques, leurs 
+sources et dates d’effet. N’administre pas les comptes 
+techniques. 
+Développeur 
+Implémenter les règles et tests; ne doit pas modifier en 
+production les valeurs techniques sans processus 
+d’approbation. 
+ 
+4. Paramètres, gouvernance et traçabilité 
+Chaque paramètre est enregistré avec un identifiant, une valeur, une unité, une portée (pays, souche, objectif, 
+sexe, phase), une source, une date d’effet, une date de révision, un statut, un auteur et un approbateur. Statuts 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  5 
+autorisés : brouillon, vérifié, publié, retiré. Seuls les paramètres publiés et valides à la date de simulation 
+alimentent les résultats. 
+Classe de donnée Exemple Affichage à l’utilisateur 
+Référence APG validée 
+Prix de poussins ou courbe de 
+consommation approuvée 
+« Référence APG », date et portée; peut 
+être modifiée si la politique produit le 
+permet. 
+Référence externe 
+Principe de gestion ou valeur générique 
+d’un guide technique 
+Source et avertissement : non spécifique 
+à Goliath, à adapter localement. 
+Hypothèse utilisateur Prix local du sac, mortalité anticipée 
+« Saisie par vous », valeur conservée 
+dans le rapport. 
+Résultat calculé 
+Kg aliment, coût estimatif, nombre de 
+poussins 
+Formule/entrées principales et règle 
+d’arrondi accessibles. 
+Donnée réelle observée 
+Poids, mortalité, œufs réellement 
+collectés 
+« Mesure réelle », date, unité et auteur si 
+connecté. 
+ 
+4.1 Paramètres à versionner 
+ Courbes de consommation et poids cible par âge, souche, sexe, objectif et système. 
+ Composition/nom de phase alimentaire (démarrage, croissance, ponte/reproduction), dates ou critères de 
+transition. 
+ Mortalité attendue par période; taux de ponte; ratio de sexes; fertilité; éclosion et survie après éclosion. 
+ Densités et équipements, températures indicatives, autonomie de secours et hypothèses de ventilation. 
+ Prix et coûts : pays, région, monnaie, date, unité de vente, taxes incluses/exclues. 
+ Calendriers de ponte/réforme et durée de cycle, avec définition précise du début et de la fin de période. 
+4.2 Source et validation APG 
+Aucune source publique consultée ne permet d’établir une courbe propriétaire de performances pour la souche 
+Africa Poulets Goliath. Les valeurs « 320 œufs », les seuils de poids, les rations, les densités et les ratios de 
+reproducteurs doivent donc rester des hypothèses APG à confirmer à partir de fiches techniques autorisées et 
+de données de lots identifiées. Un guide d’une autre souche sert à structurer les indicateurs de suivi, pas à 
+transférer ses chiffres à Goliath [2]. 
+5. Modèle de calcul commun 
+5.1 Conventions 
+ Effectifs en oiseaux; masse d’aliment en kg; ration individuelle en g/oiseau/jour; surface en m²; eau en litres; 
+monnaie avec code explicite (par défaut XOF ou XAF choisi par pays). 
+ Les pourcentages sont stockés en décimal entre 0 et 1 et présentés en pourcentage. Les calculs internes 
+gardent la précision; l’arrondi n’intervient qu’à l’affichage ou à l’achat. 
+ Chaque résultat conserve l’effectif, l’unité, la période, la date, les hypothèses et l’identifiant de version du 
+paramètre utilisé. 
+ Le simulateur distingue arrondi d’affichage (p. ex. 1 décimale), arrondi de commande (sac entier supérieur), 
+et arrondi de devis (règle monétaire configurée). 
+5.2 Formules fondamentales 
+Indicateur Calcul / règle 
+Aliment du lot, jour t (kg) 
+Effectif vivant au jour t × ration individuelle du jour t (g) ÷ 1 
+000. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  6 
+Aliment de période (kg) 
+Somme des quantités journalières de la période; calcul par 
+phase et par catégorie d’oiseaux. 
+Effectif vivant 
+Effectif début de période − pertes cumulées. Les morts ne 
+consomment pas après leur date de décès. Si seule une 
+mortalité globale est fournie, appliquer une hypothèse 
+explicitement documentée et ne pas prétendre à une 
+trajectoire quotidienne exacte. 
+Nombre de sacs 
+Plafond(kg requis ÷ poids net du sac). Prévoir 
+pertes/gaspillage comme paramètre séparé; ne pas les 
+intégrer silencieusement. 
+Coût aliment 
+Somme, par phase, de (kg consommés × prix/kg) + coûts de 
+transport/approvisionnement explicitement saisis. 
+Taux de mortalité 
+Nombre de sujets morts pendant la période ÷ effectif exposé 
+au début de la période. Le rapport précise la convention 
+choisie. 
+Écart de poids (%) 
+(Poids moyen mesuré − poids cible) ÷ poids cible × 100, 
+uniquement si la cible est documentée et comparable. 
+Production d’œufs 
+Femelles vivantes de la période × taux de ponte de la période 
+× nombre de jours; diminuer séparément pour œufs cassés, 
+sales ou non commercialisables. 
+ 
+5.3 Gestion des données incomplètes 
+Si une valeur indispensable est absente, afficher « estimation non calculable » ou demander la donnée. Ne 
+jamais convertir automatiquement une inconnue en zéro. Les valeurs nulles, zéro réel et champ non renseigné 
+sont distincts. Si une fourchette existe, présenter minimum–maximum et préciser ce qui la fait varier. 
+6. Modules fonctionnels 
+6.1 Accueil et sélection de production 
+Options exclusives à la première étape : chair; œufs de table; reproduction et œufs fécondés/poussins; mixte 
+(avec allocation explicite des effectifs par sous-lot). Le système interdit qu’un même œuf soit simultanément 
+compté comme vente d’œuf de table, œuf à couver et vente d’œuf fécondé. Le lot mixte est modélisé en sous-
+lots ou en flux alloués. 
+6.2 Alimentation et approvisionnement 
+ Permettre des courbes journalières ou hebdomadaires par phase; interpoler entre points seulement si cette 
+méthode est autorisée par le référent technique et signalée. 
+ Calculer besoin moyen, pic journalier, besoin par semaine et cumul, sujets vivants utilisés, sacs par format, 
+stock de sécurité choisi et coûts par aliment. 
+ Gérer les aliments distincts (démarrage, croissance, finition si APG la recommande, ponte/reproduction), 
+prix par sac, poids net, taux de gaspillage et livraison. 
+ Afficher les hypothèses « 25 g » et « +5 g/semaine » de V2 uniquement dans l’administration comme 
+propositions en attente; ne pas les imposer comme ration. 
+ Avertir si l’effectif, la courbe ou la durée dépasse la portée du référentiel; bloquer l’extrapolation non 
+approuvée. 
+6.3 Croissance et suivi du lot 
+Distinguer objectifs indicatifs configurés et résultats mesurés. En mode suivi, saisir date, nombre pesé, poids 
+individuel ou poids moyen, mortalité, aliment distribué et refus, eau, événements sanitaires et commentaire. Si 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  7 
+le poids est un échantillon, conserver le nombre d’oiseaux pesés et signaler qu’il s’agit d’une moyenne 
+d’échantillon. Les écarts déclenchent une alerte neutre (« à vérifier »), pas un diagnostic ni une 
+recommandation de ration automatique. 
+6.4 Ponte et reproduction 
+ La ponte se calcule par période à partir des femelles vivantes, avec taux de ponte documenté selon l’âge; 
+afficher œufs pondus, œufs collectés, œufs commercialisables et pertes séparément. 
+ Séparer œufs de table et œufs à couver; définir les affectations de lots et le stock disponible. 
+ L’effectif reproducteur est ventilé par mâles/femelles; le ratio est une référence APG à valider selon souche, 
+âge et système, non une constante universelle. 
+ Calculer la ponte cumulée par courbe d’âge et par période. Ne pas multiplier directement l’effectif initial par 
+320 sans mortalité, période de ponte, taux par âge et définition « par femelle logée » ou « par femelle 
+présente ». 
+ Durée 18/24 mois : demander si elle signifie âge total, période de ponte effective ou durée d’exploitation; ne 
+lancer le calcul qu’avec une définition choisie. 
+6.5 Incubation et production de poussins 
+Le suivi doit enregistrer lot d’œufs, date de ponte/collecte, date de stockage, incubation, mirage, transfert, 
+éclosion, poussins viables, pertes et destination. La FAO décrit le mirage et le contrôle de la qualité de 
+collecte/stockage comme éléments de gestion; les paramètres exacts d’incubateur doivent suivre le fabricant et 
+le responsable de couvoir, car ils dépendent de l’équipement et des conditions [3]. 
+Indicateur Formule obligatoire 
+Œufs mis en incubation Œufs effectivement chargés, hors œufs rejetés. 
+Fertilité (%) 
+Œufs fertiles constatés ÷ œufs mirés/chargés, avec méthode 
+et date du mirage clairement définies. 
+Éclosion sur œufs incubés (%) Poussins éclos ÷ œufs incubés. 
+Éclosion sur œufs fertiles (%) 
+Poussins éclos ÷ œufs fertiles. Les deux taux ne sont pas 
+interchangeables. 
+Poussins viables 
+Poussins éclos − poussins non viables/rejetés, selon définition 
+APG. 
+Sujets disponibles après démarrage 
+Poussins viables − pertes jusqu’à la date de mise en place. Ne 
+pas multiplier par la mortalité une seconde fois. 
+ 
+Exemple de convention — 1 000 œufs chargés × 90 % fertiles = 900 œufs fertiles; 85 % d’éclosion calculée 
+sur les œufs fertiles donne 765 poussins éclos. Si le taux 85 % est défini sur œufs chargés, le calcul est 850 
+poussins. L’interface doit rendre la base visible. 
+ 
+6.6 Bâtiments, densité et équipements 
+Calculer une surface utile de référence en divisant l’effectif maximal présent par la densité sélectionnée 
+(oiseaux/m²). Puis ajouter séparément circulations, stockage, sas, local technique et zones de tri. Présenter les 
+dimensions comme estimation d’avant-projet, non comme plan d’ingénierie. Une référence FAO pour systèmes 
+et catégories spécifiques donne des densités différentes selon type de poulet; cela confirme qu’un chiffre unique 
+n’est pas transposable à tout lot [1]. La ventilation, le comportement, la chaleur, l’humidité, l’accès à l’eau et les 
+règles locales doivent être validés sur site. 
+Les équipements sont calculés via une table administrable de capacité unitaire et taux de réserve : mangeoires, 
+abreuvoirs, chauffages, thermomètres/hygromètres, ventilateurs/panneaux si système concerné, nids, plateaux 
+et incubateur. Chaque résultat donne la capacité retenue, le nombre d’unités arrondi au supérieur et la source 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  8 
+de la capacité. Aucun débit, puissance ou nombre d’équipements ne sera prérempli sans fiche fabricant ou 
+validation APG. 
+6.7 Démarrage, chauffage et ambiance 
+Conserver dans le rapport une checklist de préparation : nettoyage/désinfection selon protocole local, séchage, 
+litière, eau, aliment adapté, vérification des équipements, préchauffage, mesure à hauteur des poussins, 
+contrôle de la répartition et observation du comportement. Les fourchettes de température de V2 peuvent rester 
+visibles à titre provisoire, mais elles sont à valider par l’équipe technique. Le comportement complète les 
+mesures; il ne les remplace pas. 
+Pour les chauffages à combustion, inclure un avertissement de ventilation, d’installation et de prévention du 
+monoxyde de carbone. Prévoir une capacité de secours (énergie/eau/chauffage) choisie par APG en fonction 
+du site. Le simulateur ne donne pas de programme sanitaire ou médicamenteux; il renvoie aux professionnels 
+locaux et aux règles applicables. La WOAH publie des normes internationales de santé et bien-être animal; les 
+obligations nationales restent à vérifier par pays [4]. 
+7. Dimensionnement, équipements et ambiance 
+7.1 Variables géographiques 
+La région/pays influe sur monnaie, prix, saison, température, humidité, disponibilité d’eau/électricité, 
+réglementation et risques sanitaires. À défaut d’une source météo raccordée et fiable, ne pas simuler le climat 
+en temps réel : demander à l’utilisateur une saison et des conditions locales ou présenter une liste de 
+vérifications à faire sur site. 
+7.2 Gestion des déjections et environnement 
+Inclure litière usagée, stockage des fientes, eaux de lavage, nuisances et prévention de contamination des eaux 
+comme postes de coût et de planification. La FAO indique que les sous-produits avicoles peuvent être valorisés 
+s’ils sont gérés correctement, tandis qu’une mauvaise gestion présente des enjeux sanitaires et 
+environnementaux [1]. Le revenu de vente de fientes reste nul par défaut tant qu’un débouché et un prix local 
+ne sont pas saisis. 
+8. Module économique et scénarios 
+8.1 Structure des coûts 
+Catégorie Postes à enregistrer 
+Investissements (CAPEX) 
+Terrain si inclus; bâtiment; terrassement; équipements; 
+incubateur; installation électrique/eau; transport et mise en 
+service. 
+Charges variables 
+Poussins; aliments par phase; vaccins/soins prescrits; litière; 
+eau; énergie; chauffage; transport; emballage; frais 
+d’incubation; commissions; mortalité et pertes. 
+Charges fixes 
+Salaires permanents; loyer; maintenance; assurance; 
+télécommunications; administration. 
+Financement et fiscalité 
+Intérêts, échéancier, impôts et taxes selon choix; exclus par 
+défaut jusqu’à saisie. 
+Amortissement 
+Coût amortissable, valeur résiduelle, durée et méthode fournis 
+par l’utilisateur/comptable; distinct du décaissement initial. 
+ 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  9 
+8.2 Recettes et indicateurs 
+Le chiffre d’affaires est la somme des quantités effectivement vendues multipliées par leurs prix. Le stock 
+produit n’est pas une vente. Les ventes d’œufs, œufs fécondés, poussins et poulets sont des destinations 
+exclusives d’un même flux. Les recettes optionnelles (fientes, reproducteurs réformés) n’apparaissent que si un 
+volume vendable et un prix sont documentés. 
+Indicateur Définition affichée 
+Marge sur coûts variables Ventes − coûts variables. 
+Résultat d’exploitation estimatif 
+Ventes − coûts variables − charges fixes − amortissements 
+retenus. 
+Trésorerie simplifiée 
+Encaissements − décaissements par période; investissements 
+et remboursement de principal séparés du résultat. 
+Seuil de rentabilité 
+Charges fixes ÷ taux de marge sur coûts variables, si les 
+hypothèses de coûts variables et de prix sont homogènes et si 
+la marge unitaire est positive. Sinon, afficher « non atteint/non 
+calculable ». 
+Coût unitaire 
+Charges affectées ÷ unités vendables de la même catégorie et 
+même période; préciser si calculé sur coût d’exploitation ou 
+coût complet. 
+Prix de vente d’équilibre 
+Prix nécessaire pour couvrir les coûts retenus, calculé par 
+produit et avec hypothèses constantes explicitement 
+indiquées. 
+ 
+8.3 Scénarios et sensibilité 
+Proposer un scénario prudent, un scénario central et un scénario favorable, mais n’inventer aucune valeur. Les 
+valeurs sont soit choisies par l’utilisateur, soit fournies par APG avec source et date. La sensibilité doit isoler au 
+minimum prix d’aliment, prix de vente, mortalité, taux de ponte, fertilité/éclosion, coût d’énergie, délai de vente 
+et rendement commercialisable. Une variable est modifiée à la fois dans l’analyse de sensibilité, sauf si le mode 
+« scénario combiné » est activé. 
+8.4 Flux de trésorerie et durée 
+Le rapport sépare mise de fonds initiale, charges mensuelles/hebdomadaires, revenus attendus, délai avant 
+première vente et besoin de trésorerie maximal. Les intérêts, impôts, inflation et actualisation sont exclus par 
+défaut; l’exclusion est visible. Comparer les durées 18 et 24 mois uniquement après clarification de leur 
+définition zootechnique et intégrer réforme et renouvellement du lot si applicables. 
+9. Écrans, rapports et expérience utilisateur 
+9.1 Écrans 
+Écran Contenu minimum 
+1. Démarrer 
+Pays, monnaie, objectif, souche/référence, effectif, période, 
+type d’élevage. 
+2. Hypothèses 
+Prix, pertes, coût, phase, source/statut des paramètres; 
+champs requis et facultatifs. 
+3. Alimentation 
+Courbe, besoin par période, cumul, sacs, prix et 
+avertissements. 
+4. Bâtiments Surface utile, annexes, équipements, capacité et réserves. 
+5. Démarrage/croissance 
+Checklist, température provisoire/validée, suivi et écarts 
+mesurés. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  10 
+6. Ponte/incubation 
+Femelles/mâles, œufs, allocation, base des taux, poussins 
+viables. 
+7. Économie 
+Investissement, charges, recettes, marge, trésorerie, 
+sensibilité. 
+8. Rapport 
+Résumé, hypothèses, date, version du référentiel, limites, 
+impression/export. 
+ 
+9.2 Rapport à télécharger 
+ Identifiant de simulation, date, durée, devise et objectif. 
+ Effectif initial et effectif projeté, pertes retenues et méthode de calcul. 
+ Tableau des hypothèses avec source, statut, unité et date de validité. 
+ Consommation alimentaire par jour/semaine/phase et cumul; sacs et coût. 
+ Surfaces utiles et annexes, équipements, limites de calcul. 
+ Calendrier et indicateurs de poids, ponte, fertilité, éclosion et poussins disponibles, uniquement si données 
+suffisantes. 
+ Investissements, charges, recettes, résultat, trésorerie, seuil de rentabilité et exclusions. 
+ Risques/alertes, paramètres à confirmer et notice « estimation – aucun rendement garanti ». 
+9.3 Accessibilité et clarté 
+L’interface doit fonctionner sur téléphone et ordinateur, utiliser des champs libellés avec unités, rendre les 
+erreurs compréhensibles et ne pas reposer uniquement sur la couleur pour signaler une alerte. Les tableaux 
+doivent être lisibles sur écran étroit; proposer téléchargement ou affichage par cartes. Les libellés doivent 
+distinguer « estimé », « saisi », « observé » et « référence APG ». 
+10. Architecture, données et interfaces 
+10.1 Principes techniques 
+ Calculs déterministes et exécutés côté serveur ou dans une bibliothèque testée commune, avec validation 
+côté serveur avant stockage. 
+ Séparation des règles de calcul, référentiels et interface; versionner les schémas et paramètres. 
+ Aucune valeur de prix ou de courbe de performance codée en dur dans l’interface. 
+ Sauvegarde locale temporaire possible; compte utilisateur facultatif. Si envoi de demande/contact, 
+consentement et finalité explicites. 
+ Rapport PDF généré à partir du même objet de simulation que l’écran afin d’éviter des chiffres divergents. 
+ Conserver une copie immuable des hypothèses du calcul au moment de la simulation, même si APG publie 
+ensuite un nouveau référentiel. 
+10.2 Entités de données minimales 
+Entité Champs indicatifs 
+Simulation 
+ID, date, pays, devise, objectif, effectif, durée, version moteur, 
+référentiel choisi, statut. 
+Paramètre 
+Clé, valeur, unité, portée, source, statut, versions, dates, 
+auteur/approbateur. 
+Lot 
+Date mise en place, sexe/catégorie, effectif initial, effectif 
+courant, pertes par date/motif si renseigné. 
+Aliment 
+Phase, nom, prix, unité de vente, poids sac, consommation, 
+pertes/gaspillage. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  11 
+Ponte/incubation 
+Femelles, œufs par statut, lot incubation, taux et 
+dénominateur, éclosions, viabilité. 
+Économie 
+Volumes vendus par produit, prix, charges, investissement, 
+taxes/intérêts inclus ou exclus. 
+Mesure terrain 
+Date, mesure, unité, méthode, nombre d’échantillons, 
+utilisateur et commentaire. 
+ 
+10.3 Validation des entrées 
+ Refuser les effectifs négatifs, les prix négatifs, les pourcentages hors 0–100 %, les poids de sac nuls et les 
+dates impossibles. 
+ Signaler une mortalité cumulée supérieure à l’effectif initial, un nombre de femelles/mâles dépassant 
+l’effectif total et des ventes supérieures aux quantités disponibles. 
+ Vérifier les unités et conversions avant calcul (g/kg; prix/sac vs prix/kg; FCFA/XOF vs XAF). 
+ Demander une confirmation avant les extrapolations hors plage d’un référentiel. Bloquer si l’extrapolation 
+peut produire une décision trompeuse. 
+11. Sécurité, confidentialité et exploitation 
+ Limiter les données personnelles à ce qui est nécessaire. Le rapport doit pouvoir être créé sans collecter 
+nom ou téléphone. 
+ Protéger les fonctions d’administration par authentification robuste, moindre privilège et journal d’audit. Les 
+paramètres publiés ne sont modifiables que par des rôles autorisés. 
+ Chiffrer les échanges réseau; protéger les sauvegardes; définir une durée de conservation des simulations 
+et demandes. 
+ Ne pas exposer les prix internes ou données de clients d’autres utilisateurs. Prévoir une politique de 
+suppression/export si un compte est créé. 
+ Journaliser les erreurs techniques sans enregistrer de données sensibles inutiles. Prévoir limitation de débit 
+contre abus et validation des fichiers/export. 
+ Afficher conditions d’utilisation, limites du modèle, politique de confidentialité et coordonnées de support 
+APG. Les obligations de protection des données doivent être examinées pays par pays. 
+12. Qualité, tests et critères de recette 
+12.1 Exigences non fonctionnelles 
+Critère Exigence à valider 
+Compatibilité 
+Navigateurs mobiles et ordinateurs courants retenus par APG; 
+tests sur petite largeur et connexion limitée. 
+Performance 
+Réponse interactive sans rechargement complet pour les 
+changements courants; cible chiffrée fixée par l’équipe produit 
+avant recette. 
+Disponibilité 
+Politique de sauvegarde, surveillance et restauration définie 
+avant mise en production. 
+Précision 
+Même entrées + même versions = mêmes résultats; calculs 
+reproductibles et tests automatisés. 
+Accessibilité 
+Navigation clavier, labels, contraste, focus visible et messages 
+d’erreur lisibles. 
+Traçabilité Le rapport montre version des paramètres et date d’exécution. 
+ 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  12 
+12.2 Principes de recette 
+ Tester chaque parcours indépendamment et le parcours mixte avec allocation complète. 
+ Vérifier le calcul numérique sur des exemples calculés manuellement; tester aussi les limites 0, 1, 500, 
+grand effectif et changement de phase. 
+ Tester les bases des taux d’éclosion et fertilité pour garantir qu’aucune formule ne double-compte. 
+ Tester les flux d’œufs, d’aliments et de ventes pour empêcher les quantités négatives et doubles comptes. 
+ Tester le rapport PDF, les sauts de page, les tableaux, la date, la devise et les avertissements. 
+ Faire valider les paramètres techniques par un référent APG et les hypothèses économiques par la 
+personne désignée. 
+13. Déploiement et conduite du changement 
+8. Étape 1 — collecte : APG fournit courbes, fiches, prix, unités et données de lots, avec propriétaires et 
+approbateurs. 
+9. Étape 2 — prototype : parcours de simulation sans revendication de performances non validées; tests de 
+compréhension avec quelques éleveurs. 
+10. Étape 3 — validation : revue technique, test des calculs, revue confidentialité, contrôle d’affichage mobile et 
+approbation formelle des valeurs. 
+11. Étape 4 — lancement contrôlé : publication avec indicateur « version bêta » si des paramètres restent 
+provisoires; mécanisme de correction/retrait. 
+12. Étape 5 — amélioration : recueillir retours et mesures réelles consenties; analyser les écarts sans 
+transformer automatiquement les données clients en références. 
+Chaque mise à jour de référentiel doit indiquer la date d’effet et conserver les rapports antérieurs dans leur 
+version initiale. Si une valeur est retirée pour erreur ou risque, le rapport ultérieur doit signaler qu’elle a été 
+remplacée; aucune relecture silencieuse des simulations déjà exportées. 
+14. Registre des risques et décisions à prendre 
+Risque / décision Impact Mesure de maîtrise / responsable 
+Performances Goliath non documentées 
+(320 œufs, poids, rations). 
+Promesse commerciale trompeuse et 
+prévisions financières fausses. 
+APG fournit documents et résultats de 
+lots; référent technique signe chaque 
+courbe. 
+Système d’élevage/climat non précisés. Surface et équipements inadaptés. 
+Ajouter pays, type de bâtiment et 
+conditions locales; validation technicien. 
+Bases des taux incohérentes. 
+Surestimation/sous-estimation des 
+poussins. 
+Nommer le dénominateur de chaque 
+taux dans l’interface et la base. 
+Mortalité appliquée deux fois ou au 
+mauvais moment. 
+Consommation et ventes erronées. 
+Modéliser effectif vivant par période; 
+préciser hypothèse si mortalité seule 
+globale. 
+Coûts incomplets ou doubles comptes. Marge artificielle. 
+Plan de comptes simple, exclusions 
+visibles, contrôle des flux. 
+Devise régionale non choisie. 
+Confusion XOF/XAF ou prix 
+incomparables. 
+Sélecteur pays/devise et affichage code 
+ISO monétaire. 
+Paramètres publiés sans contrôle. Dégradation des calculs en production. 
+Workflow brouillon → revue → 
+publication, versioning et journal d’audit. 
+Équipement ou service de réseau 
+indisponible. 
+Perte d’accès ou de saisie. 
+Prévoir sauvegarde de progression et 
+message d’erreur; la simulation locale ne 
+doit pas perdre les entrées. 
+ 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  13 
+14.1 Liste de décisions APG avant développement final 
+ Confirmer nom commercial et définition de la souche, les fiches techniques autorisées et la portée des 
+données. 
+ Fournir courbe alimentaire complète par objectif, âge, sexe et phase, avec ration en g/oiseau/jour ou autre 
+unité explicite. 
+ Fournir objectifs de poids par âge et conditions de mesure; résoudre les contradictions 1 kg / 1,5 kg à 45 
+jours et 2 kg à deux mois. 
+ Définir maturité, ponte, ratio mâles/femelles, réforme, définition de « 320 œufs » et taux par période. 
+ Définir densités, température, ventilation et capacités d’équipements par système; faire approuver par 
+référent. 
+ Définir taux et méthode de calcul de fertilité, éclosion, poussins viables et mortalité. 
+ Fixer pays/cibles, devises, tarifs APG et leur durée de validité. 
+ Décider le seuil commercial 500, les fonctions contact/compte, conservation des données et politique de 
+confidentialité. 
+ Désigner responsables de publication, approbateur technique et procédure de retrait d’un paramètre. 
+15. Choix du site et conception des bâtiments avicoles 
+15.1 Normes, portée et limites de conformité 
+Le pays d’implantation n’étant pas précisé, ce document ne peut déclarer un bâtiment « conforme aux normes 
+locales ». Les exigences de construction, d’urbanisme, de sécurité incendie, d’environnement, d’eau, 
+d’électricité, de santé animale, de bien-être, de biosécurité, d’abattage et de commercialisation diffèrent selon le 
+pays, la région et le type de production. Avant travaux, APG ou l’éleveur doit faire valider les plans par les 
+services compétents, un ingénieur/architecte local et un vétérinaire. Les recommandations WOAH fournissent 
+un cadre international de bien-être et de santé, mais ne remplacent pas la réglementation nationale [4]. 
+La densité n’est pas un chiffre unique à appliquer à tous les bâtiments. La décision dépend notamment du type 
+de production, du poids adulte, du climat, de l’humidité, du renouvellement d’air, de la litière, de l’équipement, 
+des compétences de conduite, du mode de production et de la règle locale. La WOAH demande d’évaluer la 
+densité avec ces facteurs et des indicateurs observés sur les animaux [4]. 
+15.2 Types de bâtiments et cas d’usage 
+Type de bâtiment 
+Description / 
+fonctionnement 
+Usage envisageable Points de vigilance 
+Poulailler ouvert à ventilation 
+naturelle 
+Façades longitudinales 
+largement ouvertes, grillage 
+anti-intrusion, rideaux réglables, 
+débords de toiture; 
+renouvellement d’air dépend du 
+vent et de la configuration. 
+Petit à moyen projet en climat 
+compatible, lorsque l’air ambiant 
+et le site permettent un flux 
+transversal suffisant. Peut 
+accueillir chair, pondeuses ou 
+reproducteurs si équipements et 
+plan adaptés. 
+Contrôle climatique limité; 
+risque de chaleur, pluie 
+battante, poussière, oiseaux 
+sauvages et courants d’air. 
+Prévoir suivi météo, rideaux, 
+ombrage, drainage, orientation 
+selon vents/soleil locaux. Une 
+coupure électrique n’arrête pas 
+la ventilation naturelle, mais 
+peut affecter l’eau et les 
+automatismes. 
+Bâtiment semi-ouvert / rideaux 
+et ventilation assistée 
+Ouvertures latérales avec 
+rideaux, entrées d’air, 
+ventilateurs de brassage ou 
+extracteurs; parfois régulation 
+partielle. 
+Projet moyen ou zone où le 
+bâtiment ouvert seul ne maîtrise 
+pas suffisamment les périodes 
+chaudes, humides, venteuses 
+ou pluvieuses. 
+L’efficacité dépend des 
+ouvertures, du débit réel des 
+ventilateurs, du réglage et de 
+l’entretien. Faire dimensionner 
+par calcul d’ingénierie, pas par 
+nombre d’oiseaux seul. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  14 
+Type de bâtiment 
+Description / 
+fonctionnement 
+Usage envisageable Points de vigilance 
+Bâtiment fermé à ventilation 
+mécanique contrôlée 
+Enveloppe plus étanche/isolée, 
+ventilateurs, entrées d’air, 
+contrôleurs et, selon le climat, 
+refroidissement évaporatif; les 
+modes tunnel/combi sont des 
+configurations possibles. 
+Projet commercial, forte 
+exigence de régularité ou 
+contexte climatique exigeant, si 
+l’énergie, les pièces, les 
+techniciens et le secours sont 
+disponibles. 
+Dépendance forte à l’électricité, 
+aux capteurs, aux alarmes et 
+aux équipements. Prévoir 
+générateur/solution de secours, 
+alarme testée, stock de pièces, 
+entretien documenté et plan de 
+panne. Le refroidissement 
+évaporatif peut ne pas être 
+efficace en forte humidité. 
+Poussinière / zone de 
+démarrage dédiée 
+Compartiment ou bâtiment 
+préparé à l’accueil des poussins 
+d’un jour, avec chauffage, eau, 
+alimentation et réglage des 
+ouvertures. 
+À prévoir pour chaque lot 
+lorsque la zone principale ne 
+peut pas être correctement 
+préchauffée ou compartimentée. 
+Peut être intégrée au bâtiment 
+si un secteur réellement séparé 
+et maîtrisé est conçu. 
+Dimensionner sur l’effectif à 
+accueillir, le matériel et la 
+capacité de maintenir une 
+ambiance homogène; transférer 
+selon état des oiseaux et 
+conditions, pas selon l’âge seul. 
+Bâtiment de ponte / 
+reproducteurs 
+Logement de femelles 
+pondeuses ou d’un lot de 
+reproduction, avec nids/collecte, 
+mangeoires et abreuvoirs 
+adaptés à la conduite; mâles 
+séparables si requis. 
+Production d’œufs de table 
+(mâles non nécessaires) ou 
+d’œufs fécondés (lot de 
+reproducteurs). 
+Ne pas confondre les deux 
+usages. La densité, les nids, 
+l’éclairage, la gestion des œufs, 
+les ratios sexuels et les objectifs 
+de poids exigent une validation 
+propre à la souche et au 
+système. 
+Couvoir et locaux annexes 
+Unité séparée et organisée en 
+zones de réception/tri, stockage, 
+incubation, transfert/éclosion, 
+tri/expédition, lavage et déchets. 
+Uniquement si incubation 
+planifiée; sinon le simulateur 
+estime les œufs/poussins et 
+recommande de faire réaliser 
+l’incubation par une unité 
+compétente. 
+Séparation des flux propre/sale, 
+contrôle d’accès, ventilation et 
+lavage adaptés, traçabilité par 
+lot, paramètres fabricant et 
+responsable couvoir. Ce n’est 
+pas un simple local à installer 
+dans le poulailler. 
+ 
+Les catégories de ventilation naturelle, mécanique, tunnel et combinée sont illustrées par le schéma de Ralco 
+[6]. Cette image permet de comparer des principes d’écoulement, pas de dimensionner une installation APG : 
+les débits, pressions, dimensions et réglages doivent être calculés par un spécialiste à partir du bâtiment, du 
+climat et de la biomasse. 
+ 
+Figure 1 — Exemple photographique de bâtiment avicole à ouvertures latérales. Source : Showhoo Building [7]. 
+Image fournisseur illustrative; ne constitue pas un plan, une capacité garantie ou une preuve de conformité. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  15 
+Droits d’image : vérifier les autorisations ou remplacer ces visuels par des photographies APG avant une diffusion 
+commerciale ou publique. 
+ 
+Figure 2 — Principes de ventilation transversale, latérale, longitudinale, tunnel et combinée. Source : Ralco 
+Agriculture [6]. Schéma explicatif seulement; ne fournit pas les débits ni dimensions de conception APG. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  16 
+15.3 Choisir un bâtiment selon l’effectif : orientation de planification 
+La quantité de poulets ne suffit pas à sélectionner le bâtiment. Le tableau suivant donne une grille de discussion 
+pour répartir les lots et les fonctions. Les tranches d’effectifs sont des paliers de planification inspirés des 
+capacités mentionnées dans le cahier V2; ce ne sont pas des seuils réglementaires ni des capacités certifiées. 
+Pour les lots importants, plusieurs bâtiments ou compartiments autonomes peuvent réduire le risque de perte 
+simultanée et faciliter la conduite « tout plein/tout vide », sous réserve d’un plan d’ensemble et d’un avis 
+technique. 
+Effectif simultané prévu Configuration à étudier en premier À prévoir impérativement dans l’étude 
+500 sujets 
+Un bâtiment/compartiment autonome, avec 
+poussinière dédiée ou zone de démarrage 
+isolable. Le système ouvert peut être évalué 
+si climat et ventilation le permettent. 
+Surface utile, sas, zone aliment/eau, 
+drainage, clôture, accès véhicule et 
+capacité de secours. 
+1 000 sujets 
+Un ou plusieurs compartiments 
+indépendants; comparer bâtiment ouvert et 
+semi-ouvert selon le site. 
+Évaluer uniformité d’air et accès aux 
+équipements; organiser une entrée unique 
+et des flux propres/sales. 
+2 000 sujets 
+Un bâtiment dimensionné par ingénieur ou 
+plusieurs unités/sections séparables. 
+Ne pas supposer que la ventilation naturelle 
+fonctionne sur toute largeur; vérifier l’air au 
+niveau des oiseaux et prévoir alarmes si 
+ventilation mécanique. 
+3 000 sujets 
+Étude modulaire; compartiments ou 
+maisons séparées possibles selon le cycle 
+et la possibilité d’isoler chaque lot. 
+Calcul de structure, ventilation, alimentation 
+électrique/eau, fonctionnement de secours, 
+stockage aliment et évacuation des 
+déjections. 
+5 000 sujets 
+Comparer une maison commerciale et 
+plusieurs bâtiments plus petits; choix selon 
+risque, coût, climat, main-d’œuvre et 
+capacité de secours. 
+Zones sanitaires par bâtiment, traçabilité 
+des visiteurs, accès d’urgence, séparation 
+des âges et plan de circulation. 
+10 000 sujets ou plus 
+Conception de ferme multi-bâtiments, 
+chaque maison étant traitée comme une 
+unité de biosécurité avec utilités et accès 
+planifiés. 
+Plan masse, distances d’isolement définies 
+localement, flux distincts, alimentation 
+électrique de secours dimensionnée et 
+procédure de crise. 
+ 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  17 
+15.4 Surfaces indicatives du document V2 — exemples, pas des normes 
+Pour donner un ordre de grandeur au simulateur, le cahier V2 proposait 4 adultes/m² et 20 à 25 poussins/m² 
+pendant le démarrage. Les surfaces ci-dessous reprennent uniquement ces hypothèses arithmétiques : elles ne 
+certifient pas le respect d’une norme, et ne sont pas une recommandation universelle. La surface de 
+poussinière concerne une phase et ne correspond pas à la surface nécessaire lorsque les oiseaux grandissent. 
+La densité réelle doit être déterminée par le poids vivant maximal, le système, l’équipement, les conditions de 
+confort et la règle locale. 
+Effectif 
+Adultes à 4 sujets/m² (zone 
+utile) 
+Poussins à 20–25 sujets/m² 
+(plage utile) 
+À ajouter hors zone utile 
+500 125 m² 20–25 m² 
+Sas, magasin, local technique, 
+collecte, circulation et stockage. 
+1 000 250 m² 40–50 m² 
+Idem; ajuster selon plan et 
+implantation des équipements. 
+2 000 500 m² 80–100 m² 
+Idem; contrôler la ventilation et 
+la distribution des équipements. 
+3 000 750 m² 120–150 m² 
+Idem; envisager des unités 
+séparables. 
+5 000 1 250 m² 200–250 m² 
+Idem; prévoir zones 
+propres/sales et logistique de 
+déchets. 
+10 000 2 500 m² 400–500 m² 
+Idem; étude de ferme multi-
+bâtiments et utilités. 
+ 
+Méthode de pré-calcul : surface utile = effectif maximal présent ÷ densité choisie (oiseaux/m²). Si le référentiel 
+réglementaire exprime la densité en kg de poids vif par m², utiliser surface = biomasse maximale ÷ densité 
+massique autorisée. Ne jamais convertir automatiquement un seuil kg/m² en oiseaux/m² sans poids cible. Les 
+annexes ne sont ajoutées qu’après calcul de la zone animale. Les exemples de densité par m² ci-dessus 
+doivent être masqués en production tant qu’APG n’a pas décidé de les publier comme hypothèse clairement 
+signalée. 
+15.5 Implantation, orientation et matériaux à vérifier 
+ Éviter les terrains inondables, zones de ruissellement, eaux stagnantes et proximité immédiate de sites 
+susceptibles d’attirer des oiseaux sauvages; consulter les règles locales d’urbanisme et de distance 
+sanitaire. 
+ Prévoir drainage et évacuation maîtrisée des eaux de nettoyage; ne pas rejeter eaux usées ou effluents 
+dans les puits, cours d’eau ou zones de captage. 
+ Orienter les ouvertures selon les vents dominants et l’exposition solaire locale, après étude du terrain. Une 
+orientation fixe « est-ouest » n’est pas une solution universelle si elle contredit ventilation, topographie ou 
+pluies dominantes. 
+ Installer une toiture résistante aux pluies et vents locaux, avec protection contre le rayonnement et débords 
+adéquats. Le choix (tôle, isolant, plafond, matériaux locaux) doit tenir compte de la résistance structurelle, 
+de l’entretien, du feu et de la chaleur. 
+ Prévoir un sol drainable, nettoyable et compatible avec la désinfection; la litière doit rester adaptée, sèche 
+et friable. Le système de sol doit tenir compte du climat, des matériaux et de la réglementation. 
+ Protéger ouvertures par grillage adapté contre oiseaux sauvages et nuisibles sans obstruer le 
+renouvellement d’air; prévoir fermeture sûre et accès de maintenance. 
+ Installer sas et séparation entre zone propre et zone sale, local aliment protégé, point d’eau, zone 
+carcasses/déchets selon exigences locales et circulation véhicule définie. 
+ Garder assez d’espace pour entretien, collecte, sécurité incendie et accès d’urgence; les équipements ne 
+doivent pas bloquer l’accès des oiseaux à l’eau et à l’aliment. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  18 
+16. Maladies aviaires et signes d’alerte 
+La liste ci-dessous est un aide-mémoire de risques à intégrer au simulateur, pas une liste exhaustive ni un outil 
+de diagnostic. La présence, la fréquence, la déclaration obligatoire, les tests et les mesures de contrôle varient 
+selon pays, saison, système, souche et statut sanitaire. Des signes similaires peuvent avoir plusieurs causes 
+(infectieuses, alimentation, eau, toxiques, chaleur, ventilation, parasites ou traumatismes); le diagnostic doit être 
+posé par un vétérinaire et, si nécessaire, un laboratoire. La FAO souligne explicitement que les symptômes 
+seuls ne permettent pas toujours de distinguer les maladies [5]. 
+Maladie / groupe à surveiller 
+Transmission / facteurs de 
+risque généraux 
+Signes possibles (non 
+diagnostiques) 
+Mesure de prévention 
+intégrable au système 
+Influenza aviaire 
+Contacts avec oiseaux infectés, 
+sécrétions/excrétions, matériel, 
+personnes, véhicules ou 
+environnement contaminés; 
+risque de contact avec oiseaux 
+sauvages. 
+Mortalité inhabituelle ou rapide, 
+baisse d’activité/ponte, signes 
+respiratoires ou digestifs; 
+présentation variable. 
+Empêcher contact avec oiseaux 
+sauvages; sécuriser 
+eau/aliment; contrôler accès et 
+mouvements; signalement 
+rapide à vétérinaire/autorité si 
+suspicion. 
+Maladie de Newcastle 
+Transmission entre oiseaux, 
+sécrétions, fientes et fomites; 
+mouvements de sujets, visiteurs 
+et matériel peuvent diffuser le 
+virus. 
+Troubles respiratoires, digestifs 
+ou nerveux, baisse de ponte et 
+mortalité; signes variables selon 
+souche et immunité. 
+Vaccination seulement selon 
+programme vétérinaire local; 
+biosécurité, provenance 
+documentée, limitation des 
+mouvements et surveillance 
+quotidienne. 
+Bronchite infectieuse aviaire 
+Virus respiratoire contagieux 
+diffusé dans les lots; 
+introduction facilitée par 
+contacts et matériel contaminés. 
+Toux/éternuements, 
+écoulements, baisse de ponte 
+ou qualité de coquille, parfois 
+atteinte rénale selon souche. 
+Réduire les introductions, 
+ventilation et qualité d’air 
+adaptées, hygiène des 
+équipements; programme 
+vaccinal à définir par vétérinaire. 
+Bursite infectieuse / Gumboro 
+Virus très résistant dans 
+l’environnement; contamination 
+oro-fécale et persistance dans 
+litière/locaux. 
+Dépression, diarrhée, 
+déshydratation ou mortalité; 
+forme subclinique possible. 
+Nettoyage/désinfection selon 
+agent et produit, repos sanitaire 
+validé, gestion des lots; 
+vaccination selon risque et 
+maternité immunitaire sous 
+conseil expert. 
+Marek 
+Virus associé aux 
+poussières/follicules de plumes; 
+exposition précoce possible, 
+persistance dans 
+environnement. 
+Amaigrissement, 
+paralysie/faiblesse ou lésions 
+tumorales, mais diagnostic non 
+clinique. 
+Acheter poussins de statut 
+connu; vaccination au couvoir si 
+recommandée; nettoyer les 
+locaux et limiter poussière; toute 
+stratégie par vétérinaire. 
+Coccidiose 
+Protozoaires transmis par 
+ingestion d’oocystes dans 
+litière/environnement 
+contaminé; humidité et forte 
+pression de contamination 
+favorisent le risque. 
+Diarrhée parfois sanguinolente, 
+baisse d’ingestion, croissance 
+irrégulière, déshydratation; 
+signes dépendent de l’espèce et 
+de la lésion. 
+Litière sèche et friable, gestion 
+des fuites d’eau, densité 
+adaptée, 
+rotation/assainissement; 
+prévention 
+médicamenteuse/vaccinale 
+uniquement sur avis 
+professionnel. 
+Salmonelloses (incl. 
+pullorose/typhose selon 
+contexte) 
+Transmission par œufs, 
+poussins, fientes, eau/aliment, 
+rongeurs et matériel; enjeu de 
+santé animale et humaine selon 
+sérovar. 
+Mortalité chez poussins, 
+diarrhée, abattement; signes 
+non spécifiques et portage 
+possible sans signe. 
+Approvisionnement contrôlé, 
+hygiène d’incubation, 
+eau/aliments sûrs, lutte 
+nuisibles, traçabilité et 
+surveillance selon protocole 
+officiel. 
+Pasteurellose / choléra aviaire 
+Contacts avec oiseaux porteurs, 
+animaux sauvages, sécrétions, 
+eau/aliment souillés ou 
+carcasses. 
+Mortalité soudaine, abattement, 
+atteinte respiratoire ou 
+tuméfactions; tableau variable. 
+Empêcher accès aux carcasses, 
+protéger points d’eau et 
+aliments, lutte nuisibles, 
+contrôle des introductions et 
+avis vétérinaire. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  19 
+Maladie / groupe à surveiller 
+Transmission / facteurs de 
+risque généraux 
+Signes possibles (non 
+diagnostiques) 
+Mesure de prévention 
+intégrable au système 
+Parasites (poux, acariens, vers) 
+et autres causes non 
+infectieuses 
+Litière/environnement, vecteurs, 
+contact entre lots; carences, 
+toxines, chaleur et mauvaise 
+eau peuvent mimer une 
+maladie. 
+Démangeaisons, plumage 
+dégradé, pâleur, 
+amaigrissement, baisse de 
+production ou signes digestifs. 
+Inspection régulière, gestion de 
+la litière et des nuisibles, 
+contrôle de l’eau et de l’aliment; 
+confirmation et traitement ciblé 
+par professionnel. 
+ 
+Les maladies présentées couvrent les risques couramment documentés par les sources vétérinaires et les 
+guides avicoles, mais la liste reste indicative [5] [9] [10]. Elle ne permet pas d’établir qu’une maladie est 
+présente sur une exploitation ou dans un pays donné. 
+ 
+Figure 3 — Exemple illustratif de zonage et de flux de biosécurité. Source : Lohmann Breeders [8]. Le repère « 2 m » 
+inscrit dans l’image provient de l’illustration source et ne constitue ni une distance réglementaire ni une 
+recommandation APG. 
+16.1 Données de santé à suivre dans le simulateur 
+Observation Fréquence opérationnelle proposée Utilisation / précaution 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  20 
+Observation Fréquence opérationnelle proposée Utilisation / précaution 
+Mortalité et réforme 
+Enregistrement quotidien par date et 
+nombre; cumul par semaine et cycle. 
+Comparer à la référence APG uniquement 
+si une valeur locale validée existe; hausse 
+inhabituelle = alerte de vérification, pas 
+diagnostic. 
+Consommation d’eau 
+Relevé régulier, idéalement quotidien, avec 
+température ambiante. 
+Une variation peut refléter chaleur, fuite, 
+panne, alimentation ou maladie; vérifier le 
+système et solliciter un professionnel. 
+Consommation d’aliment Relevé par jour/période et par phase. 
+Comparer avec évolution d’effectif; 
+distinguer aliment distribué, consommé et 
+gaspillé. 
+Comportement et distribution Tournée d’observation à heures régulières. 
+Entassement, halètement, léthargie ou 
+baisse d’accès aux abreuvoirs sont des 
+signaux à investiguer. 
+Litière et air 
+Contrôle visuel quotidien; instruments si 
+disponibles. 
+Litière humide, poussière, odeur irritante ou 
+condensation nécessitent vérification de 
+ventilation, abreuvement et conduite. 
+Poids / croissance 
+Échantillonnage hebdomadaire ou 
+fréquence fixée par technicien. 
+Enregistrer nombre pesé, moyenne et 
+méthode; ne pas utiliser un seuil non 
+documenté. 
+Ponte et qualité des œufs 
+Comptage par jour ou période et par 
+destination. 
+Baisse de production ou qualité = signal 
+d’analyse, non diagnostic automatique. 
+ 
+17. Prévention des pertes et plan de biosécurité 
+La biosécurité vise à réduire les voies d’introduction et de diffusion. La WOAH recommande un programme 
+proportionné au risque propre au groupe épidémiologique et couvrant contact direct, animaux 
+domestiques/sauvages, personnes, véhicules, équipements, vecteurs, aérosols, eau et aliments [4]. Les 
+mesures suivantes sont à adapter et faire valider localement; elles ne remplacent pas un protocole vétérinaire. 
+17.1 Avant la mise en place 
+ Choisir poussins d’une source traçable, documenter origine, date, effectif, certificat sanitaire disponible et 
+conditions de transport. 
+ Appliquer le vide sanitaire et la préparation du bâtiment définis avec le vétérinaire; retirer litière et matière 
+organique, nettoyer, rincer, sécher puis désinfecter avec produit autorisé et selon son étiquette. Ne pas 
+mélanger les produits. 
+ Vérifier accès à l’eau, potabilité selon analyses locales, débit des abreuvoirs, nettoyage des lignes et 
+disponibilité d’aliment correctement stocké. 
+ Tester chauffage, ventilation, thermostats, capteurs, alarme, générateur ou plan de secours avant l’arrivée; 
+consigner test et responsable. 
+ Préparer clôture, panneaux, registre visiteurs, sas, bottes/tenues dédiées, lavage des mains et protocoles 
+de véhicule. 
+ Établir un plan sanitaire local avec vétérinaire : statut, vaccination éventuelle, prélèvements, registre de 
+médicaments, délais d’attente et obligations de déclaration. 
+17.2 Pendant l’élevage 
+ Appliquer une entrée contrôlée : visiteurs limités et enregistrés; tenue/chaussures propres dédiées; hygiène 
+des mains; matériel propre propre à chaque bâtiment si possible. 
+ Organiser les tâches des lots jeunes/sains vers plus âgés ou suspects, sans retour vers un lot sain; éviter 
+partage d’équipements ou le nettoyer entre unités. 
+ Protéger l’aliment et l’eau contre rongeurs, insectes, oiseaux sauvages, poussière, excréments et humidité; 
+vérifier les fuites et nettoyer les lignes selon un plan adapté. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  21 
+ Pratiquer le tout plein/tout vide si la production le permet; sinon isoler les groupes d’âge comme unités 
+sanitaires distinctes et utiliser du matériel dédié. 
+ Enlever rapidement les carcasses avec équipements dédiés et les éliminer conformément aux consignes 
+vétérinaires et réglementaires; ne pas laisser les carcasses accessibles aux animaux. 
+ Contrôler quotidiennement mortalité, eau, aliment, activité, litière, ventilation et température; saisir les écarts 
+avec date/heure. 
+ Lutter contre rongeurs, mouches et autres nuisibles par un plan suivi; retirer les sources d’eau, d’aliment et 
+d’abri; faire intervenir un prestataire compétent si nécessaire. 
+ Éviter les traitements systématiques non prescrits. Les vaccins, médicaments, désinfectants et délais 
+d’attente sont définis par vétérinaire et autorité locale. 
+17.3 Nettoyage et désinfection entre lots 
+13. Retirer les volailles et organiser l’évacuation des fientes/litières conformément aux règles 
+environnementales et sanitaires. 
+14. Enlever à sec les matières organiques avant lavage; nettoyer du haut vers le bas; choisir un détergent 
+compatible et rincer si requis par l’étiquette. 
+15. Laisser sécher; inspecter les zones difficiles d’accès, silos, conduites, réservoirs, ventilateurs, entrées d’air, 
+nids et matériels. 
+16. Appliquer un désinfectant autorisé pour l’agent ciblé, à concentration, température et temps de contact 
+selon l’étiquette. La désinfection ne remplace pas le nettoyage préalable. 
+17. Laisser le bâtiment sécher et ventiler avant remise en place; vérifier le résultat selon le protocole 
+APG/vétérinaire (inspection ou prélèvements si indiqués). 
+18. Tracer date, responsable, produits et lot, surfaces traitées, dilutions/temps d’exposition prescrits, anomalies 
+et vérification finale. 
+17.4 Plan d’urgence — mortalité inhabituelle ou maladie suspectée 
+19. Ne pas déplacer, vendre ou abattre les oiseaux suspects avant conseil du vétérinaire/autorité si une 
+maladie réglementée est possible. 
+20. Isoler la zone et réduire immédiatement les mouvements de personnes, oiseaux, œufs, litière, aliments et 
+véhicules; limiter les contacts avec les autres lots. 
+21. Contacter sans délai le vétérinaire responsable et les services vétérinaires locaux; respecter les obligations 
+de notification du pays. 
+22. Ne pas autopsier, prélever ou transporter des échantillons sans instructions et équipements adaptés. Le 
+vétérinaire/autorité détermine le diagnostic et la collecte. 
+23. Renforcer les mesures d’hygiène selon conseil, conserver les relevés et données de lot, noter dates, 
+mortalité, consommation, visiteurs et mouvements récents. 
+24. Appliquer les mesures officielles de quarantaine, abattage sanitaire, traitement, vaccination d’urgence ou 
+élimination uniquement sur prescription/ordre compétent. 
+25. Ne reprendre les mouvements qu’après autorisation ou avis écrit de l’autorité compétente lorsque requis. 
+URGENCE SANITAIRE — Un effondrement de consommation, une mortalité soudaine, des signes 
+respiratoires/neurologiques ou une suspicion d’influenza aviaire/Newcastle requièrent un appel immédiat au 
+vétérinaire et aux services compétents. Les signes ne confirment pas la maladie; ne pas improviser 
+médicaments, désinfection ou vaccination. 
+17.5 Limites des recommandations sanitaires 
+Le simulateur ne doit pas attribuer automatiquement un symptôme à une maladie. Il ne doit pas produire de 
+diagnostic différentiel clinique, de prescription, de posologie, de calendrier vaccinal universel, ni de consigne de 
+destruction des animaux. Il peut aider à enregistrer les signaux, afficher les contacts du vétérinaire local et 
+rappeler les règles de déclaration à vérifier. Les maladies animales réglementées doivent suivre les consignes 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  22 
+des services vétérinaires. Les vaccins, traitements et désinfectants sont choisis selon statut sanitaire, étiquette, 
+laboratoire, âge, réglementation et avis professionnel [4] [5] [9]. 
+18. Fiches de maladies prioritaires documentées 
+Les fiches suivantes approfondissent sept maladies importantes pour un simulateur de poulets. Les signes sont 
+des motifs d’alerte seulement : ils ne confirment pas la maladie et leur absence ne l’exclut pas toujours. La 
+déclaration obligatoire, les prélèvements, le laboratoire, les restrictions, la vaccination et les autres mesures 
+relèvent du vétérinaire et des autorités de chaque pays. 
+18.1 Influenza aviaire (IAHP / IAFP) 
+Transmission et risque : virus influenza A, transmis directement par contacts, sécrétions respiratoires et fientes; 
+indirectement par eau, aliments, plumes, poussières, litière, carcasses, matériel, véhicules, vêtements et 
+chaussures. Les oiseaux sauvages, marchés, rassemblements et mouvements d’oiseaux peuvent contribuer à 
+l’introduction. Certaines souches peuvent affecter des mammifères. La distinction IAHP/IAFP répond à des 
+critères virologiques et réglementaires, pas aux seuls signes. 
+Alertes possibles : mortalité anormale ou rapide, abattement, baisse d’appétit/ponte, signes respiratoires, 
+digestifs ou nerveux, cyanose ou œdème de la tête/crête. Une infection peut aussi être peu visible; les 
+manifestations varient selon souche, espèce, âge et immunité. 
+Prévention : empêcher le contact avec oiseaux sauvages, protéger eau/aliment, limiter et tracer les 
+mouvements, contrôler visiteurs/véhicules, utiliser tenues et chaussures dédiées, nettoyer et désinfecter 
+correctement, et surveiller chaque jour mortalité, consommation et ponte. La vaccination, si envisagée, est 
+décidée par l’autorité avec le vétérinaire; elle ne remplace pas la biosécurité et n’a pas de calendrier universel. 
+Suspicion : limiter immédiatement accès et déplacements d’oiseaux, œufs, cadavres, fumier, litière et matériel; 
+sécuriser les cadavres sans les déplacer/éliminer de façon improvisée; contacter sans délai vétérinaire et 
+service officiel. Seuls les professionnels autorisés organisent prélèvements, laboratoire, restrictions et mesures 
+officielles. Sources : OMSA/WOAH, https://www.woah.org/en/disease/avian-influenza/ ; FAO, 
+https://www.fao.org/animal-health/animal-diseases/avian-flu-qa/en [16]. 
+18.2 Maladie de Newcastle 
+Transmission et risque : maladie virale contagieuse due à des souches virulentes d’APMV-1; diffusion par 
+contact, fientes, sécrétions respiratoires, aérosols, eau/aliments contaminés et fomites — personnes, 
+vêtements, chaussures, équipements, litière, véhicules ou carcasses. Les oiseaux sauvages ou pigeons 
+peuvent contribuer selon le contexte. 
+Alertes possibles : mortalité inhabituelle, toux/halètement/râles, diarrhée, baisse de consommation ou de ponte, 
+troubles nerveux (tremblements, paralysie, torticolis, marche en cercle). Les signes ressemblent à d’autres 
+maladies, dont l’influenza aviaire, et ne sont pas diagnostiques. 
+Prévention : contrôle d’accès et des mouvements, protection eau/aliment, séparation des lots, nettoyage-
+désinfection validés, traçabilité et surveillance quotidienne. Vaccination seulement selon programme 
+vétérinaire/national; elle ne supprime pas nécessairement l’infection et ne doit pas être préprogrammée 
+universellement. 
+Suspicion : confiner/séparer si faisable, suspendre mouvements, ventes et échanges, empêcher la dispersion 
+des cadavres, renforcer l’hygiène et appeler vétérinaire/autorité compétente. Prélèvements, laboratoire, 
+quarantaine, abattage sanitaire ou autres mesures sont décidés officiellement selon pays et souche. Source : 
+OMSA/WOAH, https://www.woah.org/en/disease/newcastle-disease/ . 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  23 
+18.3 Bronchite infectieuse aviaire 
+Transmission et risque : coronavirus aviaire très contagieux, transmission principalement aérienne/aérosol et 
+par contact direct; diffusion mécanique possible par matériel, équipements, emballages d’œufs, fumier et 
+déplacements/visites. Des oiseaux apparemment normaux peuvent excréter le virus. Certaines souches 
+atteignent surtout le système respiratoire, d’autres peuvent également toucher rein ou appareil reproducteur. 
+Alertes possibles : toux, râles, abattement et baisse de consommation chez les jeunes; baisse de 
+ponte/éclosabilité et œufs déformés ou à coquille mince chez les pondeuses; des signes rénaux ou une 
+mortalité peuvent survenir. Aucun de ces éléments ne confirme la bronchite infectieuse. 
+Prévention : ségrégation, contrôle des entrées et mouvements, équipements dédiés, nettoyage puis 
+désinfection; tenir un registre de ponte, consommation, signes et mortalité. Vaccin et stratégie dépendent de 
+souche, âge, statut immunitaire, produits autorisés et programme national, sur avis vétérinaire. 
+Suspicion : consigner lot/âge, dates, signes, mortalité et mouvements; réduire les contacts et échanges entre 
+lots; appeler vétérinaire et autorité lorsque requis. Le vétérinaire décide prélèvements, diagnostic différentiel, 
+laboratoire et mesures de contrôle. Source : OMSA/WOAH, fiche de maladie et manuel technique, 
+https://www.woah.org/fr/maladie/bronchite-infectieuse-aviaire/ et 
+https://www.woah.org/fileadmin/Home/eng/Health_standards/tahm/3.03.02_AIB.pdf [11]. 
+18.4 Maladie de Gumboro (bursite infectieuse) 
+Transmission et risque : virus aviaire très contagieux et résistant dans l’environnement; transmission surtout 
+féco-orale, également décrite par voie respiratoire, et indirecte par personnes, vêtements, chaussures, matériel, 
+véhicules, litière et locaux. Elle touche surtout les jeunes poulets; l’immunodépression et les infections 
+secondaires sont des enjeux possibles. 
+Alertes possibles : abattement, baisse d’ingestion, diarrhée aqueuse, plumes ébouriffées, déshydratation ou 
+mortalité. Des formes subcliniques existent. Ces signes sont non spécifiques et les lésions seules ne confirment 
+pas la maladie. 
+Prévention : séparer les lots d’âges différents, contrôler les mouvements/visiteurs, réserver ou nettoyer le 
+matériel, nettoyer et décontaminer les bâtiments avec une méthode validée et protéger les poussins et œufs à 
+couver de filières non vérifiées. Vaccins et calendrier dépendent de la souche/variant, immunité maternelle, 
+risque et réglementation; l’article de l’OMSA signale que certaines variantes peuvent nécessiter des vaccins 
+particuliers. 
+Suspicion : séparer le lot, limiter les mouvements, documenter âges/mortalité/signaux et appeler le vétérinaire 
+et l’autorité. Le vétérinaire/laboratoire définissent prélèvements et analyses; seules les autorités décident 
+restrictions, quarantaine et autres mesures. Source : OMSA/WOAH, https://www.woah.org/fr/maladie/bursite-
+infectieuse-maladie-de-gumboro/ et manuel terrestre 
+https://www.woah.org/fileadmin/Home/fr/Health_standards/tahm/3.03.12_IBD.pdf [12]. 
+18.5 Maladie de Marek 
+Transmission et risque : alphaherpesvirus transmis horizontalement, surtout par squames et poussières de 
+plumes; litière et poussière contaminées favorisent la dissémination. Les jeunes sont particulièrement sensibles 
+durant les premières semaines. La source consultée indique une transmission non verticale, sans que cela 
+remplace les contrôles sanitaires de la filière. 
+Alertes possibles : faiblesse, amaigrissement, retard de croissance, baisse de performances ou mortalité; 
+ataxie/paralysie d’une patte, aile ou du cou. Des lésions nerveuses ou tumorales peuvent être constatées à 
+l’examen vétérinaire. D’autres affections donnent des signes comparables. 
+Prévention : réduire poussières et transferts entre lots, appliquer contrôle d’accès et nettoyage-désinfection, 
+sourcer des poussins suivis et surveiller les lots. La vaccination joue un rôle central dans plusieurs programmes 
+mais vaccin, souche, moment d’administration et stratégie sont définis avec le vétérinaire selon le pays et le 
+couvoir. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  24 
+Suspicion : limiter les mouvements non nécessaires, gérer le lot séparément si possible, documenter 
+signes/âge/statut vaccinal, et contacter le vétérinaire. Les prélèvements, l’histologie et les tests sont décidés par 
+le professionnel; pas de diagnostic automatique ni d’abattage/repeuplement programmé. Source : 
+OMSA/WOAH, manuel terrestre, 
+https://www.woah.org/fileadmin/Home/fr/Health_standards/tahm/3.03.13_MAREK_DIS.pdf [13]. 
+18.6 Coccidiose aviaire 
+Transmission et risque : protozoaires, surtout Eimeria; infection principalement féco-orale après ingestion 
+d’oocystes sporulés présents dans litière, sol, eau, aliment et poussière. Bottes, vêtements, mains, cages, 
+matériel, insectes et rongeurs peuvent contribuer au transport. Humidité et gestion de litière influencent la 
+contamination; espèces/souches de coccidies et gravité varient. 
+Alertes possibles : baisse d’eau/aliment, croissance ralentie, amaigrissement, léthargie, plumes ébouriffées, 
+diarrhée parfois sévère, mortalité ou baisse de ponte. La présence d’oocystes dans les fientes à elle seule ne 
+prouve pas une coccidiose clinique; examen, lésions et contexte sont nécessaires. 
+Prévention : maintenir la litière sèche, limiter fuites d’eau, retirer débris/fientes, gérer le fumier, séparer les âges 
+si pertinent et nettoyer le matériel. Certains oocystes résistent à des désinfectants usuels. Vaccination et 
+stratégie anticoccidienne dépendent de l’espèce, du système, des produits autorisés et du vétérinaire; aucune 
+prévention médicamenteuse universelle. 
+Suspicion : consigner âge, lot, symptômes, consommations, croissance et mortalité; limiter mouvements et 
+partage d’équipement, retirer les morts selon règles locales et contacter le vétérinaire. Les prélèvements, 
+l’interprétation et tout traitement sont décidés par le vétérinaire; pas d’automédication. Sources : Merck 
+Veterinary Manual, https://www.merckvetmanual.com/poultry/coccidiosis-in-poultry/coccidiosis-in-poultry ; 
+ANSES, https://www.anses.fr/system/files/SANT-Fi-CoccidiosePoulet.pdf [14]. 
+18.7 Salmonelloses aviaires, pullorose et typhose 
+Transmission et risque : groupe d’infections à Salmonella. La pullorose (biovar Pullorum) concerne surtout les 
+jeunes, la typhose aviaire (biovar Gallinarum) plus souvent les oiseaux plus âgés; d’autres sérovars existent. 
+Transmission verticale/ovarienne possible chez les reproductrices, et horizontale par porteurs, fientes, 
+poussières, eau, aliments, litière, matériel, caisses, vêtements, chaussures et véhicules. Les enjeux sanitaires 
+et zoonotiques varient selon le sérovar et la juridiction. 
+Alertes possibles : chez les jeunes, abattement, diarrhée, déshydratation, cloaque souillé, baisse d’ingestion et 
+mortalité; chez les plus âgés, baisse de ponte, performances ou mortalité. Des porteurs peuvent être peu 
+symptomatiques. Les signes sont non spécifiques; dépistage ou sérologie seuls ne suffisent pas 
+nécessairement à confirmer. 
+Prévention : approvisionnement traçable, hygiène couvoir/reproducteurs, collecte et suivi des œufs à couver, 
+contrôle visiteurs/véhicules, eau et aliments sûrs, protection contre rongeurs/oiseaux sauvages, litière gérée, 
+retrait des cadavres et nettoyage-désinfection. Surveillance, prélèvements et éventuelle vaccination suivent le 
+risque local et l’autorité; vaccination ne remplace pas la biosécurité. 
+Suspicion : isoler l’unité, réduire mouvements, préserver la traçabilité et appeler vétérinaire/autorité. 
+Prélèvements et typage sont réalisés par le professionnel et laboratoire compétent; restrictions, réforme ou 
+mesures sur produits ne sont pas universelles et relèvent du plan officiel. Sources : OMSA/WOAH, Pullorum 
+disease https://www.woah.org/en/disease/pullorum-disease/ ; Fowl typhoid 
+https://www.woah.org/en/disease/fowl-typhoid/ ; Code terrestre Salmonella, 
+https://www.woah.org/fileadmin/Home/fr/Health_standards/tahc/2018/fr_chapitre_prevent_salmonella.htm [15]. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  25 
+19. Exigences fonctionnelles de réalisation et de recette 
+Les exigences prioritaires déjà décrites dans les chapitres 2 à 14 sont précisées ici par des identifiants stables. 
+Le responsable produit peut ajouter des critères, mais doit conserver la traçabilité entre exigence, cas de test et 
+validation APG. 
+ID Exigence Priorité Critère d’acceptation 
+BAT-01 
+Choix du type de bâtiment selon 
+climat, système, poids, 
+ventilation, énergie et effectif. 
+Must 
+Le simulateur n’associe jamais 
+une typologie à une conformité 
+automatique. 
+BAT-02 
+Calcul des surfaces en m² avec 
+base oiseaux/m² ou kg vif/m² 
+explicite. 
+Must 
+L’unité est visible; résultats de 
+zone animale et annexes 
+séparés; aucune conversion 
+silencieuse. 
+BAT-03 
+Configuration modulaire du 
+nombre de 
+bâtiments/compartiments. 
+Should 
+La capacité totale et effectif par 
+unité sont contrôlés; 
+surpopulation ou dépassement 
+de capacité signalés. 
+SAN-01 
+Journal quotidien de mortalité, 
+eau, aliment, ambiance et 
+observation du lot. 
+Should 
+Le système agrège par période 
+sans effacer les événements 
+originaux. 
+SAN-02 
+Alerte de maladie suspectée 
+sans diagnostic. 
+Must 
+Message recommande d’isoler 
+les mouvements selon protocole 
+et contacter vétérinaire/autorité; 
+aucune maladie attribuée 
+automatiquement. 
+SAN-03 
+Plan de biosécurité modifiable 
+par ferme. 
+Should 
+Liste tâches, responsable, 
+fréquence, horodatage et 
+preuve d’exécution exportables. 
+SAN-04 
+Plan sanitaire affiché par 
+pays/ferme selon validation 
+locale. 
+Must 
+Aucun calendrier vaccinal ou 
+traitement universel prérempli; 
+défaut = contenu « à compléter 
+avec le vétérinaire ». 
+SAN-05 
+Gestion d’un incident sanitaire 
+avec lots et mouvements 
+associés. 
+Could 
+Permet d’identifier les lots, 
+visiteurs/événements si ceux-ci 
+ont été saisis, sans inférer une 
+contagion. 
+IMG-01 
+Images explicatives de 
+bâtiments, ventilation et 
+biosécurité. 
+Must 
+Chaque illustration a une 
+légende, une source et une 
+mention « exemple, non plan 
+d’exécution ». 
+DOC-01 Rapport accessible et complet. Must 
+Avertissements réglementaires, 
+paramètres, unités, bâtiment, 
+biosécurité, données sanitaires 
+et références sont présents 
+selon parcours. 
+ 
+20. Modèle de données sanitaire et du bâtiment 
+Objet/champ Format/unité Règle de gestion 
+housing_type enum 
+open_natural, semi_open_assisted, 
+closed_mechanical, range, other; choix 
+précisé pour chaque bâtiment. 
+building_id identifiant 
+Unique dans la ferme; associe lot, capacité, 
+surface et statut sanitaire. 
+building_area_useful_m2 décimal m² 
+Surface accessible et mesurée; exclut 
+stockage/sas sauf s’ils sont accessibles aux 
+oiseaux. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  26 
+Objet/champ Format/unité Règle de gestion 
+density_method enum 
+birds_per_m2 ou kg_live_per_m2; base et 
+valeur de seuil documentées par source 
+locale. 
+design_capacity nombre + unité 
+Capacité théorique au poids/âge spécifié; 
+ne remplace pas le calcul de densité 
+autorisée. 
+ventilation_type enum 
+natural, mechanical, tunnel, combined; 
+préciser la source d’énergie et le secours. 
+ventilation_alarm_test date/état 
+Test de la procédure d’alarme et 
+alimentation de secours, responsable et 
+résultat. 
+biosecurity_task tâche + date prévue/réalisée 
+Zone, responsable, produit si applicable, 
+statut, preuve et commentaire. 
+health_event date, lot, observation 
+Signes observés séparés d’un diagnostic 
+confirmé; diagnostic seulement par 
+professionnel autorisé. 
+mortality_daily entier/date 
+Nombre journalier, âge, catégorie, motif si 
+confirmé; les inconnus restent non 
+spécifiés. 
+vet_contact date, résultat, action 
+Accès restreint; conserver les informations 
+requises sans exposer de données 
+sensibles. 
+movement_record type, provenance/destination, date 
+Entrée/sortie d’oiseaux, œufs, visiteurs, 
+véhicules ou matériel selon nécessité et loi. 
+image_asset fichier, source, légende, licence/permission 
+Conserver attribution et droits; le visuel ne 
+vaut pas preuve de conformité. 
+ 
+21. Calendrier de contrôles et indicateurs de prévention 
+Rythme à configurer localement Contrôle Action d’alerte 
+Avant chaque arrivée 
+Bâtiment nettoyé/séché; eau, aliment, 
+chauffage, ventilation et secours testés; sas 
+et registre disponibles. 
+Ne pas confirmer le statut « prêt » tant 
+qu’un contrôle critique est en échec. 
+Chaque jour 
+Mortalité, consommation eau/aliment, 
+activité/répartition, température ambiante et 
+au niveau des oiseaux, litière, fuites, portes 
+et alarmes. 
+Alerte de tendance selon seuil APG validé 
+ou seuil saisi par le responsable; sans seuil 
+validé, signaler seulement une variation 
+notable. 
+Chaque tournée 
+Vérifier alimentation/abreuvoirs et observer 
+les oiseaux sans les déranger inutilement. 
+Accès bloqué, eau interrompue, halètement 
+ou regroupement inhabituel = contrôle 
+immédiat et appel si signes sérieux. 
+Périodiquement 
+Pesée d’échantillon, contrôle de 
+l’eau/aliment, capteurs, ventilateurs, 
+générateur et nuisibles. 
+Enregistrer méthode et résultat; comparer 
+au référentiel correspondant; escalader les 
+écarts. 
+Entre les lots 
+Nettoyage, désinfection, séchage, entretien, 
+contrôle et vide sanitaire conformément au 
+plan local. 
+Aucun nouveau lot avant signature du 
+responsable de préparation et disponibilité 
+eau/énergie. 
+En cas de suspicion 
+Limiter mouvement, appeler 
+vétérinaire/autorité, tracer les mesures 
+prises. 
+Déclencher le plan d’urgence; aucune 
+prescription logicielle. 
+ 
+Les périodicités précises sont définies par APG et le vétérinaire local. Ce tableau définit les contrôles à rendre 
+configurables; il ne fixe pas à lui seul des obligations réglementaires. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  27 
+Annexe A. Jeux de tests de référence 
+Test Entrée Résultat attendu 
+Alimentation de base 500 sujets vivants × 25 g/j 
+12,5 kg/j; sur 7 jours à effectif/ration 
+constants : 87,5 kg. Cas arithmétique, 
+pas recommandation de ration. 
+Ration croissante V2 
+25 g en semaine 1, hausse de 5 g 
+chaque semaine 
+Semaine 20 = 25 + 19×5 = 120 g/j. Le 
+repère 140 g ne découle pas de cette 
+règle. 
+Sacs 87,5 kg; sacs de 50 kg 
+2 sacs (arrondi supérieur), avec 12,5 kg 
+de reliquat théorique. 
+Incubation base fertile 
+1 000 œufs; fertilité 90 %; éclosion/œufs 
+fertiles 85 % 
+900 œufs fertiles; 765 poussins éclos. 
+Incubation base chargée 1 000 œufs; éclosion/œufs incubés 85 % 
+850 poussins éclos; ne pas appliquer en 
+plus les 90 % de fertilité. 
+Ponte 
+400 femelles vivantes; ponte 80 %; 1 
+jour 
+320 œufs théoriques pondus avant 
+pertes de collecte/qualité. Hypothèse de 
+démonstration. 
+Surface 
+Effectif 500; densité utilisateur 4 
+oiseaux/m² 
+125 m² utiles, hors annexes. Valeur 
+indicative et non recommandation 
+universelle. 
+Garde-fous 
+Taux 120 %, sac 0 kg, mâles+femelles > 
+effectif 
+Erreur bloquante, message précis, 
+aucun résultat trompeur. 
+Flux de ventes 
+100 œufs produits; 60 incubation; 50 
+vendus comme œufs 
+Erreur : allocation totale dépasse 100. 
+ 
+Annexe B. Liste de validation préproduction 
+ ☐ Référent technique APG nommé; paramètres propriétaires et sources reçus. 
+ ☐ Courbes d’aliment et de poids signées, avec âge, sexe, unités et plage d’application. 
+ ☐ Divergences de poids et rations V2 résolues ou laissées explicitement en estimation. 
+ ☐ Objectif 320 œufs défini, source et période documentées ou retiré de la communication publique. 
+ ☐ Densités et températures revues pour chaque système cible et contexte climatique. 
+ ☐ Taux de fertilité/éclosion utilisent des dénominateurs explicitement nommés. 
+ ☐ Tarifs, monnaie, taxes, date d’effet et formats de sacs validés. 
+ ☐ Calculs, arrondis, mortalité, pertes, seuil de rentabilité et flux d’œufs testés. 
+ ☐ Rapport affiche hypothèses, sources, limites, version et avertissement. 
+ ☐ Tests mobile, impression, PDF, accessibilité, sécurité et restauration terminés. 
+ ☐ Conditions d’utilisation et confidentialité revues pour les marchés visés. 
+ ☐ Processus d’approbation et de retrait de paramètres testé en environnement de préproduction. 
+Annexe C. Grille de dimensionnement préliminaire des bâtiments 
+Utiliser cette grille comme formulaire de collecte et non comme plan de construction. Toute surface présentée 
+au client doit indiquer les paramètres utilisés. Les cellules ne remplacent pas le calcul de structure, la 
+ventilation, les équipements ou l’autorisation administrative. 
+Donnée à saisir Exemple d’unité Source/qui valide Blocage si absent 
+Pays, site, règles et risques 
+naturels 
+Pays/commune; inondation, 
+vent, chaleur 
+Autorité et ingénieur local 
+Oui pour afficher « conforme » 
+ou construire. 
+Objectif et système 
+Chair, ponte, reproduction; 
+ouvert/mécanisé 
+APG / exploitant 
+Oui pour recommandation de 
+typologie. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  28 
+Donnée à saisir Exemple d’unité Source/qui valide Blocage si absent 
+Effectif maximal par bâtiment Oiseaux Plan de production Oui pour surface. 
+Poids vif maximal et âge kg/oiseau; jours/semaines 
+Courbe validée / référent 
+technique 
+Oui si dimensionnement kg/m². 
+Surface utile réellement 
+accessible 
+m² Plan coté / concepteur Oui pour comparer à la densité. 
+Densité de conception et base oiseaux/m² ou kg/m² Norme locale / spécialiste 
+Oui pour évaluer conformité 
+locale. 
+Mode de ventilation et 
+paramètres 
+Naturelle/mécanique/tunnel; 
+débits calculés 
+Ingénieur ventilation / fabricant Oui pour devis équipements. 
+Pointe de chaleur et humidité Données météo locales Service météo / ingénieur 
+Oui pour choix de 
+refroidissement et chauffage. 
+Capacité et autonomie 
+électrique 
+kW, heures d’autonomie Électricien / concepteur 
+Oui si système dépend de 
+ventilateurs/pompes. 
+Eau disponible et qualité L/j; analyse Fournisseur / laboratoire Oui avant mise en place du lot. 
+Zone annexe et gestion déchets m², capacité, flux 
+APG / autorité 
+environnementale 
+Oui pour plan masse final. 
+ 
+Annexe D. Informations de validation sanitaire à demander au 
+vétérinaire 
+ Carte des maladies réglementées et coordonnées des services vétérinaires pour le site. 
+ Risques endémiques identifiés, historique sanitaire du site et protocoles régionaux publiés. 
+ Plan de vaccination individualisé par objectif, souche, origine des poussins et situation locale, lorsqu’un tel 
+plan est indiqué. 
+ Plan de prélèvements et laboratoire autorisé, méthodes d’échantillonnage et seuils de déclaration. 
+ Méthode d’isolement et de circulation des personnes/matériels lors d’une suspicion. 
+ Produits de nettoyage/désinfection autorisés, dilutions/temps d’exposition selon étiquette, compatibilité 
+matériel et règles de sécurité. 
+ Gestion des carcasses, fumier/litière, eaux usées et restrictions de mouvement en cas d’alerte. 
+Annexe E. Fiche de lot quotidienne — champs proposés 
+Date / lot Effectif début / fin Morts / réformes Aliment kg / eau L 
+Poids échantillon 
+(n et kg) 
+Température, 
+humidité, litière et 
+actions 
+____ ____ / ____ ____ / ____ ____ / ____ 
+____ oiseaux; ____ 
+kg 
+____ °C / ____ %; 
+____ 
+ 
+Annexe F. Références complémentaires 
+[11] OMSA/WOAH, bronchite infectieuse aviaire — fiche de maladie et manuel terrestre : 
+https://www.woah.org/fr/maladie/bronchite-infectieuse-aviaire/ ; 
+https://www.woah.org/fileadmin/Home/eng/Health_standards/tahm/3.03.02_AIB.pdf 
+[12] OMSA/WOAH, bursite infectieuse / maladie de Gumboro — fiche de maladie et manuel terrestre : 
+https://www.woah.org/fr/maladie/bursite-infectieuse-maladie-de-gumboro/ ; 
+https://www.woah.org/fileadmin/Home/fr/Health_standards/tahm/3.03.12_IBD.pdf 
+[13] OMSA/WOAH, maladie de Marek — manuel terrestre : 
+https://www.woah.org/fileadmin/Home/fr/Health_standards/tahm/3.03.13_MAREK_DIS.pdf 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — version 4.0  •  29 
+[14] Merck Veterinary Manual, coccidiose aviaire : https://www.merckvetmanual.com/poultry/coccidiosis-in-
+poultry/coccidiosis-in-poultry ; ANSES, fiche coccidiose du poulet : https://www.anses.fr/system/files/SANT-Fi-
+CoccidiosePoulet.pdf 
+[15] OMSA/WOAH, Pullorum disease et fowl typhoid, et Code terrestre, prévention/contrôle des infections à 
+Salmonella chez les volailles : https://www.woah.org/en/disease/pullorum-disease/ ; 
+https://www.woah.org/en/disease/fowl-typhoid/ ; 
+https://www.woah.org/fileadmin/Home/fr/Health_standards/tahc/2018/fr_chapitre_prevent_salmonella.htm 
+[16] FAO, questions-réponses sur l’influenza aviaire : https://www.fao.org/animal-health/animal-diseases/avian-
+flu-qa/en 
+Références techniques 
+Les sources ci-dessous étayent des principes généraux de conduite, de logement, d’incubation et de suivi. Elles 
+ne remplacent pas une fiche technique Goliath, ni la réglementation du pays d’exploitation. 
+[1] FAO, Small-scale poultry production, chapitres 4 et 5 : gestion générale, logement, espace, ventilation et 
+incubation. https://www.fao.org/4/y5169e/y5169e05.htm et https://www.fao.org/4/y5169e/y5169e06.htm 
+[2] Cobb-Vantress, Breeder Management Guide, ressource officielle du sélectionneur. À utiliser comme cadre 
+méthodologique de suivi des reproducteurs, non comme source de valeurs Goliath. 
+https://www.cobbgenetics.com/assets/Cobb-Files/Breeder-Management-Guide.pdf 
+[3] FAO, Management and housing : besoins physiologiques, logement, eau/alimentation, biosécurité et gestion 
+des sous-produits. https://www.fao.org/poultry-production-products/production/management-and-housing/en 
+[4] Organisation mondiale de la santé animale (OMSA/WOAH), Code sanitaire pour les animaux terrestres et 
+manuels : normes internationales de santé et de bien-être animal. Les exigences pertinentes doivent être 
+vérifiées pour le pays et la maladie concernée. https://www.woah.org/en/what-we-do/standards/codes-and-
+manuals/terrestrial-code-online-access/ 
+[5] FAO, Small-scale poultry production, chapitre 6 Health. https://www.fao.org/4/y5169e/y5169e07.htm 
+[6] Ralco Agriculture, Simplified Ventilation Guide for Poultry Houses. 
+https://www.ralcoagriculture.com/blog/simplified-ventilation-guide-for-poultry-houses-everything-you-need-to-
+know/ 
+[7] Showhoo Building, Open Side Chicken House. https://www.showhoobuilding.com/open-side-chicken-house/ 
+[8] Lohmann Breeders, Biosecurity in Layer Farms. https://lohmann-breeders.com/biosecurity-in-layer-frams/ 
+[9] WOAH/OMSA, Newcastle disease. https://www.woah.org/en/disease/newcastle-disease/ 
+[10] WOAH/OMSA, Avian influenza. https://www.woah.org/en/disease/avian-influenza/ 
+Limite de transposition — Les guides FAO consultés couvrent plusieurs systèmes de production et 
+certaines données sont génériques. Le guide Cobb concerne une autre génétique. Aucune valeur numérique 
+issue de ces sources n’est présentée ici comme une performance certifiée de la souche Goliath. 
+ 

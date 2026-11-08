@@ -1,0 +1,481 @@
+
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 1 
+AFRICA POULETS GOLIATH 
+CAHIER DES CHARGES FONCTIONNEL 
+ET GUIDE TECHNIQUE 
+Simulateur d’élevage, d’alimentation, 
+de reproduction et de rentabilité avicole 
+Document de référence destiné au développeur du site internet 
+et à l’équipe technique d’Africa Poulets Goliath 
+« Investir dans les poulets, c’est lutter pour l’autosuffisance alimentaire. » 
+  
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 2 
+Sommaire 
+ 1. Présentation et objectifs du projet 
+ 2. Fonctionnement général du simulateur 
+ 3. Simulateur d’alimentation 
+ 4. Croissance et suivi du lot 
+ 5. Bâtiments et surfaces d’élevage 
+ 6. Chauffage et démarrage des poussins 
+ 7. Reproduction et ponte 
+ 8. Incubation et production de poussins 
+ 9. Simulateur de rentabilité 
+ 10. Interface et exigences techniques 
+ 11. Sécurité, limites et validation technique 
+ 12. Résultat final attendu 
+ Annexe : points à valider avant mise en ligne 
+  
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 3 
+1. Présentation et objectifs du projet 
+Africa Poulets Goliath souhaite intégrer à son site internet un simulateur interactif accessible depuis l’onglet « 
+Poussins ». L’outil doit accompagner les éleveurs depuis leur projet d’achat jusqu’à la conduite de leur élevage, 
+à la reproduction et à l’évaluation économique. 
+1.1. Objectifs spécifiques 
+ Calculer les besoins alimentaires quotidiens, hebdomadaires et cumulés. 
+ Estimer les quantités d’aliments à acheter et leur coût. 
+ Calculer les surfaces nécessaires pour la poussinière et les bâtiments. 
+ Présenter un programme indicatif de chauffage et les conditions de démarrage. 
+ Suivre les étapes de croissance et les objectifs de poids. 
+ Estimer le démarrage et l’évolution de la ponte. 
+ Calculer le potentiel de production d’œufs et de poussins. 
+ Simuler les recettes, les dépenses et la marge prévisionnelle. 
+ Comparer plusieurs scénarios et générer un rapport imprimable ou téléchargeable. 
+2. Fonctionnement général du simulateur 
+2.1. Saisie de l’effectif 
+La commande minimale prise en charge est de 500 poussins, selon les règles commerciales d’Africa Poulets 
+Goliath. Le champ doit permettre la saisie de quantités personnalisées : 500, 1 000, 2 000, 3 000, 5 000, 10 000 
+ou davantage. 
+2.2. Paramètres du projet 
+ Nombre de poussins et type d’élevage : production de viande, reproduction ou élevage mixte. 
+ Prix d’achat des poussins et prix des aliments. 
+ Coût du bâtiment, de l’aménagement et des équipements. 
+ Coût de l’eau, de l’énergie, du chauffage et de la main-d’œuvre. 
+ Prix de vente des œufs, des œufs fécondés et des poussins. 
+ Taux de mortalité, de fertilité et d’éclosion retenus pour la simulation. 
+ Durée de reproduction envisagée : 18 ou 24 mois. 
+Les valeurs par défaut doivent être validées par APG. Le système doit distinguer clairement les paramètres 
+officiels, les valeurs saisies par le client et les résultats calculés. 
+2.3. Résultats affichés 
+ Consommation journalière, hebdomadaire et cumulée d’aliments. 
+ Nombre de sacs d’aliments et coût alimentaire estimé. 
+ Surfaces de bâtiments et équipements recommandés. 
+ Programme indicatif de chauffage. 
+ Objectifs de croissance et calendrier de ponte. 
+ Production estimée d’œufs et de poussins. 
+ Budget, recettes, dépenses et marge prévisionnelle. 
+3. Simulateur d’alimentation 
+3.1. Formules de base 
+Consommation journalière totale (kg) = nombre de volailles × ration journalière individuelle (g) ÷ 1 000. 
+Consommation hebdomadaire = somme des consommations quotidiennes de la semaine. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 4 
+Consommation cumulée = somme des consommations depuis le premier jour d’élevage. 
+3.2. Exemple pour 500 poussins 
+Paramètre Calcul Résultat 
+Ration individuelle 25 g par poussin et par jour 25 g 
+Besoin du lot par jour 500 × 25 ÷ 1 000 12,5 kg 
+Besoin sur 7 jours à ration constante 12,5 × 7 87,5 kg 
+ 
+3.3. Courbe alimentaire à valider 
+Le projet APG prévoit une ration initiale de 25 g par sujet et par jour, avec une augmentation de 5 g à chaque 
+nouvelle semaine. Cette règle doit être enregistrée sous forme de tableau de paramètres modifiable par 
+l’administrateur. 
+Point de cohérence : avec 25 g en première semaine puis une hausse de 5 g par semaine, la ration atteint 120 
+g à la 20e semaine si la première semaine est le point de départ. L’objectif de 140 g à la 20e semaine doit donc 
+être confirmé ou remplacé par une courbe officielle validée par APG. La ration adulte doit être adaptée au type 
+de reproducteur, à son poids et aux références techniques de la souche. 
+Âge 
+Ration 
+individuelle/jour 
+Besoin journalier du 
+lot 
+Besoin 
+hebdomadaire 
+Cumul 
+Semaine 1 Paramètre APG Calcul automatique Calcul automatique Calcul automatique 
+Semaine 2 Paramètre APG Calcul automatique Calcul automatique Calcul automatique 
+Semaine 3 Paramètre APG Calcul automatique Calcul automatique Calcul automatique 
+... ... ... ... ... 
+Semaine 20 Paramètre APG validé Calcul automatique Calcul automatique Calcul automatique 
+Ponte Paramètre APG validé Calcul automatique Calcul automatique Calcul automatique 
+ 
+3.4. Sacs et coût des aliments 
+Nombre de sacs = consommation totale estimée ÷ poids du sac, arrondi à l’entier supérieur. L’utilisateur choisit 
+le format disponible, par exemple 25 kg ou 50 kg. 
+Coût alimentaire = consommation totale en kilogrammes × prix du kilogramme d’aliment. Les aliments de 
+démarrage, de croissance et de ponte doivent être distingués si le programme retenu comporte plusieurs 
+phases. 
+4. Croissance et suivi du lot 
+Les repères de 1 kg à un mois et de 2 kg vers deux mois sont des objectifs indicatifs à confirmer pour la souche 
+Goliath, et non des garanties. Le simulateur doit permettre de comparer les poids cibles validés avec les poids 
+réellement mesurés. 
+4.1. Données de suivi 
+ Âge et poids moyen cible, si validé. 
+ Poids moyen réellement mesuré. 
+ Consommation alimentaire cumulée. 
+ Nombre de sujets vivants et mortalité. 
+ Observations sanitaires et notes de l’éleveur. 
+4.2. Parcours selon l’objectif 
+Production de viande : suivi de la croissance, de l’alimentation, des dépenses et du poids de vente. 
+Reproduction : suivi des reproducteurs, de la préparation à la ponte, des œufs, de l’incubation et des poussins 
+produits. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 5 
+5. Bâtiments et surfaces d’élevage 
+Le simulateur doit distinguer la poussinière, le bâtiment de croissance, le bâtiment des reproducteurs adultes et 
+les locaux annexes (aliments, matériel, sas sanitaire, collecte et stockage des œufs). Les densités doivent être 
+adaptées à l’âge, au type de production, à la ventilation et au climat. 
+5.1. Repère de planification pour les adultes 
+Pour un premier budget, une hypothèse de 4 sujets adultes par m² de surface utile peut être utilisée à titre 
+indicatif. Cette densité doit être confirmée ou adaptée par un spécialiste en fonction du système d’élevage, de la 
+taille des oiseaux, de la ventilation et des recommandations applicables. 
+Effectif adulte Surface indicative à 4 sujets/m² 
+500 125 m² 
+1 000 250 m² 
+2 000 500 m² 
+3 000 750 m² 
+5 000 1 250 m² 
+10 000 2 500 m² 
+ 
+Ces surfaces correspondent à la zone utile d’élevage, hors magasin d’aliments, sas sanitaire, local technique et 
+autres espaces annexes. 
+5.2. Poussinière 
+Pour une première estimation, une densité de 20 à 25 poussins par m² peut servir de repère de 
+dimensionnement. Elle doit être ajustée selon l’âge, le chauffage, la ventilation, la température ambiante et la 
+taille des poussins. 
+Nombre de poussins Surface à 25 poussins/m² 
+500 20 m² 
+1 000 40 m² 
+2 000 80 m² 
+3 000 120 m² 
+5 000 200 m² 
+10 000 400 m² 
+ 
+5.3. Caractéristiques recommandées 
+ Terrain bien drainé et non inondable. 
+ Conception et orientation limitant la chaleur solaire excessive selon les vents locaux. 
+ Toiture protectrice contre la pluie et la chaleur. 
+ Sol nettoyable et désinfectable, avec litière sèche et absorbante. 
+ Ventilation suffisante, sans courant d’air direct sur les poussins. 
+ Ouvertures protégées contre les rongeurs et oiseaux sauvages. 
+ Accès fiable à l’eau et à une source de chaleur sûre. 
+ Évacuation adaptée des eaux de nettoyage. 
+ Organisation des bâtiments limitant les contacts entre lots et visiteurs. 
+ Pour les reproducteurs : nids adaptés, équipements de collecte des œufs et limitation des œufs cassés ou 
+souillés. 
+6. Chauffage et démarrage des poussins 
+6.1. Préparation avant l’arrivée 
+1. Nettoyer, désinfecter et sécher le bâtiment et le matériel. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 6 
+2. Préparer une litière propre et sèche. 
+3. Vérifier les appareils de chauffage et les thermomètres. 
+4. Installer mangeoires et abreuvoirs et vérifier l’eau potable. 
+5. Préchauffer la zone suffisamment tôt pour stabiliser la température. 
+6. Contrôler l’humidité et la ventilation si les instruments sont disponibles. 
+7. Préparer le programme sanitaire avec un professionnel compétent. 
+8. Organiser la réception et le déchargement rapide des poussins. 
+6.2. Températures indicatives 
+La température doit être mesurée à la hauteur des poussins. Les valeurs ci-dessous sont des repères de départ 
+à adapter au matériel, à l’humidité, au climat et au comportement du lot. 
+Période Température indicative au niveau des poussins 
+1re semaine 32 à 35 °C 
+2e semaine 29 à 32 °C 
+3e semaine 26 à 29 °C 
+4e semaine 23 à 26 °C 
+ 
+6.3. Interprétation du comportement 
+ Poussins regroupés sous la source de chaleur : ils peuvent avoir froid. 
+ Poussins éloignés de la chaleur, haletants ou ailes écartées : ils peuvent avoir trop chaud. 
+ Poussins uniformément répartis, actifs et consommant normalement : la distribution de chaleur est 
+probablement adaptée. 
+Les observations doivent toujours être combinées à des mesures de température et au contrôle de la 
+ventilation. 
+6.4. Caisses et zones de démarrage 
+Des caisses ou cercles de démarrage peuvent délimiter une zone chauffée, mais ne doivent pas créer de 
+surpopulation ni empêcher l’accès à l’eau et à l’aliment. Le démarrage en zone dédiée peut durer jusqu’à 
+environ trois semaines selon les conditions. Le transfert vers une zone plus vaste à partir de la quatrième 
+semaine dépend de l’état de plumage, de la température, de la capacité de thermorégulation et du 
+comportement, et pas uniquement de l’âge. 
+Pour les grands effectifs, le chauffage peut être organisé directement dans une partie du bâtiment si la 
+température, la ventilation et la densité restent maîtrisées. Les appareils à combustion doivent être installés et 
+utilisés avec des mesures de sécurité contre les gaz de combustion, notamment le monoxyde de carbone. 
+6.5. Contrôles à l’arrivée 
+ Contrôler l’état général des poussins et noter les sujets faibles, blessés ou morts. 
+ Placer rapidement les poussins dans la zone préparée. 
+ Assurer un accès immédiat à une eau propre et à un aliment adapté. 
+ Vérifier leur activité et leur accès aux équipements. 
+ Enregistrer le nombre reçu et les éventuelles pertes. 
+ Suivre les recommandations sanitaires et vaccinales adaptées au lot. 
+Les médicaments ne doivent pas être administrés systématiquement sans indication appropriée. 
+6.6. Eau, aliment et ambiance 
+ Nettoyer les abreuvoirs et contrôler la qualité de l’eau. 
+ Surveiller la propreté et l’humidité de la litière. 
+ Assurer une ventilation suffisante. 
+ Surveiller la consommation d’eau et d’aliment. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 7 
+ Détecter rapidement les signes de maladie. 
+ Prévoir une solution de secours pour l’eau et le chauffage dans les grands bâtiments. 
+7. Reproduction et ponte 
+7.1. Paramètres de ponte 
+Le simulateur doit permettre de renseigner l’âge prévu du début de ponte, le nombre de femelles et de mâles 
+reproducteurs, ainsi que les taux de ponte prévisionnels. L’âge de maturité sexuelle doit être confirmé à partir 
+des références techniques de la souche Goliath et des résultats de lots APG. 
+Une poule ne pond pas nécessairement un œuf chaque jour. La ponte dépend notamment du nombre de 
+femelles vivantes, de l’âge, de l’état corporel, de la nutrition, de la santé, de l’éclairage, du stress et des 
+conditions d’élevage. 
+7.2. Calcul de la production d’œufs 
+Œufs collectés = nombre de femelles vivantes × taux de ponte journalier. 
+Exemple illustratif : 400 femelles vivantes avec un taux de ponte de 80 % donnent une estimation de 320 œufs 
+par jour. 
+Le simulateur doit permettre de faire varier le taux de ponte selon les périodes et de comparer un scénario 
+prudent, un scénario intermédiaire et un scénario favorable. 
+7.3. Objectif de 320 œufs par femelle 
+APG souhaite présenter un potentiel pouvant atteindre environ 320 œufs par femelle lorsque les conditions sont 
+réunies. Ce chiffre doit être vérifié à partir de documents techniques fiables et de résultats documentés propres 
+à la souche Goliath. Il doit être affiché comme objectif ou hypothèse, jamais comme garantie individuelle. 
+7.4. Durée de production et réforme 
+Le simulateur doit permettre de comparer une réforme après 18 mois de ponte et une réforme après 24 mois. 
+La décision effective dépend de la production réelle, de l’état sanitaire, de la qualité des œufs, de la fertilité et 
+de la rentabilité. 
+La production cumulée doit être calculée période par période en tenant compte de l’évolution du taux de ponte 
+et des pertes, plutôt que par une multiplication fixe de l’effectif par 320. 
+8. Incubation et production de nouveaux poussins 
+8.1. Étapes du parcours des œufs 
+9. Collecte des œufs et tri des œufs cassés, fêlés ou inadaptés. 
+10. Identification des lots et enregistrement des dates. 
+11. Stockage temporaire dans des conditions adaptées. 
+12. Mise en incubation et suivi des paramètres de l’incubateur. 
+13. Contrôle de la fertilité et du développement embryonnaire. 
+14. Éclosion, tri des poussins et enregistrement des résultats. 
+15. Préparation et suivi du nouveau lot. 
+8.2. Calcul des poussins 
+Œufs fertiles estimés = œufs incubés × taux de fertilité. 
+Si le taux d’éclosion est calculé sur tous les œufs incubés : poussins éclos = œufs incubés × taux d’éclosion sur 
+œufs incubés. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 8 
+Si le taux d’éclosion est calculé uniquement sur les œufs fertiles : poussins éclos = œufs fertiles × taux 
+d’éclosion sur œufs fertiles. 
+Exemple illustratif : sur 1 000 œufs incubés, avec 90 % de fertilité et 85 % d’éclosion sur les œufs fertiles, on 
+estime 900 œufs fertiles et 765 poussins éclos. Ces taux sont des hypothèses de calcul, pas une garantie APG. 
+Le simulateur doit intégrer les pertes après éclosion pour estimer le nombre de sujets effectivement disponibles. 
+9. Simulateur de rentabilité 
+9.1. Dépenses à prendre en compte 
+ Achat des poussins et des aliments. 
+ Vaccins, frais sanitaires et suivi technique. 
+ Eau, énergie et chauffage. 
+ Main-d’œuvre, litière, nettoyage et entretien. 
+ Transport, frais d’incubation et conditionnement. 
+ Pertes liées à la mortalité et aux œufs non commercialisables. 
+ Amortissement des bâtiments et équipements, si le coût complet est calculé. 
+9.2. Recettes possibles 
+ Vente de poulets vivants ou transformés. 
+ Vente d’œufs de consommation. 
+ Vente d’œufs fécondés. 
+ Vente de poussins d’un jour. 
+ Vente de reproducteurs réformés. 
+ Valorisation éventuelle des fientes. 
+Le simulateur doit éviter tout double comptage : un œuf vendu ne peut pas être comptabilisé simultanément 
+comme un œuf mis en incubation. 
+9.3. Formules financières 
+ Chiffre d’affaires = somme des quantités vendues × prix de vente correspondant. 
+ Marge prévisionnelle d’exploitation = recettes − dépenses d’exploitation. 
+ Résultat prévisionnel complet = recettes − dépenses d’exploitation − amortissements et autres charges 
+retenues. 
+ Seuil de rentabilité = niveau de recettes nécessaire pour couvrir les charges retenues, calculé selon la 
+structure des coûts. 
+Le rapport doit préciser si les montants excluent ou incluent les investissements initiaux, les intérêts d’emprunt 
+et les impôts. 
+9.4. Comparaison de scénarios 
+Prévoir au moins trois scénarios : prudent, intermédiaire et favorable. L’utilisateur doit pouvoir mesurer l’effet 
+d’une hausse du prix de l’aliment, d’une baisse de ponte ou de fertilité, d’une variation du taux d’éclosion ou 
+d’une hausse de mortalité. 
+10. Interface et exigences techniques 
+10.1. Écrans à prévoir 
+16. Accueil : choix du type d’élevage et saisie de l’effectif. 
+17. Paramètres : prix, coûts, hypothèses et durée. 
+18. Alimentation : ration quotidienne, besoins hebdomadaires et cumulés. 
+19. Bâtiments : surfaces et équipements. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 9 
+20. Démarrage : chauffage, eau, alimentation et contrôles. 
+21. Croissance : poids cibles et suivi réel. 
+22. Reproduction : ponte, fertilité et incubation. 
+23. Rentabilité : recettes, charges et marges. 
+24. Rapport final : résumé imprimable et téléchargeable. 
+10.2. Exigences de calcul 
+ Actualiser les calculs automatiquement à chaque changement de paramètre. 
+ Utiliser des unités cohérentes : g, kg, litres, m² et FCFA. 
+ Distinguer les données saisies, les paramètres officiels et les résultats calculés. 
+ Conserver les hypothèses utilisées dans chaque simulation. 
+ Permettre à l’administrateur de mettre à jour les références sans réécrire le programme. 
+ Éviter les valeurs négatives et signaler les champs manquants ou incohérents. 
+ Afficher les règles d’arrondi. 
+ Permettre l’export PDF et l’impression. 
+ Fonctionner sur ordinateur et téléphone. 
+11. Sécurité, limites et validation technique 
+Le simulateur est un outil d’aide à la décision. Il ne remplace pas le suivi d’un technicien avicole, d’un 
+vétérinaire ou d’un spécialiste de l’incubation. Les performances réelles dépendent de la souche, de 
+l’alimentation, du climat, de la santé, de la conduite d’élevage et de la qualité du matériel. 
+Les recommandations sanitaires et vaccinales doivent être adaptées aux risques locaux et aux prescriptions 
+des professionnels compétents. 
+11.1. Paramètres à valider par APG avant lancement 
+ Courbe alimentaire complète du premier jour à la réforme. 
+ Poids cible par âge et objectifs de croissance. 
+ Âge de maturité sexuelle et début de ponte. 
+ Consommation alimentaire des reproducteurs en ponte. 
+ Taux de ponte selon l’âge et potentiel cumulé de production. 
+ Ratio mâles/femelles recommandé. 
+ Taux de fertilité et d’éclosion de référence. 
+ Densités recommandées à chaque stade. 
+ Programme de chauffage et critères de transfert. 
+ Équipements à prévoir selon l’effectif. 
+ Prix et hypothèses économiques par défaut. 
+Les paramètres doivent être vérifiés à partir de documents techniques de la souche, de données de lots APG 
+et, si nécessaire, de l’avis d’un spécialiste compétent. 
+12. Résultat final attendu 
+À la fin de la simulation, l’éleveur doit obtenir un rapport personnalisé indiquant : 
+ Effectif initial et objectif d’élevage. 
+ Besoins alimentaires par période et consommation cumulée estimée. 
+ Nombre de sacs à prévoir et coût alimentaire. 
+ Surfaces et équipements recommandés. 
+ Programme indicatif de chauffage et points de contrôle. 
+ Objectifs de croissance et suivi du poids. 
+ Estimations de ponte, de fertilité, d’éclosion et de production de poussins. 
+ Budget, recettes et marge estimée. 
+ Principaux risques et paramètres à surveiller. 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 10 
+Vision d’Africa Poulets Goliath 
+Mettre à la disposition des éleveurs africains un outil pratique pour mieux préparer leurs projets, comprendre 
+leurs coûts et améliorer la gestion de leurs élevages. 
+« Investir dans les poulets, c’est lutter pour l’autosuffisance alimentaire. » 
+  
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 11 
+Annexe — Liste de contrôle avant mise en ligne 
+À compléter par l’équipe technique d’Africa Poulets Goliath avant l’activation publique du simulateur. 
+ ☐  Courbe alimentaire hebdomadaire validée et signée. 
+ ☐  Ration de ponte validée et cohérente avec les références de la souche. 
+ ☐  Objectifs de poids documentés par âge. 
+ ☐  Âge de début de ponte et courbe de ponte documentés. 
+ ☐  Objectif de 320 œufs par femelle vérifié et correctement présenté. 
+ ☐  Ratio mâles/femelles validé. 
+ ☐  Densités de poussinière et d’adultes validées. 
+ ☐  Températures de démarrage vérifiées par le référent technique. 
+ ☐  Taux de fertilité et d’éclosion définis avec leur base de calcul. 
+ ☐  Formules de coût, de recettes et de marge testées. 
+ ☐  Scénarios prudent, intermédiaire et favorable testés. 
+ ☐  Version mobile, impression et export PDF testés. 
+ 
+Fin du document 
+  
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 12 
+Complément technique — choix de l’objectif de production 
+Le simulateur doit commencer par demander à l’utilisateur quel est son objectif principal. Les paramètres 
+alimentaires, le suivi du poids, la présence de mâles et les calculs de production doivent ensuite s’adapter 
+automatiquement au parcours choisi. 
+1. Les trois objectifs possibles 
+A. Reproduction — production d’œufs fécondés et de poussins — Le lot comprend des femelles et des 
+mâles reproducteurs. Le simulateur suit la croissance, l’équilibre alimentaire, la ponte, la fertilité, l’incubation et 
+le nombre de poussins obtenus. 
+B. Production de chair — engraissement pour la vente — Les poussins sont conduits pour atteindre un 
+poids de vente rapidement, avec un objectif indicatif d’environ 45 jours à deux mois, selon les résultats 
+réellement obtenus, l’alimentation, la santé et les conditions d’élevage. 
+C. Production d’œufs de table — Le lot est composé de femelles sans mâles lorsque l’objectif est uniquement 
+la vente d’œufs de consommation. Les œufs non fécondés conviennent à la consommation, mais ne produisent 
+pas de poussins en incubation. 
+2. Parcours alimentaire selon l’objectif 
+2.1. Reproduction 
+Le programme alimentaire doit distinguer trois phases : aliment démarrage, aliment croissance et aliment ponte. 
+Le passage d’une phase à l’autre doit être défini à partir du programme technique validé par Africa Poulets 
+Goliath et non uniquement selon une date arbitraire. 
+Les repères communiqués pour le simulateur sont une ration de départ de 25 g par sujet et par jour, avec une 
+progression prévue selon l’âge. La progression exacte, notamment l’objectif de 140 g par jour autour de la 20e 
+semaine, doit être confirmée par APG avant la mise en ligne. Le simulateur doit afficher la consommation 
+quotidienne, hebdomadaire et cumulée par phase alimentaire. 
+Les reproducteurs ne doivent pas être conduits comme des poulets d’engraissement. Une prise de poids 
+excessive peut nuire à la reproduction : un mâle trop lourd peut avoir des difficultés à cocher les femelles et une 
+femelle trop grasse peut présenter une baisse de ponte. L’objectif de poids doit être défini par la référence 
+technique de la souche, et non par une limite universelle appliquée sans distinction. 
+2.2. Production de chair 
+Le programme alimentaire communiqué par APG prévoit deux phases : aliment démarrage et aliment 
+croissance. Selon la pratique décrite par l’entreprise, l’aliment finition n’est pas systématiquement nécessaire 
+pour les poulets Goliath. Cette recommandation doit être validée selon la formule des aliments disponibles, leur 
+teneur nutritionnelle et les objectifs de croissance du lot. 
+Pour le calculateur, deux hypothèses alimentaires doivent pouvoir être comparées : une ration de 25 g par sujet 
+et par jour, ou une hypothèse de 30 g par sujet et par jour. Ces valeurs doivent être configurées comme des 
+hypothèses initiales communiquées par APG et ne doivent pas être appliquées comme ration fixe pendant toute 
+la période sans courbe d’alimentation validée. 
+L’objectif annoncé par APG est un poids supérieur à environ 1,5 kg vers 45 jours dans les conditions 
+appropriées. Une autre indication communiquée est un poids supérieur à 1 kg vers 45 jours. Ces deux repères 
+doivent être clarifiés et documentés avant publication afin d’éviter des objectifs contradictoires. Le simulateur 
+devra afficher un objectif de poids par âge validé et préciser que le résultat réel dépend de la conduite 
+d’élevage. 
+2.3. Production d’œufs de table 
+Pour la production d’œufs destinés à la consommation, le lot peut être constitué uniquement de femelles. Les 
+mâles ne sont pas nécessaires si aucun œuf fécondé ni aucun poussin n’est recherché. Le simulateur doit donc 
+
+AFRICA POULETS GOLIATH  |  CAHIER DES CHARGES DU SIMULATEUR 
+Document de travail — paramètres techniques à valider avant mise en production  •  Page 13 
+retirer les mâles du calcul de l’effectif de ponte et estimer les œufs de table à partir du nombre de femelles 
+vivantes et du taux de ponte. 
+Le calibre des œufs et le nombre d’œufs produits dépendent notamment de l’âge, de la nutrition, de la santé et 
+des conditions d’élevage. Le simulateur ne doit pas garantir un calibre précis sans données techniques 
+validées. 
+3. Gestion du poids des reproducteurs 
+Le simulateur doit afficher un avertissement lorsque le poids des reproducteurs dépasse la cible définie dans le 
+programme technique APG. L’entreprise indique qu’il faut éviter l’engraissement excessif et souhaite un poids 
+ne dépassant pas environ 5 kg pour ses reproducteurs. Cette valeur doit être validée séparément pour les 
+mâles et les femelles et selon l’âge, car une même limite ne convient pas nécessairement aux deux sexes. 
+Le programme doit recommander des pesées régulières et une adaptation de la ration avec l’appui d’un 
+technicien avicole. Il ne doit pas conseiller de restriction alimentaire brutale ou non encadrée. 
+4. Logique attendue du simulateur 
+Objectif Phases alimentaires Composition du lot Résultats principaux 
+Reproduction 
+Démarrage → croissance → 
+ponte 
+Mâles + femelles 
+Œufs fécondés, incubation, 
+poussins 
+Chair Démarrage → croissance Selon le plan de production 
+Poids de vente, consommation, 
+coût et marge 
+Œufs de table 
+Démarrage → croissance → 
+ponte 
+Femelles seules si aucune 
+reproduction 
+Œufs commercialisables et 
+rentabilité 
+5. Décisions à confirmer avant programmation 
+ ☐  Confirmer la courbe alimentaire complète pour les reproducteurs, y compris la progression jusqu’à la 
+ration de ponte. 
+ ☐  Confirmer les rations de chair : 25 g ou 30 g par jour, et préciser si elles sont des repères initiaux ou des 
+rations par âge. 
+ ☐  Harmoniser l’objectif de poids à 45 jours : supérieur à 1 kg ou supérieur à 1,5 kg, avec les données de 
+lots APG. 
+ ☐  Valider les poids cibles des reproducteurs séparément pour les mâles et les femelles. 
+ ☐  Valider les périodes de passage entre aliment démarrage, croissance et ponte. 
+ ☐  Confirmer les paramètres de ponte, de fertilité et d’éclosion avant de les afficher comme références 
+APG. 
+Note de validation : les données de ration et de poids ci-dessus reprennent les indications communiquées par 
+APG. Les valeurs contradictoires ou incomplètes sont signalées pour validation avant toute utilisation publique. 

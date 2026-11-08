@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Africa Poulets Goliath (APG)
 
 Laravel 12 · Livewire 4 · Filament 5 · Tailwind 4 · SQLite · PWA.
@@ -20,3 +21,6 @@ php artisan test
 - **Simulator**: Admin > Simulateur (étapes); bad choices (`is_bad`) open an explanation popup with a back button.
 - **Chat**: bottom-right widget; AI replies if `ai_api_key` is set (Admin > Paramètres), else FAQ fallback; agents reply from Admin > Chat.
 - Legacy content import: place `database/seeders/data/apg_content.json` then `php artisan db:seed`.
+=======
+# apg
+>>>>>>> origin/main
